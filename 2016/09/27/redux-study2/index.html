@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    
+    <title>React Native 공부기 ~ Redux 후편 | 텅 빈 충만의 블로그</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+        <meta name="keywords" content="React Native,JavaScript,Redux" />
+    
+    <meta name="description" content="지난번에 공부한 것들
+props의 공급원
+
+dispatch(action.login(sessionID))의 의미
+
+Redux의 매커니즘
+
+
+다시 이야기로 돌아와서
+저런식으로 redux에 state을 저장해서 다른 컴포넌트들이 그걸 참조하는거에요.
+Q) 그럼 dumbcomponent에서 데이터가변화 =&amp;gt; screen으로 데이터가 감 =&amp;gt; action">
+<meta property="og:type" content="article">
+<meta property="og:title" content="React Native 공부기 ~ Redux 후편">
+<meta property="og:url" content="https://voidsatisfaction.github.io/2016/09/27/redux-study2/index.html">
+<meta property="og:site_name" content="텅 빈 충만의 블로그">
+<meta property="og:description" content="지난번에 공부한 것들
+props의 공급원
+
+dispatch(action.login(sessionID))의 의미
+
+Redux의 매커니즘
+
+
+다시 이야기로 돌아와서
+저런식으로 redux에 state을 저장해서 다른 컴포넌트들이 그걸 참조하는거에요.
+Q) 그럼 dumbcomponent에서 데이터가변화 =&amp;gt; screen으로 데이터가 감 =&amp;gt; action">
+<meta property="og:image" content="https://css-tricks.com/wp-content/uploads/2016/03/redux-article-3-03.svg">
+<meta property="og:updated_time" content="2016-09-27T10:25:38.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="React Native 공부기 ~ Redux 후편">
+<meta name="twitter:description" content="지난번에 공부한 것들
+props의 공급원
+
+dispatch(action.login(sessionID))의 의미
+
+Redux의 매커니즘
+
+
+다시 이야기로 돌아와서
+저런식으로 redux에 state을 저장해서 다른 컴포넌트들이 그걸 참조하는거에요.
+Q) 그럼 dumbcomponent에서 데이터가변화 =&amp;gt; screen으로 데이터가 감 =&amp;gt; action">
+<meta name="twitter:image" content="https://css-tricks.com/wp-content/uploads/2016/03/redux-article-3-03.svg">
+    
+    <link rel="canonical" href="https://voidsatisfaction.github.io/2016/09/27/redux-study2/"/>
+
+    
+
+    
+
+    <link rel="stylesheet" href="/vendor/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/vendor/titillium-web/styles.css">
+    <link rel="stylesheet" href="/vendor/source-code-pro/styles.css">
+
+    <link rel="stylesheet" href="/css/style.css">
+
+    <script src="/vendor/jquery/2.0.3/jquery.min.js"></script>
+    
+    
+        <link rel="stylesheet" href="/vendor/lightgallery/css/lightgallery.min.css">
+    
+    
+        <script type="text/javascript">
+(function(i,s,o,g,r,a,m) {i['GoogleAnalyticsObject']=r;i[r]=i[r]||function() {
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-84759824-1', 'auto');
+ga('send', 'pageview');
+
+</script>
+    
+    
+
+</head>
+
+<body>
+    <div id="wrap">
+        <header id="header">
+    <div id="header-outer" class="outer">
+        <div class="container">
+            <div class="container-inner">
+                <div id="header-title">
+                    <h1 class="logo-wrap">
+                        <a href="/" class="logo"></a>
+                    </h1>
+                    
+                        <h2 class="subtitle-wrap">
+                            <p class="subtitle">Ruby JavaScript Scheme을 사랑하는 초보 학생의 소박한 프로그래밍.</p>
+                        </h2>
+                    
+                </div>
+                <div id="header-inner" class="nav-container">
+                    <a id="main-nav-toggle" class="nav-icon fa fa-bars"></a>
+                    <div class="nav-container-inner">
+                        <ul id="main-nav">
+                            
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/">Home</a>
+                                </li>
+                            
+                                        <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/JavaScript/">JavaScript</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/JavaScript/ECMA-Script6/">ECMA Script6</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/JavaScript/Nodejs/">Nodejs</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/JavaScript/React-Native/">React Native</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Ruby/">Ruby</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Ruby/Project-Euler/">Project Euler</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Scheme/">Scheme</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Scheme/Schemer-series/">Schemer series</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Utils/">Utils</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Utils/Git-GitHub/">Git/GitHub</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/교육/">교육</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/세상-사는-이야기/">세상 사는 이야기</a></li></ul>
+                                    
+                        </ul>
+                        <nav id="sub-nav">
+                            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Type something..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+</div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+        <div class="container">
+            <div class="main-body container-inner">
+                <div class="main-body-inner">
+                    <section id="main">
+                        <div class="main-body-header">
+    <h1 class="header">
+    
+    <a class="page-title-link" href="/categories/JavaScript/">JavaScript</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/JavaScript/React-Native/">React Native</a>
+    </h1>
+</div>
+                        <div class="main-body-content">
+                            <article id="post-redux-study2" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+        React Native 공부기 ~ Redux 후편
+        </h1>
+    
+
+            </header>
+        
+        
+            <div class="article-subtitle">
+                <a href="/2016/09/27/redux-study2/" class="article-date">
+    <time datetime="2016-09-27T08:37:59.000Z" itemprop="datePublished">2016-09-27</time>
+</a>
+                
+    <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/React-Native/">React Native</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Redux/">Redux</a></li></ul>
+
+            </div>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+            <h2 id="지난번에-공부한-것들"><a href="#지난번에-공부한-것들" class="headerlink" title="지난번에 공부한 것들"></a>지난번에 공부한 것들</h2><ul>
+<li><p>props의 공급원</p>
+</li>
+<li><p>dispatch(action.login(sessionID))의 의미</p>
+</li>
+<li><p>Redux의 매커니즘</p>
+</li>
+</ul>
+<h2 id="다시-이야기로-돌아와서"><a href="#다시-이야기로-돌아와서" class="headerlink" title="다시 이야기로 돌아와서"></a>다시 이야기로 돌아와서</h2><p><img src="https://css-tricks.com/wp-content/uploads/2016/03/redux-article-3-03.svg" alt="redux"></p>
+<p>저런식으로 redux에 state을 저장해서 다른 컴포넌트들이 그걸 참조하는거에요.</p>
+<p><strong>Q) 그럼 dumbcomponent에서 데이터가변화 =&gt; screen으로 데이터가 감 =&gt; action생성 =&gt; dispather에 의한 redux상의 데이터변화(reducer)</strong> 요로코롬 이해하면 될까?</p>
+<p>네.</p>
+<p>아 이제 완벽히 이해된다.</p>
+<p>connect가 뭔지도 아시겟죠?</p>
+<p>다른 일반적인 react-redux아키텍쳐랑 조금 달라서 아마 어려울수도 있었을거에요.</p>
+<ul>
+<li>dumbcomponent에서 데이터가변화 =&gt; screen으로 데이터가 감 =&gt; action생성 =&gt; dispather에 의한 redux상의 데이터변화(reducer)</li>
+</ul>
+<p>이게 아니라,</p>
+<ul>
+<li>dumbcomponent에서 데이터가변화 =&gt; action생성 =&gt; dispather에 의한 redux상의 데이터변화(reducer)</li>
+</ul>
+<p>이거여서.</p>
+<p>보통은 react의 state을 아에 쓰지 않거든요.</p>
+<p>web front 의 경우에는 그냥 전부다 redux로 처리하니까 textInput 같은것도 redux state를 바꾸는걸로 해요.</p>
+<p>근데 저희는 redux state을 핸드폰에다가 저장을 해놔서</p>
+<p>그렇게 자잘한걸 전부다 redux로 처리를 하면 퍼포먼스가 나빠질 것 같아서, 적절히 나눈거구요.</p>
+<p>대충 redux 에 대해 이해가 되셧나요?</p>
+<hr>
+<p><strong>Q) redux로 처리하는것과 react자체 state로 처리하는 것의 차이는 뭐야?</strong></p>
+<ul>
+<li><p>redux로 처리는 action, dispatch을 이용해서 redux의 state를 바꿔서 view을 바꾸는 거구요.</p>
+</li>
+<li><p>react 자체 state는 this.setState을 통해서 view를 바꾸는 거죠.</p>
+</li>
+</ul>
+<p>그리고 사실 redux로 처리를 하면 <code>action -&gt; middleware -&gt; reducer</code>의 형태로 redux state가 변경되는데, 이 과정에서 여러가지를 할수가 있어요</p>
+<p>반면에 setState는 setState 만으로 값을 바꾸는 거여서 복잡한 처리에는 좋지 않아요.</p>
+<p>그렇지 middleware에서 데이터를 가공하든 다른곳에 통신을 하던 할 수 있으니까 redux는</p>
+<p><strong>Q) 근데 내 짧은 생각으로는 아무래도 redux가 여러가지 모듈을 거치니까 더 느릴거 같다는 생각이드는데..</strong></p>
+<p>redux가 더 느릴걸요.</p>
+<p>더 느린데 할수있는게 많은거죠.</p>
+<p>자유도 라고 해야하나요.</p>
+<p>일단은 액션만 생성하면 redux의 정보를 변경할 수 있어요.</p>
+<h2 id="this-props-lecture는-어디에서-오는가"><a href="#this-props-lecture는-어디에서-오는가" class="headerlink" title="this.props.lecture는 어디에서 오는가?"></a>this.props.lecture는 어디에서 오는가?</h2><p>아 그 props 가 어디서 오는지 설명해 드릴게요.</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">screen/LectureDetailScreen</div><div class="line"></div><div class="line"><span class="keyword">export</span> <span class="keyword">default</span> connect(</div><div class="line">  <span class="function">(<span class="params">state</span>) =&gt;</span> (&#123;</div><div class="line">    <span class="attr">timeTable</span>: state.timeTable,</div><div class="line">  &#125;),</div><div class="line">  () =&gt; (&#123;&#125;),</div><div class="line">  (stateProps, dispatchProps, ownProps) =&gt; (&#123;</div><div class="line">    ...dispatchProps,</div><div class="line">    ...ownProps,</div><div class="line">    <span class="attr">lecture</span>: stateProps.timeTable[ownProps.day][ownProps.time],</div><div class="line">  &#125;)</div><div class="line">)(<span class="class"><span class="keyword">class</span> <span class="title">LectureDetailScreen</span> <span class="keyword">extends</span> <span class="title">Component</span> </span>&#123;</div></pre></td></tr></table></figure>
+<p>this.props.timeTable에 state.timeTable을 연결시켜요</p>
+<p>또한, connect의 3번째 인수는</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">(stateProps, dispatchProps, ownProps) =&gt; (&#123;</div><div class="line">   ...dispatchProps,</div><div class="line">   ...ownProps,</div><div class="line">   <span class="attr">lecture</span>: stateProps.timeTable[ownProps.day][ownProps.time],</div><div class="line"> &#125;)</div></pre></td></tr></table></figure>
+<p>이런 함수인데</p>
+<p>여기서 state.Props는 저기 위에 있는 <code>{ timeTable: state.timeTable }</code>가 들어가 있어요.</p>
+<p>그리고 ownProps는 원래 얘가 가지고 있는 props을 의미해요.</p>
+<p>lectureDetail은 timeTableScreen 에서 오는 얘인데</p>
+<p>그때 <code>Action.lectureDetail({ day, time})</code>으로 보냈으니 <code>this.props.day, this.props.time</code> 을 받게 되죠</p>
+<p>ownProps.day과 ownProps.time 은 timeTable에서 받은 day와 time 이에요</p>
+<p>우리가 lectureDetail에서 필요한건 timeTable이 아니라 특정 timeTable안에 있는 특정 lecture 이기 때문에,</p>
+<p><strong><code>lecture: stateProps.timeTable[ownProps.day][ownProps.time],</code> 이걸 써서 this.props.lecture에 lecture을 주는거에요.</strong></p>
+<p>그래서 우리는 컴포넌트 안에서 this.props.lecture 만으로 얘의 lecture을 알수가 있죠.</p>
+<p>사실 그냥 <code>this.props.lecture = this.props.timeTable[this.props.day][this.props.time]</code> 와 같이 해도 되는데</p>
+<p>저건 별로 좋지도 않고</p>
+<p><strong>데이터 가공이랑 데이터 사용을 분리해서 적어놔야 보기가 편해요.</strong></p>
+<p>“아 이 컴포넌트는 lecture을 쓰는구나 timeTable 전체를 안쓰는군.” 이렇게요.</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line">screen/scheduleScreen</div><div class="line"></div><div class="line"><span class="keyword">export</span> <span class="keyword">default</span> connect(<span class="function">(<span class="params">state</span>) =&gt;</span> &#123;</div><div class="line">  <span class="keyword">const</span> timetableScheduleItems = state.timeTable ? state.timeTable.reduce(<span class="function">(<span class="params">sum, dayTimetable</span>) =&gt;</span> &#123;</div><div class="line">    <span class="keyword">const</span> dayTimetableSchedules = dayTimetable.reduce(<span class="function">(<span class="params">daySum, lecture</span>) =&gt;</span> &#123;</div><div class="line">      <span class="keyword">const</span> timelines = lecture.timelines.map(<span class="function">(<span class="params">timeline</span>) =&gt;</span> (&#123;</div><div class="line">        ...timeline.info,</div><div class="line">        <span class="attr">lectureName</span>: lecture.lectureDPName,</div><div class="line">      &#125;));</div><div class="line">      <span class="keyword">return</span> [...daySum, ...timelines];</div><div class="line">    &#125;, []);</div><div class="line">    <span class="keyword">return</span> [...sum, ...dayTimetableSchedules];</div><div class="line">  &#125;, []) : [];</div><div class="line">  <span class="keyword">const</span> scheduleItems = [</div><div class="line">    ...timetableScheduleItems,</div><div class="line">    ...state.schedules,</div><div class="line">  ];</div><div class="line">  <span class="keyword">return</span> (&#123;</div><div class="line">    scheduleItems,</div><div class="line">  &#125;);</div><div class="line">&#125;)(<span class="class"><span class="keyword">class</span> <span class="title">ScheduleScreen</span> <span class="keyword">extends</span> <span class="title">Component</span> </span>&#123;</div></pre></td></tr></table></figure>
+<p>이건 scheduleScreen 인데 얘도 timeTable을 가공해서 shceduleItem을 만드는거에요.</p>
+
+        </div>
+        <footer class="article-footer">
+            
+
+
+
+    <a data-url="https://voidsatisfaction.github.io/2016/09/27/redux-study2/" data-id="ciuj4ugwo002ebysd30ej1xix" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+<script>
+    (function ($) {
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+        </footer>
+    </div>
+</article>
+
+    <section id="comments">
+    
+        
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
+    
+    </section>
+
+                        </div>
+                    </section>
+                    <aside id="sidebar">
+    <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
+    <div class="sidebar-top">
+        <p>follow:</p>
+        <ul class="social-links">
+            
+                
+                <li>
+                    <a class="social-tooltip" title="facebook" href="https://www.facebook.com/yeon.gyumin" target="_blank">
+                        <i class="icon fa fa-facebook"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="github" href="https://github.com/voidsatisfaction" target="_blank">
+                        <i class="icon fa fa-github"></i>
+                    </a>
+                </li>
+                
+            
+        </ul>
+    </div>
+    <div class="github-card" data-github="voidSatisfaction" data-height="" data-theme="default"></div>
+    <script src="//cdn.jsdelivr.net/github-cards/latest/widget.js"></script>
+    
+        
+<nav id="article-nav">
+    
+        <a href="/2016/09/29/buddhism-and-programming/" id="article-nav-newer" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">newer</strong>
+        <p class="article-nav-title">
+        
+            불교와 프로그래밍
+        
+        </p>
+        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
+    </a>
+    
+    
+        <a href="/2016/09/27/redux-study1/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">older</strong>
+        <p class="article-nav-title">React Native 공부기 ~ Redux 전편</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
+    
+    <div class="widgets-container">
+        
+            
+                
+    <div class="widget-wrap">
+        <h3 class="widget-title">recents</h3>
+        <div class="widget">
+            <ul id="recent-post" class="no-thumbnail">
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/JavaScript/">JavaScript</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/JavaScript/ECMA-Script6/">ECMA Script6</a></p>
+                            <p class="item-title"><a href="/2016/10/21/so-hard-javascript-class/" class="title">너무 헷갈리는 자바스크립트 Class개념</a></p>
+                            <p class="item-date"><time datetime="2016-10-21T01:11:37.000Z" itemprop="datePublished">2016-10-21</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/교육/">교육</a></p>
+                            <p class="item-title"><a href="/2016/10/14/good-site-for-javascript-study/" class="title">자바스크립트 공부에 도움이 되는 사이트</a></p>
+                            <p class="item-date"><time datetime="2016-10-14T06:56:24.000Z" itemprop="datePublished">2016-10-14</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/JavaScript/">JavaScript</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/JavaScript/React-Native/">React Native</a></p>
+                            <p class="item-title"><a href="/2016/10/14/javascript-study-and-react-native-function-method/" class="title">React Native의 원리 및 JavaScript의 함수</a></p>
+                            <p class="item-date"><time datetime="2016-10-14T02:26:21.000Z" itemprop="datePublished">2016-10-14</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Ruby/">Ruby</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Ruby/Project-Euler/">Project Euler</a></p>
+                            <p class="item-title"><a href="/2016/10/07/project-euler-134-solution/" class="title">Project Euler 134</a></p>
+                            <p class="item-date"><time datetime="2016-10-06T16:55:01.000Z" itemprop="datePublished">2016-10-07</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/세상-사는-이야기/">세상 사는 이야기</a></p>
+                            <p class="item-title"><a href="/2016/10/06/lesson-from-teacher-with-errors/" class="title">MECE하게 &#39;생각&#39;하라.</a></p>
+                            <p class="item-date"><time datetime="2016-10-05T16:15:38.000Z" itemprop="datePublished">2016-10-06</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">categories</h3>
+        <div class="widget">
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/JavaScript/">JavaScript</a><span class="category-list-count">12</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/JavaScript/ECMA-Script6/">ECMA Script6</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/JavaScript/Nodejs/">Nodejs</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/JavaScript/React-Native/">React Native</a><span class="category-list-count">5</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Ruby/">Ruby</a><span class="category-list-count">6</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Ruby/Project-Euler/">Project Euler</a><span class="category-list-count">5</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Scheme/">Scheme</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Scheme/Schemer-series/">Schemer series</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Utils/">Utils</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Utils/Git-GitHub/">Git/GitHub</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/교육/">교육</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/세상-사는-이야기/">세상 사는 이야기</a><span class="category-list-count">8</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">archives</h3>
+        <div class="widget">
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">October 2016</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/09/">September 2016</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">August 2016</a><span class="archive-list-count">13</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-float">
+        <h3 class="widget-title">tag cloud</h3>
+        <div class="widget tagcloud">
+            <a href="/tags/GitHub/" style="font-size: 10px;">GitHub</a> <a href="/tags/Grammar/" style="font-size: 10px;">Grammar</a> <a href="/tags/JavaScript/" style="font-size: 20px;">JavaScript</a> <a href="/tags/Nodejs/" style="font-size: 12.86px;">Nodejs</a> <a href="/tags/Project-Euler/" style="font-size: 15.71px;">Project Euler</a> <a href="/tags/React-Native/" style="font-size: 17.14px;">React Native</a> <a href="/tags/Redux/" style="font-size: 11.43px;">Redux</a> <a href="/tags/Ruby/" style="font-size: 17.14px;">Ruby</a> <a href="/tags/Scheme/" style="font-size: 10px;">Scheme</a> <a href="/tags/Socket-io/" style="font-size: 10px;">Socket.io</a> <a href="/tags/객체지향/" style="font-size: 10px;">객체지향</a> <a href="/tags/불교/" style="font-size: 10px;">불교</a> <a href="/tags/세상-사는-이야기/" style="font-size: 18.57px;">세상 사는 이야기</a> <a href="/tags/알고리즘/" style="font-size: 10px;">알고리즘</a> <a href="/tags/프로그래밍/" style="font-size: 14.29px;">프로그래밍</a> <a href="/tags/프로그래밍-교육/" style="font-size: 10px;">프로그래밍 교육</a>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">links</h3>
+        <div class="widget">
+            <ul>
+                
+                    <li>
+                        <a href="http://hexo.io">Hexo</a>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+
+            
+        
+    </div>
+</aside>
+
+                </div>
+            </div>
+        </div>
+        <footer id="footer">
+    <div class="container">
+        <div class="container-inner">
+            <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
+            <div class="credit">
+                <h1 class="logo-wrap">
+                    <a href="/" class="logo"></a>
+                </h1>
+                <p>&copy; 2016 텅 빈 충만(voidSatisfaction)</p>
+                <p>Powered by <a href="//hexo.io/" target="_blank">Hexo</a>. Theme by <a href="//github.com/ppoffice" target="_blank">PPOffice</a></p>
+            </div>
+        </div>
+    </div>
+</footer>
+        
+    
+    <script>
+    var disqus_shortname = 'voidsatisfaction';
+    
+    
+    var disqus_url = 'https://voidsatisfaction.github.io/2016/09/27/redux-study2/';
+    
+    (function() {
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+
+
+
+    
+        <script src="/vendor/lightgallery/js/lightgallery.min.js"></script>
+        <script src="/vendor/lightgallery/js/lg-thumbnail.min.js"></script>
+        <script src="/vendor/lightgallery/js/lg-pager.min.js"></script>
+        <script src="/vendor/lightgallery/js/lg-autoplay.min.js"></script>
+        <script src="/vendor/lightgallery/js/lg-fullscreen.min.js"></script>
+        <script src="/vendor/lightgallery/js/lg-zoom.min.js"></script>
+        <script src="/vendor/lightgallery/js/lg-hash.min.js"></script>
+        <script src="/vendor/lightgallery/js/lg-share.min.js"></script>
+        <script src="/vendor/lightgallery/js/lg-video.min.js"></script>
+    
+
+
+<!-- Custom Scripts -->
+<script src="/js/main.js"></script>
+
+    </div>
+</body>
+</html>

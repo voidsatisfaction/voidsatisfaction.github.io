@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    
+    <title>MECE하게 &#39;생각&#39;하라. | 텅 빈 충만의 블로그</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+        <meta name="keywords" content="세상 사는 이야기,프로그래밍" />
+    
+    <meta name="description" content="오늘 사부와의 미팅에서 배운 것들.
+에러가 뜨면 막무가내로 실행하지 말고, 한 번 더 논리적으로 천천히 생각해보자. 본질에 입각해서 생각하자.
+
+어떠한 process중에서 에러가 발생하면 그 process의 하나하나의 단계를 MECE(Mutually Exclusive and Collectively Exhaustive)하게 테스트한다.
+
+편한 Tool을 항상">
+<meta property="og:type" content="article">
+<meta property="og:title" content="MECE하게 '생각'하라.">
+<meta property="og:url" content="https://voidsatisfaction.github.io/2016/10/06/lesson-from-teacher-with-errors/index.html">
+<meta property="og:site_name" content="텅 빈 충만의 블로그">
+<meta property="og:description" content="오늘 사부와의 미팅에서 배운 것들.
+에러가 뜨면 막무가내로 실행하지 말고, 한 번 더 논리적으로 천천히 생각해보자. 본질에 입각해서 생각하자.
+
+어떠한 process중에서 에러가 발생하면 그 process의 하나하나의 단계를 MECE(Mutually Exclusive and Collectively Exhaustive)하게 테스트한다.
+
+편한 Tool을 항상">
+<meta property="og:updated_time" content="2016-10-06T04:58:42.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="MECE하게 '생각'하라.">
+<meta name="twitter:description" content="오늘 사부와의 미팅에서 배운 것들.
+에러가 뜨면 막무가내로 실행하지 말고, 한 번 더 논리적으로 천천히 생각해보자. 본질에 입각해서 생각하자.
+
+어떠한 process중에서 에러가 발생하면 그 process의 하나하나의 단계를 MECE(Mutually Exclusive and Collectively Exhaustive)하게 테스트한다.
+
+편한 Tool을 항상">
+    
+    <link rel="canonical" href="https://voidsatisfaction.github.io/2016/10/06/lesson-from-teacher-with-errors/"/>
+
+    
+
+    
+
+    <link rel="stylesheet" href="/vendor/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/vendor/titillium-web/styles.css">
+    <link rel="stylesheet" href="/vendor/source-code-pro/styles.css">
+
+    <link rel="stylesheet" href="/css/style.css">
+
+    <script src="/vendor/jquery/2.0.3/jquery.min.js"></script>
+    
+    
+        <link rel="stylesheet" href="/vendor/lightgallery/css/lightgallery.min.css">
+    
+    
+        <script type="text/javascript">
+(function(i,s,o,g,r,a,m) {i['GoogleAnalyticsObject']=r;i[r]=i[r]||function() {
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-84759824-1', 'auto');
+ga('send', 'pageview');
+
+</script>
+    
+    
+
+</head>
+
+<body>
+    <div id="wrap">
+        <header id="header">
+    <div id="header-outer" class="outer">
+        <div class="container">
+            <div class="container-inner">
+                <div id="header-title">
+                    <h1 class="logo-wrap">
+                        <a href="/" class="logo"></a>
+                    </h1>
+                    
+                        <h2 class="subtitle-wrap">
+                            <p class="subtitle">Ruby JavaScript Scheme을 사랑하는 초보 학생의 소박한 프로그래밍.</p>
+                        </h2>
+                    
+                </div>
+                <div id="header-inner" class="nav-container">
+                    <a id="main-nav-toggle" class="nav-icon fa fa-bars"></a>
+                    <div class="nav-container-inner">
+                        <ul id="main-nav">
+                            
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/">Home</a>
+                                </li>
+                            
+                                        <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/JavaScript/">JavaScript</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/JavaScript/ECMA-Script6/">ECMA Script6</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/JavaScript/Nodejs/">Nodejs</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/JavaScript/React-Native/">React Native</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Ruby/">Ruby</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Ruby/Project-Euler/">Project Euler</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Scheme/">Scheme</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Scheme/Schemer-series/">Schemer series</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Utils/">Utils</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Utils/Git-GitHub/">Git/GitHub</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/교육/">교육</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/세상-사는-이야기/">세상 사는 이야기</a></li></ul>
+                                    
+                        </ul>
+                        <nav id="sub-nav">
+                            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Type something..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+</div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+        <div class="container">
+            <div class="main-body container-inner">
+                <div class="main-body-inner">
+                    <section id="main">
+                        <div class="main-body-header">
+    <h1 class="header">
+    
+    <a class="page-title-link" href="/categories/세상-사는-이야기/">세상 사는 이야기</a>
+    </h1>
+</div>
+                        <div class="main-body-content">
+                            <article id="post-lesson-from-teacher-with-errors" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+        MECE하게 &#39;생각&#39;하라.
+        </h1>
+    
+
+            </header>
+        
+        
+            <div class="article-subtitle">
+                <a href="/2016/10/06/lesson-from-teacher-with-errors/" class="article-date">
+    <time datetime="2016-10-05T16:15:38.000Z" itemprop="datePublished">2016-10-06</time>
+</a>
+                
+    <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/세상-사는-이야기/">세상 사는 이야기</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/프로그래밍/">프로그래밍</a></li></ul>
+
+            </div>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+            <h2 id="오늘-사부와의-미팅에서-배운-것들"><a href="#오늘-사부와의-미팅에서-배운-것들" class="headerlink" title="오늘 사부와의 미팅에서 배운 것들."></a>오늘 사부와의 미팅에서 배운 것들.</h2><ul>
+<li><p>에러가 뜨면 막무가내로 실행하지 말고, 한 번 더 논리적으로 천천히 생각해보자. 본질에 입각해서 생각하자.</p>
+</li>
+<li><p>어떠한 process중에서 에러가 발생하면 그 process의 하나하나의 단계를 MECE(Mutually Exclusive and Collectively Exhaustive)하게 테스트한다.</p>
+</li>
+<li><p>편한 Tool을 항상 알아보자. ex) Reactotron, Vscode(plug in), Atom eslint, Atom terminal, Zsh 생산성을 상승 시키자.</p>
+</li>
+<li><p>기회가 있으면 꼭 참여해보자.</p>
+</li>
+</ul>
+<hr>
+<p>오랜만에 사부와 미팅을 했다.</p>
+<p>방학동안에 한 번도 보지 못했는데, 여전히 사부는 사부였고, 나 역시 배운 것이 참 많았다.</p>
+<p><strong>위에 내가 배운것을 정리해 놓았다.</strong></p>
+<h2 id="사고-정지의-위험성"><a href="#사고-정지의-위험성" class="headerlink" title="사고 정지의 위험성"></a>사고 정지의 위험성</h2><p>파인만 알고리즘, Do not study programming과 같은 글들을 보면 프로그래밍을 잘 하는 방법은 참 간단하고 명쾌하다.</p>
+<p><strong>‘손부터 움직이지 말고, 문제를 올바르게 파악하여 해결책에 대하여 숙고한 뒤에 해결하기 위한 코딩을 한다.’</strong> 라는 것이다.</p>
+<p>이미 위와같은 글을 몇번이나 읽고 ‘아 프로그래밍을 할 떄는 반드시 이러한 마음가짐으로 해야지’라고 다짐까지 했건만, 정작 내 앞에 ‘익숙하지 않은’문제들이 다가오면 불쑥 손부터 움직이기 시작한다.</p>
+<p>아마 초보 코더의 본능과 같은 것일까?</p>
+<p>이번 웹뷰 에러를 디버그 하는 상황에서도 아무런 논리적 근거도 없이 나는 ‘이걸 이렇게 변경하면 되겠지’라는 마음가짐으로 일단 iphone의 simulator를 실행시키려고 했다.</p>
+<p>그 때 사부가 잠깐만요! <strong>좀더 천천히 생각해봐요</strong> 하는 말에 ‘아 그렇구나 너무 조급했구나’ 싶었다.</p>
+<p>그리고 논리적으로 따져나가니 결국에는 거짓말같이 전혀 단서가 없어보이는 문제가 해결되었다.</p>
+<p>이렇게 문제가 해결되는 것을 보며 나는 몇해전 학교 세미나에서 교수님이 하신 말씀이 생각났다.</p>
+<blockquote>
+<p><strong>사고 정지야 말로 가장 위험한 것이다.</strong></p>
+</blockquote>
+<p>아무런 생각없이, 아무런 논리적 근거없이 일을 행하는 것은 위험하다는 말씀이었다.</p>
+<p>이 말씀을 생각하니 또 세미나에서 교수님이 하신 다른 말씀이 생각났다.</p>
+<blockquote>
+<p><strong>아무리 복잡해보이는 일이라도 하나하나 MECE(빠짐없이, 중복없이)하게 행한다면 논리적인 문제는 반드시 특정할 수 있다.</strong></p>
+</blockquote>
+<p>어찌보면 당연한 말이고 나 역시 말을 들을때 마다 고개를 끄덕였던 기억이 있지만 이번에는 언제 그 말을 들었냐는 듯이 망각해버리고 말았다. 사실 이번 뿐 아니라, 다소 어려운 Euler Project문제를 풀 떄도 항상 잊어버리고 만다.</p>
+<p>앞으로는 사고정지가 일어날 때 마다 MECE를 떠올려야겠다.</p>
+<h2 id="프로그래밍의-신비"><a href="#프로그래밍의-신비" class="headerlink" title="프로그래밍의 신비"></a>프로그래밍의 신비</h2><p>이번에 내가 사고정지에 대한 글을 쓰면서 생각난 프로그래밍의 재미있는 특징은, 프로그래밍에서 나오는 문제는 대부분 ‘끊임없이 생각하는 한 반드시 풀린다’는 점이다.</p>
+<p>프로그래밍이 각종 작은 도구들을 조합해서 큰 물건을 만드는 것이기 때문에, 작은 도구들을 논리적으로 이리저리 조합하다 보면 반드시 해답이 나온다는 것이다.</p>
+<p>하지만 해답을 찾는 과정을 위에 언급했듯이 <strong>문제를 올바르게 파악하여 해결책에 대하여 숙고한다면</strong> 더더욱 정확하고 빠르게, 그리고 간결하게 해답을 찾을 수 있을 것이다.</p>
+
+        </div>
+        <footer class="article-footer">
+            
+
+
+
+    <a data-url="https://voidsatisfaction.github.io/2016/10/06/lesson-from-teacher-with-errors/" data-id="ciuj4ugvb001mbysdmpkt86t1" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+<script>
+    (function ($) {
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+        </footer>
+    </div>
+</article>
+
+    <section id="comments">
+    
+        
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
+    
+    </section>
+
+                        </div>
+                    </section>
+                    <aside id="sidebar">
+    <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
+    <div class="sidebar-top">
+        <p>follow:</p>
+        <ul class="social-links">
+            
+                
+                <li>
+                    <a class="social-tooltip" title="facebook" href="https://www.facebook.com/yeon.gyumin" target="_blank">
+                        <i class="icon fa fa-facebook"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="github" href="https://github.com/voidsatisfaction" target="_blank">
+                        <i class="icon fa fa-github"></i>
+                    </a>
+                </li>
+                
+            
+        </ul>
+    </div>
+    <div class="github-card" data-github="voidSatisfaction" data-height="" data-theme="default"></div>
+    <script src="//cdn.jsdelivr.net/github-cards/latest/widget.js"></script>
+    
+        
+<nav id="article-nav">
+    
+        <a href="/2016/10/07/project-euler-134-solution/" id="article-nav-newer" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">newer</strong>
+        <p class="article-nav-title">
+        
+            Project Euler 134
+        
+        </p>
+        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
+    </a>
+    
+    
+        <a href="/2016/10/04/project-euler-131/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">older</strong>
+        <p class="article-nav-title">Project Euler 131</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
+    
+    <div class="widgets-container">
+        
+            
+                
+    <div class="widget-wrap">
+        <h3 class="widget-title">recents</h3>
+        <div class="widget">
+            <ul id="recent-post" class="no-thumbnail">
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/JavaScript/">JavaScript</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/JavaScript/ECMA-Script6/">ECMA Script6</a></p>
+                            <p class="item-title"><a href="/2016/10/21/so-hard-javascript-class/" class="title">너무 헷갈리는 자바스크립트 Class개념</a></p>
+                            <p class="item-date"><time datetime="2016-10-21T01:11:37.000Z" itemprop="datePublished">2016-10-21</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/교육/">교육</a></p>
+                            <p class="item-title"><a href="/2016/10/14/good-site-for-javascript-study/" class="title">자바스크립트 공부에 도움이 되는 사이트</a></p>
+                            <p class="item-date"><time datetime="2016-10-14T06:56:24.000Z" itemprop="datePublished">2016-10-14</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/JavaScript/">JavaScript</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/JavaScript/React-Native/">React Native</a></p>
+                            <p class="item-title"><a href="/2016/10/14/javascript-study-and-react-native-function-method/" class="title">React Native의 원리 및 JavaScript의 함수</a></p>
+                            <p class="item-date"><time datetime="2016-10-14T02:26:21.000Z" itemprop="datePublished">2016-10-14</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Ruby/">Ruby</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Ruby/Project-Euler/">Project Euler</a></p>
+                            <p class="item-title"><a href="/2016/10/07/project-euler-134-solution/" class="title">Project Euler 134</a></p>
+                            <p class="item-date"><time datetime="2016-10-06T16:55:01.000Z" itemprop="datePublished">2016-10-07</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/세상-사는-이야기/">세상 사는 이야기</a></p>
+                            <p class="item-title"><a href="/2016/10/06/lesson-from-teacher-with-errors/" class="title">MECE하게 &#39;생각&#39;하라.</a></p>
+                            <p class="item-date"><time datetime="2016-10-05T16:15:38.000Z" itemprop="datePublished">2016-10-06</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">categories</h3>
+        <div class="widget">
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/JavaScript/">JavaScript</a><span class="category-list-count">12</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/JavaScript/ECMA-Script6/">ECMA Script6</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/JavaScript/Nodejs/">Nodejs</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/JavaScript/React-Native/">React Native</a><span class="category-list-count">5</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Ruby/">Ruby</a><span class="category-list-count">6</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Ruby/Project-Euler/">Project Euler</a><span class="category-list-count">5</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Scheme/">Scheme</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Scheme/Schemer-series/">Schemer series</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Utils/">Utils</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Utils/Git-GitHub/">Git/GitHub</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/교육/">교육</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/세상-사는-이야기/">세상 사는 이야기</a><span class="category-list-count">8</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">archives</h3>
+        <div class="widget">
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">October 2016</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/09/">September 2016</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">August 2016</a><span class="archive-list-count">13</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-float">
+        <h3 class="widget-title">tag cloud</h3>
+        <div class="widget tagcloud">
+            <a href="/tags/GitHub/" style="font-size: 10px;">GitHub</a> <a href="/tags/Grammar/" style="font-size: 10px;">Grammar</a> <a href="/tags/JavaScript/" style="font-size: 20px;">JavaScript</a> <a href="/tags/Nodejs/" style="font-size: 12.86px;">Nodejs</a> <a href="/tags/Project-Euler/" style="font-size: 15.71px;">Project Euler</a> <a href="/tags/React-Native/" style="font-size: 17.14px;">React Native</a> <a href="/tags/Redux/" style="font-size: 11.43px;">Redux</a> <a href="/tags/Ruby/" style="font-size: 17.14px;">Ruby</a> <a href="/tags/Scheme/" style="font-size: 10px;">Scheme</a> <a href="/tags/Socket-io/" style="font-size: 10px;">Socket.io</a> <a href="/tags/객체지향/" style="font-size: 10px;">객체지향</a> <a href="/tags/불교/" style="font-size: 10px;">불교</a> <a href="/tags/세상-사는-이야기/" style="font-size: 18.57px;">세상 사는 이야기</a> <a href="/tags/알고리즘/" style="font-size: 10px;">알고리즘</a> <a href="/tags/프로그래밍/" style="font-size: 14.29px;">프로그래밍</a> <a href="/tags/프로그래밍-교육/" style="font-size: 10px;">프로그래밍 교육</a>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">links</h3>
+        <div class="widget">
+            <ul>
+                
+                    <li>
+                        <a href="http://hexo.io">Hexo</a>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+
+            
+        
+    </div>
+</aside>
+
+                </div>
+            </div>
+        </div>
+        <footer id="footer">
+    <div class="container">
+        <div class="container-inner">
+            <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
+            <div class="credit">
+                <h1 class="logo-wrap">
+                    <a href="/" class="logo"></a>
+                </h1>
+                <p>&copy; 2016 텅 빈 충만(voidSatisfaction)</p>
+                <p>Powered by <a href="//hexo.io/" target="_blank">Hexo</a>. Theme by <a href="//github.com/ppoffice" target="_blank">PPOffice</a></p>
+            </div>
+        </div>
+    </div>
+</footer>
+        
+    
+    <script>
+    var disqus_shortname = 'voidsatisfaction';
+    
+    
+    var disqus_url = 'https://voidsatisfaction.github.io/2016/10/06/lesson-from-teacher-with-errors/';
+    
+    (function() {
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+
+
+
+    
+        <script src="/vendor/lightgallery/js/lightgallery.min.js"></script>
+        <script src="/vendor/lightgallery/js/lg-thumbnail.min.js"></script>
+        <script src="/vendor/lightgallery/js/lg-pager.min.js"></script>
+        <script src="/vendor/lightgallery/js/lg-autoplay.min.js"></script>
+        <script src="/vendor/lightgallery/js/lg-fullscreen.min.js"></script>
+        <script src="/vendor/lightgallery/js/lg-zoom.min.js"></script>
+        <script src="/vendor/lightgallery/js/lg-hash.min.js"></script>
+        <script src="/vendor/lightgallery/js/lg-share.min.js"></script>
+        <script src="/vendor/lightgallery/js/lg-video.min.js"></script>
+    
+
+
+<!-- Custom Scripts -->
+<script src="/js/main.js"></script>
+
+    </div>
+</body>
+</html>

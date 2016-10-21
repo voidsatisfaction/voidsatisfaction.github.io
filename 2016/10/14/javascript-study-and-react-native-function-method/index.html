@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    
+    <title>React Native의 원리 및 JavaScript의 함수 | 텅 빈 충만의 블로그</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+        <meta name="keywords" content="React Native,JavaScript" />
+    
+    <meta name="description" content="출처 및 들어가 보면 좋은 사이트
+사부의 말
+
+Intoriduction to JavaScript - Mozilla 재단
+
+객체지향 자바스크립트의 소개 - Mozilla 재단
+
+
+의문내가 React Native코드를 작성하는 과정에서 다음과 같은 일이 있었다.
+ListView의 renderRow함수를 this.renderRow로 하고그 안의 Touchable">
+<meta property="og:type" content="article">
+<meta property="og:title" content="React Native의 원리 및 JavaScript의 함수">
+<meta property="og:url" content="https://voidsatisfaction.github.io/2016/10/14/javascript-study-and-react-native-function-method/index.html">
+<meta property="og:site_name" content="텅 빈 충만의 블로그">
+<meta property="og:description" content="출처 및 들어가 보면 좋은 사이트
+사부의 말
+
+Intoriduction to JavaScript - Mozilla 재단
+
+객체지향 자바스크립트의 소개 - Mozilla 재단
+
+
+의문내가 React Native코드를 작성하는 과정에서 다음과 같은 일이 있었다.
+ListView의 renderRow함수를 this.renderRow로 하고그 안의 Touchable">
+<meta property="og:updated_time" content="2016-10-14T03:13:25.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="React Native의 원리 및 JavaScript의 함수">
+<meta name="twitter:description" content="출처 및 들어가 보면 좋은 사이트
+사부의 말
+
+Intoriduction to JavaScript - Mozilla 재단
+
+객체지향 자바스크립트의 소개 - Mozilla 재단
+
+
+의문내가 React Native코드를 작성하는 과정에서 다음과 같은 일이 있었다.
+ListView의 renderRow함수를 this.renderRow로 하고그 안의 Touchable">
+    
+    <link rel="canonical" href="https://voidsatisfaction.github.io/2016/10/14/javascript-study-and-react-native-function-method/"/>
+
+    
+
+    
+
+    <link rel="stylesheet" href="/vendor/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/vendor/titillium-web/styles.css">
+    <link rel="stylesheet" href="/vendor/source-code-pro/styles.css">
+
+    <link rel="stylesheet" href="/css/style.css">
+
+    <script src="/vendor/jquery/2.0.3/jquery.min.js"></script>
+    
+    
+        <link rel="stylesheet" href="/vendor/lightgallery/css/lightgallery.min.css">
+    
+    
+        <script type="text/javascript">
+(function(i,s,o,g,r,a,m) {i['GoogleAnalyticsObject']=r;i[r]=i[r]||function() {
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-84759824-1', 'auto');
+ga('send', 'pageview');
+
+</script>
+    
+    
+
+</head>
+
+<body>
+    <div id="wrap">
+        <header id="header">
+    <div id="header-outer" class="outer">
+        <div class="container">
+            <div class="container-inner">
+                <div id="header-title">
+                    <h1 class="logo-wrap">
+                        <a href="/" class="logo"></a>
+                    </h1>
+                    
+                        <h2 class="subtitle-wrap">
+                            <p class="subtitle">Ruby JavaScript Scheme을 사랑하는 초보 학생의 소박한 프로그래밍.</p>
+                        </h2>
+                    
+                </div>
+                <div id="header-inner" class="nav-container">
+                    <a id="main-nav-toggle" class="nav-icon fa fa-bars"></a>
+                    <div class="nav-container-inner">
+                        <ul id="main-nav">
+                            
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/">Home</a>
+                                </li>
+                            
+                                        <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/JavaScript/">JavaScript</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/JavaScript/ECMA-Script6/">ECMA Script6</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/JavaScript/Nodejs/">Nodejs</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/JavaScript/React-Native/">React Native</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Ruby/">Ruby</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Ruby/Project-Euler/">Project Euler</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Scheme/">Scheme</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Scheme/Schemer-series/">Schemer series</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Utils/">Utils</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Utils/Git-GitHub/">Git/GitHub</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/교육/">교육</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/세상-사는-이야기/">세상 사는 이야기</a></li></ul>
+                                    
+                        </ul>
+                        <nav id="sub-nav">
+                            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Type something..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+</div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+        <div class="container">
+            <div class="main-body container-inner">
+                <div class="main-body-inner">
+                    <section id="main">
+                        <div class="main-body-header">
+    <h1 class="header">
+    
+    <a class="page-title-link" href="/categories/JavaScript/">JavaScript</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/JavaScript/React-Native/">React Native</a>
+    </h1>
+</div>
+                        <div class="main-body-content">
+                            <article id="post-javascript-study-and-react-native-function-method" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+        React Native의 원리 및 JavaScript의 함수
+        </h1>
+    
+
+            </header>
+        
+        
+            <div class="article-subtitle">
+                <a href="/2016/10/14/javascript-study-and-react-native-function-method/" class="article-date">
+    <time datetime="2016-10-14T02:26:21.000Z" itemprop="datePublished">2016-10-14</time>
+</a>
+                
+    <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/React-Native/">React Native</a></li></ul>
+
+            </div>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+            <h2 id="출처-및-들어가-보면-좋은-사이트"><a href="#출처-및-들어가-보면-좋은-사이트" class="headerlink" title="출처 및 들어가 보면 좋은 사이트"></a>출처 및 들어가 보면 좋은 사이트</h2><ul>
+<li><p>사부의 말</p>
+</li>
+<li><p><a href="https://developer.mozilla.org/ko/docs/A_re-introduction_to_JavaScript" target="_blank" rel="external">Intoriduction to JavaScript - Mozilla 재단</a></p>
+</li>
+<li><p><a href="https://developer.mozilla.org/ko/docs/Web/JavaScript/Introduction_to_Object-Oriented_JavaScript" target="_blank" rel="external">객체지향 자바스크립트의 소개 - Mozilla 재단</a></p>
+</li>
+</ul>
+<h2 id="의문"><a href="#의문" class="headerlink" title="의문"></a>의문</h2><p>내가 React Native코드를 작성하는 과정에서 다음과 같은 일이 있었다.</p>
+<p>ListView의 renderRow함수를 this.renderRow로 하고<br>그 안의 TouchableOpacity의 onPress속성에 부모 컴포넌트에서 받아온 함수를 넘겨주려고 했는데,<br>막상 클릭해보니 <code>this.props.함수 == undefined</code> 이라는 것이었다.</p>
+<p>즉, this.props에는 그 함수가 존재하지 않는다는 것이었는데, 나는 renderRow라는 함수를 component class안에 정의해두었기 때문에<br>당연히 this가 그 component를 가리킨다고 생각했다.</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="class"><span class="keyword">class</span> <span class="title">SchoolBoardList</span> <span class="keyword">extends</span> <span class="title">Component</span> </span>&#123;</div><div class="line">  <span class="keyword">static</span> propTypes = &#123;</div><div class="line">    <span class="attr">boardItems</span>: PropTypes.array.isRequired,</div><div class="line">    <span class="attr">boardItemOnpress</span>: PropTypes.func.isRequired,</div><div class="line">  &#125;</div><div class="line">  <span class="keyword">constructor</span>(props) &#123;</div><div class="line">    <span class="keyword">super</span>(props);</div><div class="line">    <span class="keyword">const</span> ds = <span class="keyword">new</span> ListView.DataSource(&#123; <span class="attr">rowHasChanged</span>: <span class="function">(<span class="params">r1, r2</span>) =&gt;</span> r1 !== r2 &#125;);</div><div class="line">    <span class="keyword">this</span>.state = &#123;</div><div class="line">      <span class="attr">dataSource</span>: ds.cloneWithRows(<span class="keyword">this</span>.props.boardItems),</div><div class="line">    &#125;;</div><div class="line">    <span class="keyword">this</span>.renderRow = <span class="keyword">this</span>.renderRow.bind(<span class="keyword">this</span>);</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  renderRow(rowData) &#123;</div><div class="line">    <span class="keyword">const</span> &#123; title, date, content, author, good, chat &#125; = rowData;</div><div class="line">    <span class="keyword">return</span> (</div><div class="line">      <span class="xml"><span class="tag">&lt;<span class="name">TouchableOpacity</span></span></span></div><div class="line">        <span class="attr">style</span>=<span class="string">&#123;style.item&#125;</span></div><div class="line">        <span class="attr">onPress</span>=<span class="string">&#123;()</span> =&gt; &#123; this.props.boardItemOnpress(); &#125;&#125;</div><div class="line">      &gt;</div><div class="line">        ...</div><div class="line">      <span class="tag">&lt;/<span class="name">TouchableOpacity</span>&gt;</span></div><div class="line">    );</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  render() &#123;</div><div class="line">    <span class="keyword">const</span> &#123; dataSource &#125; = <span class="keyword">this</span>.state;</div><div class="line">    <span class="keyword">return</span> (</div><div class="line">      <span class="xml"><span class="tag">&lt;<span class="name">View</span> <span class="attr">style</span>=<span class="string">&#123;style.container&#125;</span>&gt;</span></span></div><div class="line">        <span class="tag">&lt;<span class="name">ListView</span></span></div><div class="line">          <span class="attr">dataSource</span>=<span class="string">&#123;dataSource&#125;</span></div><div class="line">          <span class="attr">renderRow</span>=<span class="string">&#123;this.renderRow&#125;</span></div><div class="line">          <span class="attr">automaticallyAdjustContentInsets</span>=<span class="string">&#123;false&#125;</span></div><div class="line">        /&gt;</div><div class="line">      <span class="tag">&lt;/<span class="name">View</span>&gt;</span></div><div class="line">    );</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>이런식으로 되어있는 코드였다.</p>
+<p>그래서 어? 어쩐일이지? 하면서 TouchableOpacity내부의 onPress속성 안에 console.log(this)를 넣어보니 웬걸 this는 전역객체를 의미하고 있었다!</p>
+<p>그래서 나는 “뭐지? 난 클래스 안에다가 함수를 정의했는데? 왜 this가 전역객체인거야!” 하고 대혼란에 빠졌다.</p>
+<h2 id="사부의-답변"><a href="#사부의-답변" class="headerlink" title="사부의 답변"></a>사부의 답변</h2><p>그래서 나는 바로 사부에게 물어보았다. “왜 클래스 안에다가 함수를 정의했는데 this가 전역이 되는가?” 라고.</p>
+<p>그래서 사부는 나에게 “React Native에서 render를 누가 부를까요? 라고 되물었다.”</p>
+<p>답은 ‘React Native 엔진’이었다.</p>
+<p>사부에 의하면 React Native엔진의 행동은 다음과 같다.(다소 차이점이 있다고는 하지만 지금은 이렇게 알아둬도 된다고 했다.)</p>
+<hr>
+<p><strong>RN 엔진의 행동</strong></p>
+<ol>
+<li><p>index.js 실행</p>
+</li>
+<li><p>React Native Lifecycle실행</p>
+</li>
+<li><p>index.js안의 new component를 만듬</p>
+</li>
+<li><p>component.render()를 실행해서 view를 만듬</p>
+</li>
+<li><p>동작</p>
+</li>
+</ol>
+<p><strong>메소드와 함수</strong></p>
+<blockquote>
+<p>클래스.함수 로 실행시키면 클래스 안에 있는 함수를 실행시키는 거여서 메서드 로 처리해요.  </p>
+<p>근데 형은 보통 this.함수를 클래스 안에서 사용하잖아요 이 경우에는 React Native입장에서 this.함수의 결과가 함수잖아요 그래서 함수로 실행시켜요.</p>
+</blockquote>
+<hr>
+<p>즉 React Native엔진이 component.render()를 실행할때는 this가 component가 되니까 즉 class 가 되니까 </p>
+<p>render()함수 내에서 사용한 this.함수명 = 메소드(component 클래스 안에서의 함수 ex: 위의 경우 <code>renderRow()</code>와 같은 함수) 이렇게 되는거고</p>
+<p>근데 버튼을 클릭하는 행동 같은 경우에는 class안에서 this를 정의해버렸으니 그 this가 전역객체니까 그걸 다시 component로 바꾸기 위해서 constructor나 render안에서 bind(this)하는 것이었다.</p>
+<p>즉 그냥 renderRow함수 내에서 <code>&lt;TouchableOpacity onPress={this.props.boardItemOnpress}</code> 이렇게만 하면 RN엔진이 <strong>component.renderRow이렇게 실행하지 않기</strong>때문에 renderRow안의 this는 전역 객체가 되어 버리고</p>
+<p>전역 this에는 this.props.boardItemOnpress가 존재하지 않으니까 <code>this.props.함수 == undefined</code> 이렇게 되었던 것이었다.</p>
+<p>그렇기 때문에 이 문제를 해결하기 위해서는 클래스 내부의 constructor함수에서 <code>this.renderRow = this.renderRow.bind(this)</code> 이렇게 this의 지정을 component class로 명확히 해줘야 한다.</p>
+<p>이는 <code>함수.bind(this)</code>를 해주기 전까지는 <strong>어디에서 혹은 무엇이</strong> 그 함수를 부르는가가 중요하지만, <code>함수.bind(this)</code>를 해주는 행위는 <strong>어디에서 그 함수를 호출하든 함수 내부의 this를 지정</strong> 해주는 것이다.</p>
+<h2 id="느낀-점"><a href="#느낀-점" class="headerlink" title="느낀 점"></a>느낀 점</h2><p>어떠한 기술을 확실히 ‘내 것’으로 만들기 위해서는 그 기술의 core를 이해하지 않으면 안된다.</p>
+<p>이번 일을 계기로 JavaScript의 class개념, 함수 / 메소드 개념 React Native의 Lifecycle같은 개념을 알아야 하는 것의 중요함을 깨닫게 되었다.</p>
+<p>자바스크립트에 대해서 깊이 이해하고 싶은 분들은 앞에서 소개한 mozilla재단의 javascript관련 문서를 읽는 것을 추천합니다.</p>
+<p>역시 프로그래밍은 재미있다! 그리고 사부는 최고다.</p>
+
+        </div>
+        <footer class="article-footer">
+            
+
+
+
+    <a data-url="https://voidsatisfaction.github.io/2016/10/14/javascript-study-and-react-native-function-method/" data-id="ciuj4ugvr001tbysdav1v60o7" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+<script>
+    (function ($) {
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+        </footer>
+    </div>
+</article>
+
+    <section id="comments">
+    
+        
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
+    
+    </section>
+
+                        </div>
+                    </section>
+                    <aside id="sidebar">
+    <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
+    <div class="sidebar-top">
+        <p>follow:</p>
+        <ul class="social-links">
+            
+                
+                <li>
+                    <a class="social-tooltip" title="facebook" href="https://www.facebook.com/yeon.gyumin" target="_blank">
+                        <i class="icon fa fa-facebook"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="github" href="https://github.com/voidsatisfaction" target="_blank">
+                        <i class="icon fa fa-github"></i>
+                    </a>
+                </li>
+                
+            
+        </ul>
+    </div>
+    <div class="github-card" data-github="voidSatisfaction" data-height="" data-theme="default"></div>
+    <script src="//cdn.jsdelivr.net/github-cards/latest/widget.js"></script>
+    
+        
+<nav id="article-nav">
+    
+        <a href="/2016/10/14/good-site-for-javascript-study/" id="article-nav-newer" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">newer</strong>
+        <p class="article-nav-title">
+        
+            자바스크립트 공부에 도움이 되는 사이트
+        
+        </p>
+        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
+    </a>
+    
+    
+        <a href="/2016/10/07/project-euler-134-solution/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">older</strong>
+        <p class="article-nav-title">Project Euler 134</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
+    
+    <div class="widgets-container">
+        
+            
+                
+    <div class="widget-wrap">
+        <h3 class="widget-title">recents</h3>
+        <div class="widget">
+            <ul id="recent-post" class="no-thumbnail">
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/JavaScript/">JavaScript</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/JavaScript/ECMA-Script6/">ECMA Script6</a></p>
+                            <p class="item-title"><a href="/2016/10/21/so-hard-javascript-class/" class="title">너무 헷갈리는 자바스크립트 Class개념</a></p>
+                            <p class="item-date"><time datetime="2016-10-21T01:11:37.000Z" itemprop="datePublished">2016-10-21</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/교육/">교육</a></p>
+                            <p class="item-title"><a href="/2016/10/14/good-site-for-javascript-study/" class="title">자바스크립트 공부에 도움이 되는 사이트</a></p>
+                            <p class="item-date"><time datetime="2016-10-14T06:56:24.000Z" itemprop="datePublished">2016-10-14</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/JavaScript/">JavaScript</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/JavaScript/React-Native/">React Native</a></p>
+                            <p class="item-title"><a href="/2016/10/14/javascript-study-and-react-native-function-method/" class="title">React Native의 원리 및 JavaScript의 함수</a></p>
+                            <p class="item-date"><time datetime="2016-10-14T02:26:21.000Z" itemprop="datePublished">2016-10-14</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Ruby/">Ruby</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Ruby/Project-Euler/">Project Euler</a></p>
+                            <p class="item-title"><a href="/2016/10/07/project-euler-134-solution/" class="title">Project Euler 134</a></p>
+                            <p class="item-date"><time datetime="2016-10-06T16:55:01.000Z" itemprop="datePublished">2016-10-07</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/세상-사는-이야기/">세상 사는 이야기</a></p>
+                            <p class="item-title"><a href="/2016/10/06/lesson-from-teacher-with-errors/" class="title">MECE하게 &#39;생각&#39;하라.</a></p>
+                            <p class="item-date"><time datetime="2016-10-05T16:15:38.000Z" itemprop="datePublished">2016-10-06</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">categories</h3>
+        <div class="widget">
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/JavaScript/">JavaScript</a><span class="category-list-count">12</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/JavaScript/ECMA-Script6/">ECMA Script6</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/JavaScript/Nodejs/">Nodejs</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/JavaScript/React-Native/">React Native</a><span class="category-list-count">5</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Ruby/">Ruby</a><span class="category-list-count">6</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Ruby/Project-Euler/">Project Euler</a><span class="category-list-count">5</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Scheme/">Scheme</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Scheme/Schemer-series/">Schemer series</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Utils/">Utils</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Utils/Git-GitHub/">Git/GitHub</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/교육/">교육</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/세상-사는-이야기/">세상 사는 이야기</a><span class="category-list-count">8</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">archives</h3>
+        <div class="widget">
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">October 2016</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/09/">September 2016</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">August 2016</a><span class="archive-list-count">13</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-float">
+        <h3 class="widget-title">tag cloud</h3>
+        <div class="widget tagcloud">
+            <a href="/tags/GitHub/" style="font-size: 10px;">GitHub</a> <a href="/tags/Grammar/" style="font-size: 10px;">Grammar</a> <a href="/tags/JavaScript/" style="font-size: 20px;">JavaScript</a> <a href="/tags/Nodejs/" style="font-size: 12.86px;">Nodejs</a> <a href="/tags/Project-Euler/" style="font-size: 15.71px;">Project Euler</a> <a href="/tags/React-Native/" style="font-size: 17.14px;">React Native</a> <a href="/tags/Redux/" style="font-size: 11.43px;">Redux</a> <a href="/tags/Ruby/" style="font-size: 17.14px;">Ruby</a> <a href="/tags/Scheme/" style="font-size: 10px;">Scheme</a> <a href="/tags/Socket-io/" style="font-size: 10px;">Socket.io</a> <a href="/tags/객체지향/" style="font-size: 10px;">객체지향</a> <a href="/tags/불교/" style="font-size: 10px;">불교</a> <a href="/tags/세상-사는-이야기/" style="font-size: 18.57px;">세상 사는 이야기</a> <a href="/tags/알고리즘/" style="font-size: 10px;">알고리즘</a> <a href="/tags/프로그래밍/" style="font-size: 14.29px;">프로그래밍</a> <a href="/tags/프로그래밍-교육/" style="font-size: 10px;">프로그래밍 교육</a>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">links</h3>
+        <div class="widget">
+            <ul>
+                
+                    <li>
+                        <a href="http://hexo.io">Hexo</a>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+
+            
+        
+    </div>
+</aside>
+
+                </div>
+            </div>
+        </div>
+        <footer id="footer">
+    <div class="container">
+        <div class="container-inner">
+            <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
+            <div class="credit">
+                <h1 class="logo-wrap">
+                    <a href="/" class="logo"></a>
+                </h1>
+                <p>&copy; 2016 텅 빈 충만(voidSatisfaction)</p>
+                <p>Powered by <a href="//hexo.io/" target="_blank">Hexo</a>. Theme by <a href="//github.com/ppoffice" target="_blank">PPOffice</a></p>
+            </div>
+        </div>
+    </div>
+</footer>
+        
+    
+    <script>
+    var disqus_shortname = 'voidsatisfaction';
+    
+    
+    var disqus_url = 'https://voidsatisfaction.github.io/2016/10/14/javascript-study-and-react-native-function-method/';
+    
+    (function() {
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+
+
+
+    
+        <script src="/vendor/lightgallery/js/lightgallery.min.js"></script>
+        <script src="/vendor/lightgallery/js/lg-thumbnail.min.js"></script>
+        <script src="/vendor/lightgallery/js/lg-pager.min.js"></script>
+        <script src="/vendor/lightgallery/js/lg-autoplay.min.js"></script>
+        <script src="/vendor/lightgallery/js/lg-fullscreen.min.js"></script>
+        <script src="/vendor/lightgallery/js/lg-zoom.min.js"></script>
+        <script src="/vendor/lightgallery/js/lg-hash.min.js"></script>
+        <script src="/vendor/lightgallery/js/lg-share.min.js"></script>
+        <script src="/vendor/lightgallery/js/lg-video.min.js"></script>
+    
+
+
+<!-- Custom Scripts -->
+<script src="/js/main.js"></script>
+
+    </div>
+</body>
+</html>

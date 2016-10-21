@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    
+    <title>후배의 좋은 가르침 | 텅 빈 충만의 블로그</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+        <meta name="keywords" content="세상 사는 이야기" />
+    
+    <meta name="description" content="포인트
+백엔드의 본질은 서버를 구성하는 틀을 이해하는 것이다(ex 로그인)
+
+Connecting the dots
+
+자신이 무엇을 좋아하는지, 하고 싶은지, 잘 할 수 있는지에 대한 자기분석이 중요하고, 그것을 잘 살려 나갈 수 있어야 한다
+
+진정한 도전정신
+
+
+
+오늘은 후배를 만났다.
+사실 그는 대학에 늦게 들어온 것 뿐이지, 컴퓨터 공학과 웹 공부에 대해">
+<meta property="og:type" content="article">
+<meta property="og:title" content="후배의 좋은 가르침">
+<meta property="og:url" content="https://voidsatisfaction.github.io/2016/08/21/2016-8-21-a-learning/index.html">
+<meta property="og:site_name" content="텅 빈 충만의 블로그">
+<meta property="og:description" content="포인트
+백엔드의 본질은 서버를 구성하는 틀을 이해하는 것이다(ex 로그인)
+
+Connecting the dots
+
+자신이 무엇을 좋아하는지, 하고 싶은지, 잘 할 수 있는지에 대한 자기분석이 중요하고, 그것을 잘 살려 나갈 수 있어야 한다
+
+진정한 도전정신
+
+
+
+오늘은 후배를 만났다.
+사실 그는 대학에 늦게 들어온 것 뿐이지, 컴퓨터 공학과 웹 공부에 대해">
+<meta property="og:image" content="https://voidsatisfaction.github.io/images/20160821_rails_architecture.png">
+<meta property="og:updated_time" content="2016-09-26T15:30:34.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="후배의 좋은 가르침">
+<meta name="twitter:description" content="포인트
+백엔드의 본질은 서버를 구성하는 틀을 이해하는 것이다(ex 로그인)
+
+Connecting the dots
+
+자신이 무엇을 좋아하는지, 하고 싶은지, 잘 할 수 있는지에 대한 자기분석이 중요하고, 그것을 잘 살려 나갈 수 있어야 한다
+
+진정한 도전정신
+
+
+
+오늘은 후배를 만났다.
+사실 그는 대학에 늦게 들어온 것 뿐이지, 컴퓨터 공학과 웹 공부에 대해">
+<meta name="twitter:image" content="https://voidsatisfaction.github.io/images/20160821_rails_architecture.png">
+    
+    <link rel="canonical" href="https://voidsatisfaction.github.io/2016/08/21/2016-8-21-a-learning/"/>
+
+    
+
+    
+
+    <link rel="stylesheet" href="/vendor/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/vendor/titillium-web/styles.css">
+    <link rel="stylesheet" href="/vendor/source-code-pro/styles.css">
+
+    <link rel="stylesheet" href="/css/style.css">
+
+    <script src="/vendor/jquery/2.0.3/jquery.min.js"></script>
+    
+    
+        <link rel="stylesheet" href="/vendor/lightgallery/css/lightgallery.min.css">
+    
+    
+        <script type="text/javascript">
+(function(i,s,o,g,r,a,m) {i['GoogleAnalyticsObject']=r;i[r]=i[r]||function() {
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-84759824-1', 'auto');
+ga('send', 'pageview');
+
+</script>
+    
+    
+
+</head>
+
+<body>
+    <div id="wrap">
+        <header id="header">
+    <div id="header-outer" class="outer">
+        <div class="container">
+            <div class="container-inner">
+                <div id="header-title">
+                    <h1 class="logo-wrap">
+                        <a href="/" class="logo"></a>
+                    </h1>
+                    
+                        <h2 class="subtitle-wrap">
+                            <p class="subtitle">Ruby JavaScript Scheme을 사랑하는 초보 학생의 소박한 프로그래밍.</p>
+                        </h2>
+                    
+                </div>
+                <div id="header-inner" class="nav-container">
+                    <a id="main-nav-toggle" class="nav-icon fa fa-bars"></a>
+                    <div class="nav-container-inner">
+                        <ul id="main-nav">
+                            
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/">Home</a>
+                                </li>
+                            
+                                        <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/JavaScript/">JavaScript</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/JavaScript/ECMA-Script6/">ECMA Script6</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/JavaScript/Nodejs/">Nodejs</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/JavaScript/React-Native/">React Native</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Ruby/">Ruby</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Ruby/Project-Euler/">Project Euler</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Scheme/">Scheme</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Scheme/Schemer-series/">Schemer series</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Utils/">Utils</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Utils/Git-GitHub/">Git/GitHub</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/교육/">교육</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/세상-사는-이야기/">세상 사는 이야기</a></li></ul>
+                                    
+                        </ul>
+                        <nav id="sub-nav">
+                            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Type something..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+</div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+        <div class="container">
+            <div class="main-body container-inner">
+                <div class="main-body-inner">
+                    <section id="main">
+                        <div class="main-body-header">
+    <h1 class="header">
+    
+    <a class="page-title-link" href="/categories/세상-사는-이야기/">세상 사는 이야기</a>
+    </h1>
+</div>
+                        <div class="main-body-content">
+                            <article id="post-2016-8-21-a-learning" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+        후배의 좋은 가르침
+        </h1>
+    
+
+            </header>
+        
+        
+            <div class="article-subtitle">
+                <a href="/2016/08/21/2016-8-21-a-learning/" class="article-date">
+    <time datetime="2016-08-21T02:52:00.000Z" itemprop="datePublished">2016-08-21</time>
+</a>
+                
+    <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/세상-사는-이야기/">세상 사는 이야기</a></li></ul>
+
+            </div>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+            <h2 id="포인트"><a href="#포인트" class="headerlink" title="포인트"></a>포인트</h2><ul>
+<li><p>백엔드의 본질은 서버를 구성하는 틀을 이해하는 것이다(ex 로그인)</p>
+</li>
+<li><p>Connecting the dots</p>
+</li>
+<li><p>자신이 무엇을 좋아하는지, 하고 싶은지, 잘 할 수 있는지에 대한 자기분석이 중요하고, 그것을 잘 살려 나갈 수 있어야 한다</p>
+</li>
+<li><p>진정한 도전정신</p>
+</li>
+</ul>
+<hr>
+<p>오늘은 후배를 만났다.</p>
+<p>사실 그는 대학에 늦게 들어온 것 뿐이지, 컴퓨터 공학과 웹 공부에 대해서는 나에게 아주 좋은 선배다.</p>
+<p>그 후배를 만나면 언제나 큰 자극을 받을 뿐더러 많은 것을 깨닫게 해준다.</p>
+<p>오늘은 그 후배와의 만남에서 느낀 몇가지에 대해서 간단히 써 보려고 한다.</p>
+<hr>
+<h2 id="백엔드의-본질은-서버를-구성하는-틀을-이해하는-것이다"><a href="#백엔드의-본질은-서버를-구성하는-틀을-이해하는-것이다" class="headerlink" title="백엔드의 본질은 서버를 구성하는 틀을 이해하는 것이다"></a>백엔드의 본질은 서버를 구성하는 틀을 이해하는 것이다</h2><p>말 그대로 후배는 웹 개발에 있어서 백엔드의 본질은 서버를 구성하는 틀을 이해하는 것이라고 했다. 서버의 구조란 Ruby On Rails를 예로 들어보면 다음과 같다.</p>
+<p><img src="/images/20160821_rails_architecture.png" alt="ROR Architecture"></p>
+<p>위와 같이 Rails가 어떤 식으로 돌아가는지 Data Flow를 이해하는 것 또한 서버를 구성하는 틀을 이해하는 방식의 하나이다.</p>
+<p>여기서 한가지 포인트는 반드시 서버 내부의 Data Flow를 이해하는 것만이 서버를 구성하는 틀을 이해하는 것이 아니라는 것이다.</p>
+<p><strong>서버를 다양한 각도에서 볼 수 있어야 한다.</strong></p>
+<p>서버를 ‘기능’의 관점에서 이해할 수도 있어야 한다. 예를들면, 서버에는 로그인, DB와의 연동 등등.. 다양한 기능이 탑재되어 있다. 이러한 ‘기능’의 시선에서 서버를 볼 줄도 알아야한다.</p>
+<p>그리고 서버에 대한 이해가 깊어진 이후에는 각각의 상황에서 구글 선생님의 도움을 청하면 된다.</p>
+<h2 id="Connecting-the-dots"><a href="#Connecting-the-dots" class="headerlink" title="Connecting the dots"></a>Connecting the dots</h2><p>‘Connecting the dots’라는 말은 ‘Give it five minutes’와 더불어 내 삶의 신조와 같다. 이 말은 스티브 잡스가 스탠포드 연설에서 한 말인데, 그 뜻은 <strong>‘지금 하는 것이 별로 도움이 되지 않는 것 처럼 보이더라도 그것이 점과 점을 연결하듯이 언젠가 무엇인가에 연결되어 도움이 될 수도 있다’</strong> 라는 것이다.(여담이지만 스티브 잡스의 스탠포드 연설은 정말 볼 만한 가치가 있다.)</p>
+<p>오늘 마침 후배가 자신이 참 좋아하는 말이라며 Connecting the dots에 대해서 언급했는데, 오랜만에 만난 친구를 보는 것과 같은 반가움을 느꼈다.</p>
+<h2 id="자신이-무엇을-좋아하는지-하고-싶은지-잘-할-수-있는지에-대한-자기분석이-중요하고-그것을-잘-살려-나갈-수-있어야-한다"><a href="#자신이-무엇을-좋아하는지-하고-싶은지-잘-할-수-있는지에-대한-자기분석이-중요하고-그것을-잘-살려-나갈-수-있어야-한다" class="headerlink" title="자신이 무엇을 좋아하는지, 하고 싶은지, 잘 할 수 있는지에 대한 자기분석이 중요하고, 그것을 잘 살려 나갈 수 있어야 한다"></a>자신이 무엇을 좋아하는지, 하고 싶은지, 잘 할 수 있는지에 대한 자기분석이 중요하고, 그것을 잘 살려 나갈 수 있어야 한다</h2><p>사실 나는 이 부분이 조금 약하다고 생각한다. 물론 성격차이 일 수 있겠지만, 나는 이성적으로 냉철하게 나를 분석하고 계획을 세워서 생활하기보다는 물에 내 몸을 맡기듯이 내가 직관적으로 좋아하는 무엇인가를 자연스럽게 계속해서 추구해나가는 타입이다.</p>
+<p>하지만 세상일들이 무릇 그렇듯 <strong>균형이 참 중요한 것 같다.</strong></p>
+<p>항상 직관적으로만 살아가면 냉철함을 잊기 쉽고 항상 이성적으로만 살아가면 뜨거운 열정을 잊기 쉽다. 직관과 이성의 조화가 중요하다고 생각한다. 이는 인간이나 기계나 매한가지인 듯 싶다.</p>
+<p>직관을 배우려는 기계를 보면서 말이다.</p>
+<h2 id="진정한-도전정신"><a href="#진정한-도전정신" class="headerlink" title="진정한 도전정신"></a>진정한 도전정신</h2><p>단도직입적으로 나는 혼자서 무엇인가를 하는 것을 좋아한다. 이는, 내가 프로그래밍을 좋아하는 이유 중 하나이기도 하다.</p>
+<p>하지만 후배는 정말 적극적으로 도전해나가는 모습이 참 멋있었다. 섬에 가서 인턴생들과 함께 기계팔을 만들어서 프로그래밍을 하거나, 스타트업에 참여해 CTO로서 적극적으로 도전해나가는 모습. 또, 그것에 그치지 않고 해커톤까지 열심히 참여하는 모습은 정말 대단하다고 느껴진다.</p>
+<p>그래도 역시 나는 ‘나 다움’이 있다고 생각한다.</p>
+<p>내가 혼자서 무엇인가를 하는 것을 좋아하는데 억지로 나가서 도전할 필요는 없다고 생각한다. <strong>대신에 나 자신이 진정 도전하고 싶다는 생각이 들 때 두려움 없이 뛰쳐나갈 수 있는 마음가짐을 갖고 있는 것은 중요하다고 생각한다.</strong></p>
+<p>두려움과 그것을 극복할 의지.</p>
+<blockquote>
+<p>The only thing we have to fear is fear itself.</p>
+</blockquote>
+<p>오늘 짧다면 짧고 길다면 긴 시간동안 이렇게 중요한 교훈을 느끼게 해주고 나를 한 발자국 더 나아게가 자극시켜준 후배에게 정말 감사하다는 말을 전해주고 싶다.</p>
+<p>오늘은 기분이 참 좋은 날이다.</p>
+
+        </div>
+        <footer class="article-footer">
+            
+
+
+
+    <a data-url="https://voidsatisfaction.github.io/2016/08/21/2016-8-21-a-learning/" data-id="ciuj4ugt10005bysdsft46zi0" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+<script>
+    (function ($) {
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+        </footer>
+    </div>
+</article>
+
+    <section id="comments">
+    
+        
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
+    
+    </section>
+
+                        </div>
+                    </section>
+                    <aside id="sidebar">
+    <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
+    <div class="sidebar-top">
+        <p>follow:</p>
+        <ul class="social-links">
+            
+                
+                <li>
+                    <a class="social-tooltip" title="facebook" href="https://www.facebook.com/yeon.gyumin" target="_blank">
+                        <i class="icon fa fa-facebook"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="github" href="https://github.com/voidsatisfaction" target="_blank">
+                        <i class="icon fa fa-github"></i>
+                    </a>
+                </li>
+                
+            
+        </ul>
+    </div>
+    <div class="github-card" data-github="voidSatisfaction" data-height="" data-theme="default"></div>
+    <script src="//cdn.jsdelivr.net/github-cards/latest/widget.js"></script>
+    
+        
+<nav id="article-nav">
+    
+        <a href="/2016/08/21/2016-8-21-b-justbecause/" id="article-nav-newer" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">newer</strong>
+        <p class="article-nav-title">
+        
+            세상은 넓고 대단한 사람은 많다.
+        
+        </p>
+        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
+    </a>
+    
+    
+        <a href="/2016/08/19/2016-8-19-a-found/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">older</strong>
+        <p class="article-nav-title">Local Git에서 Git Hub로 push할 경우 permission deny문제</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
+    
+    <div class="widgets-container">
+        
+            
+                
+    <div class="widget-wrap">
+        <h3 class="widget-title">recents</h3>
+        <div class="widget">
+            <ul id="recent-post" class="no-thumbnail">
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/JavaScript/">JavaScript</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/JavaScript/ECMA-Script6/">ECMA Script6</a></p>
+                            <p class="item-title"><a href="/2016/10/21/so-hard-javascript-class/" class="title">너무 헷갈리는 자바스크립트 Class개념</a></p>
+                            <p class="item-date"><time datetime="2016-10-21T01:11:37.000Z" itemprop="datePublished">2016-10-21</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/교육/">교육</a></p>
+                            <p class="item-title"><a href="/2016/10/14/good-site-for-javascript-study/" class="title">자바스크립트 공부에 도움이 되는 사이트</a></p>
+                            <p class="item-date"><time datetime="2016-10-14T06:56:24.000Z" itemprop="datePublished">2016-10-14</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/JavaScript/">JavaScript</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/JavaScript/React-Native/">React Native</a></p>
+                            <p class="item-title"><a href="/2016/10/14/javascript-study-and-react-native-function-method/" class="title">React Native의 원리 및 JavaScript의 함수</a></p>
+                            <p class="item-date"><time datetime="2016-10-14T02:26:21.000Z" itemprop="datePublished">2016-10-14</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Ruby/">Ruby</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Ruby/Project-Euler/">Project Euler</a></p>
+                            <p class="item-title"><a href="/2016/10/07/project-euler-134-solution/" class="title">Project Euler 134</a></p>
+                            <p class="item-date"><time datetime="2016-10-06T16:55:01.000Z" itemprop="datePublished">2016-10-07</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/세상-사는-이야기/">세상 사는 이야기</a></p>
+                            <p class="item-title"><a href="/2016/10/06/lesson-from-teacher-with-errors/" class="title">MECE하게 &#39;생각&#39;하라.</a></p>
+                            <p class="item-date"><time datetime="2016-10-05T16:15:38.000Z" itemprop="datePublished">2016-10-06</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">categories</h3>
+        <div class="widget">
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/JavaScript/">JavaScript</a><span class="category-list-count">12</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/JavaScript/ECMA-Script6/">ECMA Script6</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/JavaScript/Nodejs/">Nodejs</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/JavaScript/React-Native/">React Native</a><span class="category-list-count">5</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Ruby/">Ruby</a><span class="category-list-count">6</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Ruby/Project-Euler/">Project Euler</a><span class="category-list-count">5</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Scheme/">Scheme</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Scheme/Schemer-series/">Schemer series</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Utils/">Utils</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Utils/Git-GitHub/">Git/GitHub</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/교육/">교육</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/세상-사는-이야기/">세상 사는 이야기</a><span class="category-list-count">8</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">archives</h3>
+        <div class="widget">
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">October 2016</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/09/">September 2016</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">August 2016</a><span class="archive-list-count">13</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-float">
+        <h3 class="widget-title">tag cloud</h3>
+        <div class="widget tagcloud">
+            <a href="/tags/GitHub/" style="font-size: 10px;">GitHub</a> <a href="/tags/Grammar/" style="font-size: 10px;">Grammar</a> <a href="/tags/JavaScript/" style="font-size: 20px;">JavaScript</a> <a href="/tags/Nodejs/" style="font-size: 12.86px;">Nodejs</a> <a href="/tags/Project-Euler/" style="font-size: 15.71px;">Project Euler</a> <a href="/tags/React-Native/" style="font-size: 17.14px;">React Native</a> <a href="/tags/Redux/" style="font-size: 11.43px;">Redux</a> <a href="/tags/Ruby/" style="font-size: 17.14px;">Ruby</a> <a href="/tags/Scheme/" style="font-size: 10px;">Scheme</a> <a href="/tags/Socket-io/" style="font-size: 10px;">Socket.io</a> <a href="/tags/객체지향/" style="font-size: 10px;">객체지향</a> <a href="/tags/불교/" style="font-size: 10px;">불교</a> <a href="/tags/세상-사는-이야기/" style="font-size: 18.57px;">세상 사는 이야기</a> <a href="/tags/알고리즘/" style="font-size: 10px;">알고리즘</a> <a href="/tags/프로그래밍/" style="font-size: 14.29px;">프로그래밍</a> <a href="/tags/프로그래밍-교육/" style="font-size: 10px;">프로그래밍 교육</a>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">links</h3>
+        <div class="widget">
+            <ul>
+                
+                    <li>
+                        <a href="http://hexo.io">Hexo</a>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+
+            
+        
+    </div>
+</aside>
+
+                </div>
+            </div>
+        </div>
+        <footer id="footer">
+    <div class="container">
+        <div class="container-inner">
+            <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
+            <div class="credit">
+                <h1 class="logo-wrap">
+                    <a href="/" class="logo"></a>
+                </h1>
+                <p>&copy; 2016 텅 빈 충만(voidSatisfaction)</p>
+                <p>Powered by <a href="//hexo.io/" target="_blank">Hexo</a>. Theme by <a href="//github.com/ppoffice" target="_blank">PPOffice</a></p>
+            </div>
+        </div>
+    </div>
+</footer>
+        
+    
+    <script>
+    var disqus_shortname = 'voidsatisfaction';
+    
+    
+    var disqus_url = 'https://voidsatisfaction.github.io/2016/08/21/2016-8-21-a-learning/';
+    
+    (function() {
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+
+
+
+    
+        <script src="/vendor/lightgallery/js/lightgallery.min.js"></script>
+        <script src="/vendor/lightgallery/js/lg-thumbnail.min.js"></script>
+        <script src="/vendor/lightgallery/js/lg-pager.min.js"></script>
+        <script src="/vendor/lightgallery/js/lg-autoplay.min.js"></script>
+        <script src="/vendor/lightgallery/js/lg-fullscreen.min.js"></script>
+        <script src="/vendor/lightgallery/js/lg-zoom.min.js"></script>
+        <script src="/vendor/lightgallery/js/lg-hash.min.js"></script>
+        <script src="/vendor/lightgallery/js/lg-share.min.js"></script>
+        <script src="/vendor/lightgallery/js/lg-video.min.js"></script>
+    
+
+
+<!-- Custom Scripts -->
+<script src="/js/main.js"></script>
+
+    </div>
+</body>
+</html>

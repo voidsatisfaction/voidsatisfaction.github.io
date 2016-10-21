@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    
+    <title>불교와 프로그래밍 | 텅 빈 충만의 블로그</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+        <meta name="keywords" content="세상 사는 이야기,프로그래밍,불교" />
+    
+    <meta name="description" content="법륜스님의 즉문즉설나는 요즈음 학교 도서관에 갈 때 팟캐스트 ‘법륜 스님의 즉문즉설’을 즐겨 듣는다.
+‘법륜스님의 즉문즉설’은 법륜스님이 한국과 세계의 이곳저곳을 돌아다니시면서 강연하시는 내용이다. 여기서 특이한 점은, 스님이 일방적으로 자신의 생각과 견해를 전하는 것이 아니라는 점이다.
+항상 스님은 질문자의 질문을 먼저 듣고 그것에 대한 답변을 하신다.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="불교와 프로그래밍">
+<meta property="og:url" content="https://voidsatisfaction.github.io/2016/09/29/buddhism-and-programming/index.html">
+<meta property="og:site_name" content="텅 빈 충만의 블로그">
+<meta property="og:description" content="법륜스님의 즉문즉설나는 요즈음 학교 도서관에 갈 때 팟캐스트 ‘법륜 스님의 즉문즉설’을 즐겨 듣는다.
+‘법륜스님의 즉문즉설’은 법륜스님이 한국과 세계의 이곳저곳을 돌아다니시면서 강연하시는 내용이다. 여기서 특이한 점은, 스님이 일방적으로 자신의 생각과 견해를 전하는 것이 아니라는 점이다.
+항상 스님은 질문자의 질문을 먼저 듣고 그것에 대한 답변을 하신다.">
+<meta property="og:updated_time" content="2016-09-29T05:37:55.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="불교와 프로그래밍">
+<meta name="twitter:description" content="법륜스님의 즉문즉설나는 요즈음 학교 도서관에 갈 때 팟캐스트 ‘법륜 스님의 즉문즉설’을 즐겨 듣는다.
+‘법륜스님의 즉문즉설’은 법륜스님이 한국과 세계의 이곳저곳을 돌아다니시면서 강연하시는 내용이다. 여기서 특이한 점은, 스님이 일방적으로 자신의 생각과 견해를 전하는 것이 아니라는 점이다.
+항상 스님은 질문자의 질문을 먼저 듣고 그것에 대한 답변을 하신다.">
+    
+    <link rel="canonical" href="https://voidsatisfaction.github.io/2016/09/29/buddhism-and-programming/"/>
+
+    
+
+    
+
+    <link rel="stylesheet" href="/vendor/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/vendor/titillium-web/styles.css">
+    <link rel="stylesheet" href="/vendor/source-code-pro/styles.css">
+
+    <link rel="stylesheet" href="/css/style.css">
+
+    <script src="/vendor/jquery/2.0.3/jquery.min.js"></script>
+    
+    
+        <link rel="stylesheet" href="/vendor/lightgallery/css/lightgallery.min.css">
+    
+    
+        <script type="text/javascript">
+(function(i,s,o,g,r,a,m) {i['GoogleAnalyticsObject']=r;i[r]=i[r]||function() {
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-84759824-1', 'auto');
+ga('send', 'pageview');
+
+</script>
+    
+    
+
+</head>
+
+<body>
+    <div id="wrap">
+        <header id="header">
+    <div id="header-outer" class="outer">
+        <div class="container">
+            <div class="container-inner">
+                <div id="header-title">
+                    <h1 class="logo-wrap">
+                        <a href="/" class="logo"></a>
+                    </h1>
+                    
+                        <h2 class="subtitle-wrap">
+                            <p class="subtitle">Ruby JavaScript Scheme을 사랑하는 초보 학생의 소박한 프로그래밍.</p>
+                        </h2>
+                    
+                </div>
+                <div id="header-inner" class="nav-container">
+                    <a id="main-nav-toggle" class="nav-icon fa fa-bars"></a>
+                    <div class="nav-container-inner">
+                        <ul id="main-nav">
+                            
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/">Home</a>
+                                </li>
+                            
+                                        <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/JavaScript/">JavaScript</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/JavaScript/ECMA-Script6/">ECMA Script6</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/JavaScript/Nodejs/">Nodejs</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/JavaScript/React-Native/">React Native</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Ruby/">Ruby</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Ruby/Project-Euler/">Project Euler</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Scheme/">Scheme</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Scheme/Schemer-series/">Schemer series</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Utils/">Utils</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Utils/Git-GitHub/">Git/GitHub</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/교육/">교육</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/세상-사는-이야기/">세상 사는 이야기</a></li></ul>
+                                    
+                        </ul>
+                        <nav id="sub-nav">
+                            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Type something..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+</div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+        <div class="container">
+            <div class="main-body container-inner">
+                <div class="main-body-inner">
+                    <section id="main">
+                        <div class="main-body-header">
+    <h1 class="header">
+    
+    <a class="page-title-link" href="/categories/세상-사는-이야기/">세상 사는 이야기</a>
+    </h1>
+</div>
+                        <div class="main-body-content">
+                            <article id="post-buddhism-and-programming" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+        불교와 프로그래밍
+        </h1>
+    
+
+            </header>
+        
+        
+            <div class="article-subtitle">
+                <a href="/2016/09/29/buddhism-and-programming/" class="article-date">
+    <time datetime="2016-09-29T02:08:18.000Z" itemprop="datePublished">2016-09-29</time>
+</a>
+                
+    <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/불교/">불교</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/세상-사는-이야기/">세상 사는 이야기</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/프로그래밍/">프로그래밍</a></li></ul>
+
+            </div>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+            <h2 id="법륜스님의-즉문즉설"><a href="#법륜스님의-즉문즉설" class="headerlink" title="법륜스님의 즉문즉설"></a>법륜스님의 즉문즉설</h2><p>나는 요즈음 학교 도서관에 갈 때 팟캐스트 ‘법륜 스님의 즉문즉설’을 즐겨 듣는다.</p>
+<p>‘법륜스님의 즉문즉설’은 법륜스님이 한국과 세계의 이곳저곳을 돌아다니시면서 강연하시는 내용이다. 여기서 특이한 점은, 스님이 일방적으로 자신의 생각과 견해를 전하는 것이 아니라는 점이다.</p>
+<p>항상 스님은 질문자의 질문을 먼저 듣고 그것에 대한 답변을 하신다.</p>
+<p>질문의 내용을 조금 발췌해보자면 다음과 같다.</p>
+<ul>
+<li><p>부모님과의 사이가 좋지 않다. 어떻게 해야하는가?</p>
+</li>
+<li><p>아이가 공부를 안하는데 어떻게 하면 좋을까?</p>
+</li>
+<li><p>내가 화를 잘 참지 못한다. 어떻게 해야하는가?</p>
+</li>
+<li><p>시어머니와의 사이가 좋지 않은데 어떻게 해야하는가?</p>
+</li>
+<li><p>이 세상은 올바르게 사는 사람이 더 손해보는 것 같다. 나는 어떻게 살아야 하는가?</p>
+</li>
+</ul>
+<p>에피소드 하나 하나가 5~20분 사이로 생각보다 길지도 않고 정말 나도 한 번쯤은 생각해봤을 그런 문제들이며 현실과 동떨어지지 않은것 같아서 내용이 공감도 되고 참 재미있다.</p>
+<p>하지만 즉문즉설의 백미는 역시 법륜스님의 명쾌한 대답이다.</p>
+<h2 id="즉문즉설을-관통하는-세가지-사고방식"><a href="#즉문즉설을-관통하는-세가지-사고방식" class="headerlink" title="즉문즉설을 관통하는 세가지 사고방식"></a>즉문즉설을 관통하는 세가지 사고방식</h2><p>스님의 즉설을 듣고 있으면 언제나 세가지 원칙이 있다는 것을 느낀다.</p>
+<ol>
+<li><p>모든 문제는 ‘나’에게 있다. 따라서 문제의 해결의 열쇠 역시 ‘나’에게 있다.</p>
+</li>
+<li><p>나는 나고 너는 너. 내 마음대로 타인을 변화시키려 하지마라.</p>
+</li>
+<li><p>기대하지 마라.</p>
+</li>
+</ol>
+<h3 id="모든-문제는-‘나’에게-있다"><a href="#모든-문제는-‘나’에게-있다" class="headerlink" title="모든 문제는 ‘나’에게 있다."></a>모든 문제는 ‘나’에게 있다.</h3><p>즉문즉설에서 질문자는 간혹 ‘~때문에 화가나거나 힘들다. 그렇다면 어떻게 그를 고쳐야 하는가?’ 와 같은 질문을 할 때가 있다.</p>
+<p>그럴때 스님은 항상 모든 문제의 핵심은 바로 나 자신에게 있다고 말씀하신다.</p>
+<p>그러므로 내가 어떠한 마음가짐을 가지느냐에 따라 문제를 해결할 수 있다고 하신다.</p>
+<p>예를 들어, 남편이 매일 술을 마시고 들어와 화가났을 경우, 스님은 다음과 같이 조언하신다.</p>
+<blockquote>
+<p>‘매일아침 하루 빠짐없이 매일 우리 남편 술을 꼭 먹고 들어오게 해주십시오’를 생각하며 108배를 하시죠.</p>
+<p>그리고 오히려 술을 마시고 오지 않을 경우는 술을 준비해서 그 기도를 이루도록 해야합니다.</p>
+</blockquote>
+<p>여기서 포인트는 <strong>마음에서 우러나와서</strong> 그렇게 해야 한다는 것이다.</p>
+<p>그러면 3년 정도 후에는 남편의 술주정이 줄어들고 거짓말 같이 술을 마시지 않게 된다는 것이며, 자기자신의 생활이 술에 대한 스트레스가 사라짐과 동시에 보다 편해진다는 것이다.</p>
+<p>나는 이 조언이 스님이 이야기하고자 하는 삶의 지혜를 고스란히 보여주고 있다고 생각한다.</p>
+<p>그 지혜 중 하나는, 스트레스의 원인을 <strong>자기자신의 마음</strong> 으로 지목하신 것이다.</p>
+<p>질문자는 남편이 술을 마시는 행위를 자기자신을 스트레스 받게하는 요소로 생각하고 있다.</p>
+<p>하지만 스님은 술을 마시는 행위를 스트레스의 요소가 아닌, <strong>긍정적인 요소</strong> 로 발상의 전환을 제안한다.</p>
+<p>이것이 사고의 역전이자 즉문즉설의 백미.</p>
+<h3 id="나는-나고-너는-너-내-마음대로-타인을-변화시키려-하지마라"><a href="#나는-나고-너는-너-내-마음대로-타인을-변화시키려-하지마라" class="headerlink" title="나는 나고 너는 너. 내 마음대로 타인을 변화시키려 하지마라."></a>나는 나고 너는 너. 내 마음대로 타인을 변화시키려 하지마라.</h3><p>또한 스님의 말씀에는 또 다른 지혜의 아름다움이 숨겨져 있는데 그것은 다름아닌 <strong>타인의 문제와 나와의 분리</strong> 다.</p>
+<p>질문자는 분명 남편을 변화시킬 방법을 스님에게 묻고싶었겠지만, 스님은 ‘술을 마시는 일’자체를 내가 원하는대로 변화시키는 것은 욕심이라고 하신다.</p>
+<p>사실 우리의 삶에서 타인의 행동을 긍정적인 방향이든 부정적인 방향이든 변화시키는 것은 정말 쉽지 않은 일이다.</p>
+<p>내가 아무리 노력해도 그 사람은 내 노력을 티끌로도 보지 않는 경우도 심심치 않게 볼 수 있다.</p>
+<p>따라서 만일 내가 타인을 변화시키는 것이 나의 과제이자 숙명으로 여기면 그 짐으로 인한 무게가 내 삶 자체를 짓누를 것이다.</p>
+<p>그래서 스님은 <strong>애초에 타인의 짐을 자신이 짊어질 필요가 없다</strong> 고 역설하신 것이라고 생각한다.</p>
+<p>이와 같은 마음가짐은 타인은 타인이 그러한 행동을 하는 자유가 있다는 것을 존중하는 동시에 나 자신의 짐도 덜어버리는 것이다.</p>
+<h3 id="기대하지-마라"><a href="#기대하지-마라" class="headerlink" title="기대하지 마라."></a>기대하지 마라.</h3><p>마지막으로 스님은 ‘기대하지 말라’고 충고하신다.</p>
+<p>대개 사람들은 기도를 하면서 자신을 둘러싼 환경이 변화가 되길 기대한다.</p>
+<p>하지만, 기대를 하므로써 우리는 ‘기대’라는 이름의 새로운 짐을 짊어지게 되는 것이다.</p>
+<p>만일 내 기대가 이루어지지 않는다면 그 기대라는 짐은 또다시 무거운 고뇌가 되어 나의 어깨를 누를것이다.</p>
+<p>그래서 스님은 무주상보시(無住相布施). 즉, 어떠한 행위의 결과에서 아무런 기대를 하지 않는 마음의 중요성을 강조하신다. 중요한 것은 그 행위를 하는 것이지 행위의 결과는 자신의 마음과 아무 상관이 없다는 것이다.</p>
+<hr>
+<h2 id="프로그래밍과-불교"><a href="#프로그래밍과-불교" class="headerlink" title="프로그래밍과 불교"></a>프로그래밍과 불교</h2><p>법륜스님의 위의 세가지 원칙과 더 나아가 불교의 가르침은 프로그래밍의 세상과 일맥상통하는 부분이 있다.</p>
+<p>다음과 같이 생각해보자.</p>
+<p>가장 먼저, ‘나’는 나를 둘러싼 세상의 환경적 요소를 인수로서 받는 함수라고 생각한다.</p>
+<p>그리고 그 함수 내부에는 내가 세상을 바라보는 시선 즉. 세상을 바라보는 알고리즘이 들어있는것이다.</p>
+<p>이를 코드화한다면 다음과 같을 것이다.</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">me</span> (<span class="params">나를 둘러싼 환경인수들</span>)</span>&#123;</div><div class="line">  내가 어떻게 환경을 바라보는가?</div><div class="line">  내가 어떻게 환경을 활용하는가?</div><div class="line">&#125;</div><div class="line"></div><div class="line">me(환경인수들) <span class="comment">// 이것이 내가 세상에 살아가는 output. 내가 세상을 살아가는 모습</span></div></pre></td></tr></table></figure>
+<p>우리들은 보통 나를 둘러싼 환경인수들을 탓하며 무리하게 환경을 바꾸려고 한다.</p>
+<p>하지만 법륜스님을 비롯한 불교의 가르침은 내가 제어할 수 없는 환경 인수에 초점을 맞추는 것이 아닌,</p>
+<ul>
+<li>내가 어떻게 환경을 바라보는가?</li>
+<li>내가 어떻게 나에게 주어진 환경을 활용하는가?</li>
+</ul>
+<p>와 같은 ‘나’의 마음에 좋은 알고리즘을 만드려는 구상에 초점을 맞춘다.</p>
+<p>사실 프로그래밍에서도 그렇듯이 함수의 output을 환경인수를 간단히 변경하는게 언뜻 보면 쉬울 것 같아보인다.</p>
+<p>하지만 또 우리가 평소 생활하면서 느끼듯이</p>
+<p><strong>타인을 내가 원하는 방향으로 변화시키는 것은 쉽지 않다. 또한, 타인을 변화시켰을때는 반드시 부작용이 따른다.</strong></p>
+<p>하지만 그에 반하여, 잘 정의된 함수는 인수에 object가 오든, string이 오든 어떠한 자료구조, 어떠한 데이터 형태가 input으로 들어와도 원하는 output으로 변화시킬 수 있다.</p>
+<p>따라서 우리는 어떠한 일이 내가 바라는 바 처럼 되길 바라고 기도하는 것이 아니라,<br><strong>어떠한 일이 닥치더라도 흔들리지 않는 그런 마음을 갖게 될 수 있도록 기도해야한다.</strong></p>
+<p>나는 어떠한 input이 오든 흔들리지 않고 나만의 신념을 지킬 수 있는 output을 낼 수 있는 그런 하나의 함수가 되고 싶다.</p>
+<p>그래서 이제 나는 나에게 묻고자 한다. ‘나는 어떤 함수인가?’ ‘나의 함수는 환경인수를 제어하려 하는가, 아니면 내 마음의 좋은 알고리즘을 만드려하는가?’</p>
+<hr>
+<p>나는 종교를 믿지 않지만 어느종교이든 아름다운 말과 생각에는 그 특유의 향기가 있는 것을 느낀다.</p>
+<p>마치, 절차지향적, 객체지향, 함수형, 선언형 프로그래밍 등등.. 각각의 프로그래밍 스타일이 고유의 매력을 뽑내는 것과 같이.</p>
+<p>또한 각각의 프로그래밍 스타일도 궁극적으로 <strong>‘좋은 프로그램을 작성한다.’</strong> 라는 공통된 궁극적인 지향점 있듯이, 모든 종교도 <strong>‘향기롭고 아름다운 삶을 산다’</strong> 라는 공통의 궁극적인 지향점 있다고 생각한다.</p>
+<p>이렇게 잘 생각해보면 세상을 살아가는 이치가 프로그래밍에도 곳곳에 스며들어있는 것이 아닌가 싶다.</p>
+<p>작지만 나의 배움을 바탕으로 세상을 이런식으로 나만의 방식으로 의미부여를 해가는것은 참 재밌다.</p>
+<p>같은 세상이라도 나에게는 조금 더 특별해 보이니까.</p>
+<p>항상 좋은 말씀 감사합니다 법륜스님.</p>
+<h2 id="참고"><a href="#참고" class="headerlink" title="참고"></a>참고</h2><ul>
+<li><a href="http://www.podbbang.com/ch/1805" target="_blank" rel="external">법륜스님의 즉문즉설 팟캐스트</a></li>
+</ul>
+
+        </div>
+        <footer class="article-footer">
+            
+
+
+
+    <a data-url="https://voidsatisfaction.github.io/2016/09/29/buddhism-and-programming/" data-id="ciuj4ugvn001qbysd6mvcc4jf" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+<script>
+    (function ($) {
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+        </footer>
+    </div>
+</article>
+
+    <section id="comments">
+    
+        
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
+    
+    </section>
+
+                        </div>
+                    </section>
+                    <aside id="sidebar">
+    <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
+    <div class="sidebar-top">
+        <p>follow:</p>
+        <ul class="social-links">
+            
+                
+                <li>
+                    <a class="social-tooltip" title="facebook" href="https://www.facebook.com/yeon.gyumin" target="_blank">
+                        <i class="icon fa fa-facebook"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="github" href="https://github.com/voidsatisfaction" target="_blank">
+                        <i class="icon fa fa-github"></i>
+                    </a>
+                </li>
+                
+            
+        </ul>
+    </div>
+    <div class="github-card" data-github="voidSatisfaction" data-height="" data-theme="default"></div>
+    <script src="//cdn.jsdelivr.net/github-cards/latest/widget.js"></script>
+    
+        
+<nav id="article-nav">
+    
+        <a href="/2016/09/29/feynman-algoritm/" id="article-nav-newer" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">newer</strong>
+        <p class="article-nav-title">
+        
+            파인만 알고리즘
+        
+        </p>
+        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
+    </a>
+    
+    
+        <a href="/2016/09/27/redux-study2/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">older</strong>
+        <p class="article-nav-title">React Native 공부기 ~ Redux 후편</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
+    
+    <div class="widgets-container">
+        
+            
+                
+    <div class="widget-wrap">
+        <h3 class="widget-title">recents</h3>
+        <div class="widget">
+            <ul id="recent-post" class="no-thumbnail">
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/JavaScript/">JavaScript</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/JavaScript/ECMA-Script6/">ECMA Script6</a></p>
+                            <p class="item-title"><a href="/2016/10/21/so-hard-javascript-class/" class="title">너무 헷갈리는 자바스크립트 Class개념</a></p>
+                            <p class="item-date"><time datetime="2016-10-21T01:11:37.000Z" itemprop="datePublished">2016-10-21</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/교육/">교육</a></p>
+                            <p class="item-title"><a href="/2016/10/14/good-site-for-javascript-study/" class="title">자바스크립트 공부에 도움이 되는 사이트</a></p>
+                            <p class="item-date"><time datetime="2016-10-14T06:56:24.000Z" itemprop="datePublished">2016-10-14</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/JavaScript/">JavaScript</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/JavaScript/React-Native/">React Native</a></p>
+                            <p class="item-title"><a href="/2016/10/14/javascript-study-and-react-native-function-method/" class="title">React Native의 원리 및 JavaScript의 함수</a></p>
+                            <p class="item-date"><time datetime="2016-10-14T02:26:21.000Z" itemprop="datePublished">2016-10-14</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Ruby/">Ruby</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Ruby/Project-Euler/">Project Euler</a></p>
+                            <p class="item-title"><a href="/2016/10/07/project-euler-134-solution/" class="title">Project Euler 134</a></p>
+                            <p class="item-date"><time datetime="2016-10-06T16:55:01.000Z" itemprop="datePublished">2016-10-07</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/세상-사는-이야기/">세상 사는 이야기</a></p>
+                            <p class="item-title"><a href="/2016/10/06/lesson-from-teacher-with-errors/" class="title">MECE하게 &#39;생각&#39;하라.</a></p>
+                            <p class="item-date"><time datetime="2016-10-05T16:15:38.000Z" itemprop="datePublished">2016-10-06</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">categories</h3>
+        <div class="widget">
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/JavaScript/">JavaScript</a><span class="category-list-count">12</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/JavaScript/ECMA-Script6/">ECMA Script6</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/JavaScript/Nodejs/">Nodejs</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/JavaScript/React-Native/">React Native</a><span class="category-list-count">5</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Ruby/">Ruby</a><span class="category-list-count">6</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Ruby/Project-Euler/">Project Euler</a><span class="category-list-count">5</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Scheme/">Scheme</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Scheme/Schemer-series/">Schemer series</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Utils/">Utils</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Utils/Git-GitHub/">Git/GitHub</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/교육/">교육</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/세상-사는-이야기/">세상 사는 이야기</a><span class="category-list-count">8</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">archives</h3>
+        <div class="widget">
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">October 2016</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/09/">September 2016</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">August 2016</a><span class="archive-list-count">13</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-float">
+        <h3 class="widget-title">tag cloud</h3>
+        <div class="widget tagcloud">
+            <a href="/tags/GitHub/" style="font-size: 10px;">GitHub</a> <a href="/tags/Grammar/" style="font-size: 10px;">Grammar</a> <a href="/tags/JavaScript/" style="font-size: 20px;">JavaScript</a> <a href="/tags/Nodejs/" style="font-size: 12.86px;">Nodejs</a> <a href="/tags/Project-Euler/" style="font-size: 15.71px;">Project Euler</a> <a href="/tags/React-Native/" style="font-size: 17.14px;">React Native</a> <a href="/tags/Redux/" style="font-size: 11.43px;">Redux</a> <a href="/tags/Ruby/" style="font-size: 17.14px;">Ruby</a> <a href="/tags/Scheme/" style="font-size: 10px;">Scheme</a> <a href="/tags/Socket-io/" style="font-size: 10px;">Socket.io</a> <a href="/tags/객체지향/" style="font-size: 10px;">객체지향</a> <a href="/tags/불교/" style="font-size: 10px;">불교</a> <a href="/tags/세상-사는-이야기/" style="font-size: 18.57px;">세상 사는 이야기</a> <a href="/tags/알고리즘/" style="font-size: 10px;">알고리즘</a> <a href="/tags/프로그래밍/" style="font-size: 14.29px;">프로그래밍</a> <a href="/tags/프로그래밍-교육/" style="font-size: 10px;">프로그래밍 교육</a>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">links</h3>
+        <div class="widget">
+            <ul>
+                
+                    <li>
+                        <a href="http://hexo.io">Hexo</a>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+
+            
+        
+    </div>
+</aside>
+
+                </div>
+            </div>
+        </div>
+        <footer id="footer">
+    <div class="container">
+        <div class="container-inner">
+            <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
+            <div class="credit">
+                <h1 class="logo-wrap">
+                    <a href="/" class="logo"></a>
+                </h1>
+                <p>&copy; 2016 텅 빈 충만(voidSatisfaction)</p>
+                <p>Powered by <a href="//hexo.io/" target="_blank">Hexo</a>. Theme by <a href="//github.com/ppoffice" target="_blank">PPOffice</a></p>
+            </div>
+        </div>
+    </div>
+</footer>
+        
+    
+    <script>
+    var disqus_shortname = 'voidsatisfaction';
+    
+    
+    var disqus_url = 'https://voidsatisfaction.github.io/2016/09/29/buddhism-and-programming/';
+    
+    (function() {
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+
+
+
+    
+        <script src="/vendor/lightgallery/js/lightgallery.min.js"></script>
+        <script src="/vendor/lightgallery/js/lg-thumbnail.min.js"></script>
+        <script src="/vendor/lightgallery/js/lg-pager.min.js"></script>
+        <script src="/vendor/lightgallery/js/lg-autoplay.min.js"></script>
+        <script src="/vendor/lightgallery/js/lg-fullscreen.min.js"></script>
+        <script src="/vendor/lightgallery/js/lg-zoom.min.js"></script>
+        <script src="/vendor/lightgallery/js/lg-hash.min.js"></script>
+        <script src="/vendor/lightgallery/js/lg-share.min.js"></script>
+        <script src="/vendor/lightgallery/js/lg-video.min.js"></script>
+    
+
+
+<!-- Custom Scripts -->
+<script src="/js/main.js"></script>
+
+    </div>
+</body>
+</html>

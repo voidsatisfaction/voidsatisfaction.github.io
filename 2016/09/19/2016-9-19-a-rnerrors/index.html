@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    
+    <title>Xcode버전업과 RN개발환경 오류들 | 텅 빈 충만의 블로그</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+        <meta name="keywords" content="React Native,JavaScript" />
+    
+    <meta name="description" content="이 글을 쓰게 되는 계기는 다름이 아니라 몇가지 에러로 인하여 나와 사부가 정말 말 그대로 하루종일 고생했다는 점이다.
+그래서 앞으로 이러한 에러가 나올 경우에 잘 대처할 수 있도록 머리에 담아두고자 이곳에 글을 쓴다.
+발단 : Git사용의 미숙함 + Xcode업데이트Remote에서 git pull을 한 이후로 이상하게 simulator가 실행되지 않는 버">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Xcode버전업과 RN개발환경 오류들">
+<meta property="og:url" content="https://voidsatisfaction.github.io/2016/09/19/2016-9-19-a-rnerrors/index.html">
+<meta property="og:site_name" content="텅 빈 충만의 블로그">
+<meta property="og:description" content="이 글을 쓰게 되는 계기는 다름이 아니라 몇가지 에러로 인하여 나와 사부가 정말 말 그대로 하루종일 고생했다는 점이다.
+그래서 앞으로 이러한 에러가 나올 경우에 잘 대처할 수 있도록 머리에 담아두고자 이곳에 글을 쓴다.
+발단 : Git사용의 미숙함 + Xcode업데이트Remote에서 git pull을 한 이후로 이상하게 simulator가 실행되지 않는 버">
+<meta property="og:image" content="https://voidsatisfaction.github.io/images/20160919_websocket_error.png">
+<meta property="og:updated_time" content="2016-09-26T15:47:35.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Xcode버전업과 RN개발환경 오류들">
+<meta name="twitter:description" content="이 글을 쓰게 되는 계기는 다름이 아니라 몇가지 에러로 인하여 나와 사부가 정말 말 그대로 하루종일 고생했다는 점이다.
+그래서 앞으로 이러한 에러가 나올 경우에 잘 대처할 수 있도록 머리에 담아두고자 이곳에 글을 쓴다.
+발단 : Git사용의 미숙함 + Xcode업데이트Remote에서 git pull을 한 이후로 이상하게 simulator가 실행되지 않는 버">
+<meta name="twitter:image" content="https://voidsatisfaction.github.io/images/20160919_websocket_error.png">
+    
+    <link rel="canonical" href="https://voidsatisfaction.github.io/2016/09/19/2016-9-19-a-rnerrors/"/>
+
+    
+
+    
+
+    <link rel="stylesheet" href="/vendor/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/vendor/titillium-web/styles.css">
+    <link rel="stylesheet" href="/vendor/source-code-pro/styles.css">
+
+    <link rel="stylesheet" href="/css/style.css">
+
+    <script src="/vendor/jquery/2.0.3/jquery.min.js"></script>
+    
+    
+        <link rel="stylesheet" href="/vendor/lightgallery/css/lightgallery.min.css">
+    
+    
+        <script type="text/javascript">
+(function(i,s,o,g,r,a,m) {i['GoogleAnalyticsObject']=r;i[r]=i[r]||function() {
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-84759824-1', 'auto');
+ga('send', 'pageview');
+
+</script>
+    
+    
+
+</head>
+
+<body>
+    <div id="wrap">
+        <header id="header">
+    <div id="header-outer" class="outer">
+        <div class="container">
+            <div class="container-inner">
+                <div id="header-title">
+                    <h1 class="logo-wrap">
+                        <a href="/" class="logo"></a>
+                    </h1>
+                    
+                        <h2 class="subtitle-wrap">
+                            <p class="subtitle">Ruby JavaScript Scheme을 사랑하는 초보 학생의 소박한 프로그래밍.</p>
+                        </h2>
+                    
+                </div>
+                <div id="header-inner" class="nav-container">
+                    <a id="main-nav-toggle" class="nav-icon fa fa-bars"></a>
+                    <div class="nav-container-inner">
+                        <ul id="main-nav">
+                            
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/">Home</a>
+                                </li>
+                            
+                                        <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/JavaScript/">JavaScript</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/JavaScript/ECMA-Script6/">ECMA Script6</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/JavaScript/Nodejs/">Nodejs</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/JavaScript/React-Native/">React Native</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Ruby/">Ruby</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Ruby/Project-Euler/">Project Euler</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Scheme/">Scheme</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Scheme/Schemer-series/">Schemer series</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Utils/">Utils</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Utils/Git-GitHub/">Git/GitHub</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/교육/">교육</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/세상-사는-이야기/">세상 사는 이야기</a></li></ul>
+                                    
+                        </ul>
+                        <nav id="sub-nav">
+                            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Type something..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+</div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+        <div class="container">
+            <div class="main-body container-inner">
+                <div class="main-body-inner">
+                    <section id="main">
+                        <div class="main-body-header">
+    <h1 class="header">
+    
+    <a class="page-title-link" href="/categories/JavaScript/">JavaScript</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/JavaScript/React-Native/">React Native</a>
+    </h1>
+</div>
+                        <div class="main-body-content">
+                            <article id="post-2016-9-19-a-rnerrors" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+        Xcode버전업과 RN개발환경 오류들
+        </h1>
+    
+
+            </header>
+        
+        
+            <div class="article-subtitle">
+                <a href="/2016/09/19/2016-9-19-a-rnerrors/" class="article-date">
+    <time datetime="2016-09-19T02:52:00.000Z" itemprop="datePublished">2016-09-19</time>
+</a>
+                
+    <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/React-Native/">React Native</a></li></ul>
+
+            </div>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+            <p>이 글을 쓰게 되는 계기는 다름이 아니라 몇가지 에러로 인하여 나와 사부가 정말 말 그대로 <strong>하루종일</strong> 고생했다는 점이다.</p>
+<p>그래서 앞으로 이러한 에러가 나올 경우에 잘 대처할 수 있도록 머리에 담아두고자 이곳에 글을 쓴다.</p>
+<h2 id="발단-Git사용의-미숙함-Xcode업데이트"><a href="#발단-Git사용의-미숙함-Xcode업데이트" class="headerlink" title="발단 : Git사용의 미숙함 + Xcode업데이트"></a>발단 : Git사용의 미숙함 + Xcode업데이트</h2><p>Remote에서 git pull을 한 이후로 이상하게 simulator가 실행되지 않는 버그가 발생했다. 그리고, 나는 그것이 Xcode가 업데이트되지 않았기 때문에 발생한 문제라고 생각했다.</p>
+<p>그래서 나는, 끔찍한 미래가 기다리는 것도 모른채</p>
+<p>RN노드 모듈을 전부 삭제하고 다시 깔고, cache도 전부 지웠다 다시 깔았으며, xcode마저 업데이트 했다.</p>
+<h2 id="해결"><a href="#해결" class="headerlink" title="해결"></a>해결</h2><p>해결은 다음과 같은 순서로 행해졌다.</p>
+<h3 id="1-xcode업데이트에-의한-websocket오류-gt-RCTWebSocket의-Custom-Compiler-Flag의-value-제거"><a href="#1-xcode업데이트에-의한-websocket오류-gt-RCTWebSocket의-Custom-Compiler-Flag의-value-제거" class="headerlink" title="1. xcode업데이트에 의한 websocket오류 =&gt; RCTWebSocket의 Custom Compiler Flag의 value 제거"></a>1. xcode업데이트에 의한 websocket오류 =&gt; RCTWebSocket의 Custom Compiler Flag의 value 제거</h3><p><img src="/images/20160919_websocket_error.png" alt="error1"></p>
+<h3 id="2-terminal상에서-무엇이-에러인지-모를때-gt-xcode에서-build후-error를-추출한다"><a href="#2-terminal상에서-무엇이-에러인지-모를때-gt-xcode에서-build후-error를-추출한다" class="headerlink" title="2. terminal상에서 무엇이 에러인지 모를때 =&gt; xcode에서 build후 error를 추출한다."></a>2. terminal상에서 무엇이 에러인지 모를때 =&gt; xcode에서 build후 error를 추출한다.</h3><h3 id="3-xcode를-build할때-gt-흰색으로-열어라"><a href="#3-xcode를-build할때-gt-흰색으로-열어라" class="headerlink" title="3. xcode를 build할때 =&gt; 흰색으로 열어라"></a>3. xcode를 build할때 =&gt; 흰색으로 열어라</h3><h3 id="4-linker-library지원-7-0버전-설정을-로컬에-맞는-9-1로-변환"><a href="#4-linker-library지원-7-0버전-설정을-로컬에-맞는-9-1로-변환" class="headerlink" title="4. linker library지원 (7.0버전 설정을 로컬에 맞는 9.1로 변환)"></a>4. linker library지원 (7.0버전 설정을 로컬에 맞는 9.1로 변환)</h3><p><img src="/images/20160919_linker_error.png" alt="error2"></p>
+<h3 id="5-suitable-library-오류-gt-시뮬레이터를-ios10-에서-ios9로-실행을-바꿈-없으면-새로-다운받아야함"><a href="#5-suitable-library-오류-gt-시뮬레이터를-ios10-에서-ios9로-실행을-바꿈-없으면-새로-다운받아야함" class="headerlink" title="5. suitable library 오류 =&gt; 시뮬레이터를 ios10 에서 ios9로 실행을 바꿈(없으면 새로 다운받아야함)"></a>5. suitable library 오류 =&gt; 시뮬레이터를 ios10 에서 ios9로 실행을 바꿈(없으면 새로 다운받아야함)</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">dyld: Library not loaded: @rpath/libFirestack.a</div><div class="line">  Referenced from: /Users/tech-camp-064/Library/Developer/CoreSimulator/Devices/3692613C-5EBB-4BAD-9496-C336B2629BC8/data/Containers/Bundle/Application/D73B751F-39B9-4230-818A-C7C5BF5B7C66/SchoolShare.app/SchoolShare</div><div class="line">  Reason: no suitable image found.  </div><div class="line"></div><div class="line">  Did find:</div><div class="line">    /Users/tech-camp-064/Library/Developer/Xcode/DerivedData/SchoolShare-dlacbtwbdazihdgkeyjricajfoer/Build/Products/Debug-iphonesimulator/libFirestack.a: required code signature missing for &apos;/Users/tech-camp-064/Library/Developer/Xcode/DerivedData/SchoolShare-dlacbtwbdazihdgkeyjricajfoer/Build/Products/Debug-iphonesimulator/libFirestack.a&apos;</div><div class="line"></div><div class="line">(lldb)</div></pre></td></tr></table></figure>
+<p><img src="/images/20160919_simulator_error.png" alt="error3"></p>
+<h3 id="6-무슨-이유인지-모르겠지만-npm-install을-해도-존재하지-않다고-하면-그것은-수동으로-npm-i-해줘야-한다"><a href="#6-무슨-이유인지-모르겠지만-npm-install을-해도-존재하지-않다고-하면-그것은-수동으로-npm-i-해줘야-한다" class="headerlink" title="6. 무슨 이유인지 모르겠지만 npm install을 해도 존재하지 않다고 하면 그것은 수동으로 npm i 해줘야 한다"></a>6. 무슨 이유인지 모르겠지만 npm install을 해도 존재하지 않다고 하면 그것은 수동으로 npm i 해줘야 한다</h3><p><img src="/images/20160919_module_error2.png" alt="error4"></p>
+<p>이와같은 방식으로 해결했다.</p>
+<h2 id="교훈"><a href="#교훈" class="headerlink" title="교훈"></a>교훈</h2><ul>
+<li><p>xcode업데이트는 팀원과 협의하에 행해야 한다.</p>
+</li>
+<li><p>terminal상에서 error의 내용을 잘 확인할 수 없을때에는 xcode에서 build하면 단서를 얻을 수 있다.</p>
+</li>
+<li><p>xcode를 틈틈이 공부할 수 있으면 참 좋을것 같다.</p>
+</li>
+</ul>
+<p>그래도 오늘도 굴복하지 말고 Happy Coding!</p>
+
+        </div>
+        <footer class="article-footer">
+            
+
+
+
+    <a data-url="https://voidsatisfaction.github.io/2016/09/19/2016-9-19-a-rnerrors/" data-id="ciuj4uguq0015bysdk47o8oe7" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+<script>
+    (function ($) {
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+        </footer>
+    </div>
+</article>
+
+    <section id="comments">
+    
+        
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
+    
+    </section>
+
+                        </div>
+                    </section>
+                    <aside id="sidebar">
+    <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
+    <div class="sidebar-top">
+        <p>follow:</p>
+        <ul class="social-links">
+            
+                
+                <li>
+                    <a class="social-tooltip" title="facebook" href="https://www.facebook.com/yeon.gyumin" target="_blank">
+                        <i class="icon fa fa-facebook"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="github" href="https://github.com/voidsatisfaction" target="_blank">
+                        <i class="icon fa fa-github"></i>
+                    </a>
+                </li>
+                
+            
+        </ul>
+    </div>
+    <div class="github-card" data-github="voidSatisfaction" data-height="" data-theme="default"></div>
+    <script src="//cdn.jsdelivr.net/github-cards/latest/widget.js"></script>
+    
+        
+<nav id="article-nav">
+    
+        <a href="/2016/09/23/2016-9-23-a-1:100/" id="article-nav-newer" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">newer</strong>
+        <p class="article-nav-title">
+        
+            기여도 1%의 의미
+        
+        </p>
+        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
+    </a>
+    
+    
+        <a href="/2016/09/09/2016-9-09-a-gitandmygit/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">older</strong>
+        <p class="article-nav-title">오늘 또 느낀 것들...</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
+    
+    <div class="widgets-container">
+        
+            
+                
+    <div class="widget-wrap">
+        <h3 class="widget-title">recents</h3>
+        <div class="widget">
+            <ul id="recent-post" class="no-thumbnail">
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/JavaScript/">JavaScript</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/JavaScript/ECMA-Script6/">ECMA Script6</a></p>
+                            <p class="item-title"><a href="/2016/10/21/so-hard-javascript-class/" class="title">너무 헷갈리는 자바스크립트 Class개념</a></p>
+                            <p class="item-date"><time datetime="2016-10-21T01:11:37.000Z" itemprop="datePublished">2016-10-21</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/교육/">교육</a></p>
+                            <p class="item-title"><a href="/2016/10/14/good-site-for-javascript-study/" class="title">자바스크립트 공부에 도움이 되는 사이트</a></p>
+                            <p class="item-date"><time datetime="2016-10-14T06:56:24.000Z" itemprop="datePublished">2016-10-14</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/JavaScript/">JavaScript</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/JavaScript/React-Native/">React Native</a></p>
+                            <p class="item-title"><a href="/2016/10/14/javascript-study-and-react-native-function-method/" class="title">React Native의 원리 및 JavaScript의 함수</a></p>
+                            <p class="item-date"><time datetime="2016-10-14T02:26:21.000Z" itemprop="datePublished">2016-10-14</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Ruby/">Ruby</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Ruby/Project-Euler/">Project Euler</a></p>
+                            <p class="item-title"><a href="/2016/10/07/project-euler-134-solution/" class="title">Project Euler 134</a></p>
+                            <p class="item-date"><time datetime="2016-10-06T16:55:01.000Z" itemprop="datePublished">2016-10-07</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/세상-사는-이야기/">세상 사는 이야기</a></p>
+                            <p class="item-title"><a href="/2016/10/06/lesson-from-teacher-with-errors/" class="title">MECE하게 &#39;생각&#39;하라.</a></p>
+                            <p class="item-date"><time datetime="2016-10-05T16:15:38.000Z" itemprop="datePublished">2016-10-06</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">categories</h3>
+        <div class="widget">
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/JavaScript/">JavaScript</a><span class="category-list-count">12</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/JavaScript/ECMA-Script6/">ECMA Script6</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/JavaScript/Nodejs/">Nodejs</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/JavaScript/React-Native/">React Native</a><span class="category-list-count">5</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Ruby/">Ruby</a><span class="category-list-count">6</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Ruby/Project-Euler/">Project Euler</a><span class="category-list-count">5</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Scheme/">Scheme</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Scheme/Schemer-series/">Schemer series</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Utils/">Utils</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Utils/Git-GitHub/">Git/GitHub</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/교육/">교육</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/세상-사는-이야기/">세상 사는 이야기</a><span class="category-list-count">8</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">archives</h3>
+        <div class="widget">
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">October 2016</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/09/">September 2016</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">August 2016</a><span class="archive-list-count">13</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-float">
+        <h3 class="widget-title">tag cloud</h3>
+        <div class="widget tagcloud">
+            <a href="/tags/GitHub/" style="font-size: 10px;">GitHub</a> <a href="/tags/Grammar/" style="font-size: 10px;">Grammar</a> <a href="/tags/JavaScript/" style="font-size: 20px;">JavaScript</a> <a href="/tags/Nodejs/" style="font-size: 12.86px;">Nodejs</a> <a href="/tags/Project-Euler/" style="font-size: 15.71px;">Project Euler</a> <a href="/tags/React-Native/" style="font-size: 17.14px;">React Native</a> <a href="/tags/Redux/" style="font-size: 11.43px;">Redux</a> <a href="/tags/Ruby/" style="font-size: 17.14px;">Ruby</a> <a href="/tags/Scheme/" style="font-size: 10px;">Scheme</a> <a href="/tags/Socket-io/" style="font-size: 10px;">Socket.io</a> <a href="/tags/객체지향/" style="font-size: 10px;">객체지향</a> <a href="/tags/불교/" style="font-size: 10px;">불교</a> <a href="/tags/세상-사는-이야기/" style="font-size: 18.57px;">세상 사는 이야기</a> <a href="/tags/알고리즘/" style="font-size: 10px;">알고리즘</a> <a href="/tags/프로그래밍/" style="font-size: 14.29px;">프로그래밍</a> <a href="/tags/프로그래밍-교육/" style="font-size: 10px;">프로그래밍 교육</a>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">links</h3>
+        <div class="widget">
+            <ul>
+                
+                    <li>
+                        <a href="http://hexo.io">Hexo</a>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+
+            
+        
+    </div>
+</aside>
+
+                </div>
+            </div>
+        </div>
+        <footer id="footer">
+    <div class="container">
+        <div class="container-inner">
+            <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
+            <div class="credit">
+                <h1 class="logo-wrap">
+                    <a href="/" class="logo"></a>
+                </h1>
+                <p>&copy; 2016 텅 빈 충만(voidSatisfaction)</p>
+                <p>Powered by <a href="//hexo.io/" target="_blank">Hexo</a>. Theme by <a href="//github.com/ppoffice" target="_blank">PPOffice</a></p>
+            </div>
+        </div>
+    </div>
+</footer>
+        
+    
+    <script>
+    var disqus_shortname = 'voidsatisfaction';
+    
+    
+    var disqus_url = 'https://voidsatisfaction.github.io/2016/09/19/2016-9-19-a-rnerrors/';
+    
+    (function() {
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+
+
+
+    
+        <script src="/vendor/lightgallery/js/lightgallery.min.js"></script>
+        <script src="/vendor/lightgallery/js/lg-thumbnail.min.js"></script>
+        <script src="/vendor/lightgallery/js/lg-pager.min.js"></script>
+        <script src="/vendor/lightgallery/js/lg-autoplay.min.js"></script>
+        <script src="/vendor/lightgallery/js/lg-fullscreen.min.js"></script>
+        <script src="/vendor/lightgallery/js/lg-zoom.min.js"></script>
+        <script src="/vendor/lightgallery/js/lg-hash.min.js"></script>
+        <script src="/vendor/lightgallery/js/lg-share.min.js"></script>
+        <script src="/vendor/lightgallery/js/lg-video.min.js"></script>
+    
+
+
+<!-- Custom Scripts -->
+<script src="/js/main.js"></script>
+
+    </div>
+</body>
+</html>

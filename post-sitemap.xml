@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type="text/xsl" href="sitemap.xsl"?>
+<urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <url>
+        <loc>https://voidsatisfaction.github.io</loc>
+        <changefreq>daily</changefreq>
+        <priority>1</priority>
+    </url>
+
+    <url>
+        <loc>https://voidsatisfaction.github.io/2016/10/21/so-hard-javascript-class/</loc>
+        <lastmod>2016-10-21T01:34:44.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://voidsatisfaction.github.io/2016/10/14/good-site-for-javascript-study/</loc>
+        <lastmod>2016-10-14T07:11:52.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://voidsatisfaction.github.io/2016/10/14/javascript-study-and-react-native-function-method/</loc>
+        <lastmod>2016-10-14T03:13:25.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://voidsatisfaction.github.io/2016/10/07/project-euler-134-solution/</loc>
+        <lastmod>2016-10-06T17:03:07.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://voidsatisfaction.github.io/2016/10/06/lesson-from-teacher-with-errors/</loc>
+        <lastmod>2016-10-06T04:58:42.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://voidsatisfaction.github.io/2016/10/04/project-euler-131/</loc>
+        <lastmod>2016-10-04T12:32:42.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://voidsatisfaction.github.io/2016/09/30/project-euler-123/</loc>
+        <lastmod>2016-09-30T04:15:12.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://voidsatisfaction.github.io/2016/09/29/projecteuler124/</loc>
+        <lastmod>2016-09-29T14:57:42.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://voidsatisfaction.github.io/2016/09/29/buddhism-and-programming/</loc>
+        <lastmod>2016-09-29T05:37:55.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://voidsatisfaction.github.io/2016/09/29/feynman-algoritm/</loc>
+        <lastmod>2016-09-29T05:29:04.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://voidsatisfaction.github.io/2016/09/27/redux-study2/</loc>
+        <lastmod>2016-09-27T10:25:38.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://voidsatisfaction.github.io/2016/09/27/redux-study1/</loc>
+        <lastmod>2016-09-27T08:39:38.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://voidsatisfaction.github.io/2016/09/23/2016-9-23-a-1:100/</loc>
+        <lastmod>2016-09-27T07:53:43.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://voidsatisfaction.github.io/2016/08/23/2016-8-23-a-nodestudy/</loc>
+        <lastmod>2016-09-27T01:42:34.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://voidsatisfaction.github.io/2016/09/27/2016-9-27-a-ProjectEuler/</loc>
+        <lastmod>2016-09-26T16:42:42.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://voidsatisfaction.github.io/2016/09/02/2016-9-02-a-thisapply/</loc>
+        <lastmod>2016-09-26T16:05:18.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://voidsatisfaction.github.io/2016/08/25/2016-8-25-a-cbcjcn/</loc>
+        <lastmod>2016-09-26T16:04:50.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://voidsatisfaction.github.io/2016/08/19/2016-8-19-b-graduate/</loc>
+        <lastmod>2016-09-26T15:59:10.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://voidsatisfaction.github.io/2016/09/09/2016-9-09-a-gitandmygit/</loc>
+        <lastmod>2016-09-26T15:57:24.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://voidsatisfaction.github.io/2016/08/18/2016-8-18-a-jekyllfound/</loc>
+        <lastmod>2016-09-26T15:53:58.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://voidsatisfaction.github.io/2016/08/25/3018-8-18-c-ProgrammingSite/</loc>
+        <lastmod>2016-09-26T15:49:40.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://voidsatisfaction.github.io/2016/09/19/2016-9-19-a-rnerrors/</loc>
+        <lastmod>2016-09-26T15:47:35.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://voidsatisfaction.github.io/2016/09/03/2016-9-03-b-securitysocketio/</loc>
+        <lastmod>2016-09-26T15:46:18.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://voidsatisfaction.github.io/2016/08/26/2016-8-26-a-giveItFiveMinutes/</loc>
+        <lastmod>2016-09-26T15:44:15.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://voidsatisfaction.github.io/2016/08/24/2016-8-24-b-rn/</loc>
+        <lastmod>2016-09-26T15:38:17.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://voidsatisfaction.github.io/2016/08/24/2016-8-24-a-nodestudy3/</loc>
+        <lastmod>2016-09-26T15:37:05.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://voidsatisfaction.github.io/2016/08/23/2016-8-23-c-nodestudy2/</loc>
+        <lastmod>2016-09-26T15:36:03.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://voidsatisfaction.github.io/2016/08/23/2016-8-23-b-schemestudy/</loc>
+        <lastmod>2016-09-26T15:34:04.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://voidsatisfaction.github.io/2016/08/21/2016-8-21-b-justbecause/</loc>
+        <lastmod>2016-09-26T15:31:06.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://voidsatisfaction.github.io/2016/08/21/2016-8-21-a-learning/</loc>
+        <lastmod>2016-09-26T15:30:34.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://voidsatisfaction.github.io/2016/08/19/2016-8-19-a-found/</loc>
+        <lastmod>2016-09-26T15:27:29.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+</urlset>
+<!-- XML Sitemap generated by Hexo SEO Friendly Sitemap Generator -->
