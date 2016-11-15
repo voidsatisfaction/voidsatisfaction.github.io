@@ -86,13 +86,6 @@
     </url>
 
     <url>
-        <loc>https://voidsatisfaction.github.io/tags/React-Native/</loc>
-        <lastmod>2016-10-14T03:13:25.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>https://voidsatisfaction.github.io/tags/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/</loc>
         <lastmod>2016-10-14T07:11:52.000Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -108,7 +101,14 @@
 
     <url>
         <loc>https://voidsatisfaction.github.io/tags/JavaScript/</loc>
-        <lastmod>2016-11-15T06:31:36.000Z</lastmod>
+        <lastmod>2016-11-15T07:56:37.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://voidsatisfaction.github.io/tags/React-Native/</loc>
+        <lastmod>2016-11-15T07:56:37.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
