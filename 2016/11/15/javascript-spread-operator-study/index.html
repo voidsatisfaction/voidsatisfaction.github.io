@@ -3,20 +3,59 @@
 <head>
     <meta charset="utf-8">
     
-    <title>Category: Utils | 텅 빈 충만의 블로그</title>
+    <title>JavaScript Spread Operator | 텅 빈 충만의 블로그</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
-    <meta name="description" content="세상을 살아가면서 깨닫는 것들">
-<meta property="og:type" content="website">
-<meta property="og:title" content="텅 빈 충만의 블로그">
-<meta property="og:url" content="https://voidsatisfaction.github.io/categories/Utils/index.html">
-<meta property="og:site_name" content="텅 빈 충만의 블로그">
-<meta property="og:description" content="세상을 살아가면서 깨닫는 것들">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="텅 빈 충만의 블로그">
-<meta name="twitter:description" content="세상을 살아가면서 깨닫는 것들">
+        <meta name="keywords" content="JavaScript" />
     
-    <link rel="canonical" href="https://voidsatisfaction.github.io/categories/Utils/"/>
+    <meta name="description" content="참조
+전개 연산자 - MDN
+
+Iteration protocols - MDN
+
+
+용도Point
+
+함수 호출 용 / 배열 리터럴 용 / 비구조화용
+더 나은 apply
+더 강력한 배열 리터럴
+
+구문12345678// 함수 호출 용myFunction(...iterableObj);// 배열 리터럴 용[...iterableObj, 4, 5, 6];// 비구조화(de">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JavaScript Spread Operator">
+<meta property="og:url" content="https://voidsatisfaction.github.io/2016/11/15/javascript-spread-operator-study/index.html">
+<meta property="og:site_name" content="텅 빈 충만의 블로그">
+<meta property="og:description" content="참조
+전개 연산자 - MDN
+
+Iteration protocols - MDN
+
+
+용도Point
+
+함수 호출 용 / 배열 리터럴 용 / 비구조화용
+더 나은 apply
+더 강력한 배열 리터럴
+
+구문12345678// 함수 호출 용myFunction(...iterableObj);// 배열 리터럴 용[...iterableObj, 4, 5, 6];// 비구조화(de">
+<meta property="og:updated_time" content="2016-11-15T06:31:36.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="JavaScript Spread Operator">
+<meta name="twitter:description" content="참조
+전개 연산자 - MDN
+
+Iteration protocols - MDN
+
+
+용도Point
+
+함수 호출 용 / 배열 리터럴 용 / 비구조화용
+더 나은 apply
+더 강력한 배열 리터럴
+
+구문12345678// 함수 호출 용myFunction(...iterableObj);// 배열 리터럴 용[...iterableObj, 4, 5, 6];// 비구조화(de">
+    
+    <link rel="canonical" href="https://voidsatisfaction.github.io/2016/11/15/javascript-spread-operator-study/"/>
 
     
 
@@ -129,59 +168,133 @@ ga('send', 'pageview');
                         <div class="main-body-header">
     <h1 class="header">
     
-    <i class="icon fa fa-folder-open"></i>Category: <em class="page-title-link">Utils</em>
+    <a class="page-title-link" href="/categories/JavaScript/">JavaScript</a>
     </h1>
 </div>
                         <div class="main-body-content">
-                            
-
-    
-    
+                            <article id="post-javascript-spread-operator-study" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
         
-        
-        <section class="archives-wrap">
-            <div class="archive-year-wrap">
-                <a href="/archives/2016" class="archive-year"><i class="icon fa fa-calendar-o"></i>2016</a>
-            </div>
-            <div class="archives">
-    
-    
-    
-        <div class="article-row">
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <div class="article-meta">
-            <p class="category">
-            <a class="article-category-link" href="/categories/Utils/">Utils</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Utils/Git-GitHub/">Git/GitHub</a>
-            </p>
-            <p class="date"><time datetime="2016-08-19T12:52:00.000Z" itemprop="datePublished">2016-08-19</time></p>
-        </div>
-        
+            <header class="article-header">
+                
     
         <h1 class="article-title" itemprop="name">
-        <a href="/2016/08/19/2016-8-19-a-found/">Local Git에서 Git Hub로 push할 경우 permission deny문제</a>
+        JavaScript Spread Operator
         </h1>
     
 
-        <p class="article-excerpt">
-            배경Jekyll을 로컬에서 수정하고 싶어서 Github의 repository와의 연동을 시도했으나, 다음과 같은 에러 메세지가 떴다.
+            </header>
+        
+        
+            <div class="article-subtitle">
+                <a href="/2016/11/15/javascript-spread-operator-study/" class="article-date">
+    <time datetime="2016-11-15T05:21:56.000Z" itemprop="datePublished">2016-11-15</time>
+</a>
+                
+    <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
 
-포인트Local에 저장되어있는 Keychain에서, Github.com의 account와 password를 현재 사용하는 깃허브의 계정으로 변환
-과정123451) Mac에서 Keychain이라는 어플리케이션을 연다.2) g
-        </p>
+            </div>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+            <h2 id="참조"><a href="#참조" class="headerlink" title="참조"></a>참조</h2><ul>
+<li><p><a href="https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Operators/Spread_operator" target="_blank" rel="external">전개 연산자 - MDN</a></p>
+</li>
+<li><p><a href="https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Iteration_protocols" target="_blank" rel="external">Iteration protocols - MDN</a></p>
+</li>
+</ul>
+<h2 id="용도"><a href="#용도" class="headerlink" title="용도"></a>용도</h2><p><strong>Point</strong></p>
+<ol>
+<li>함수 호출 용 / 배열 리터럴 용 / 비구조화용</li>
+<li>더 나은 apply</li>
+<li>더 강력한 배열 리터럴</li>
+</ol>
+<h3 id="구문"><a href="#구문" class="headerlink" title="구문"></a>구문</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 함수 호출 용</span></div><div class="line">myFunction(...iterableObj);</div><div class="line"></div><div class="line"><span class="comment">// 배열 리터럴 용</span></div><div class="line">[...iterableObj, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>];</div><div class="line"></div><div class="line"><span class="comment">// 비구조화(destructuring) 용</span></div><div class="line">[a, b, ...iterableObj] = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>];</div></pre></td></tr></table></figure>
+<h3 id="더-나은-apply"><a href="#더-나은-apply" class="headerlink" title="더 나은 apply"></a>더 나은 apply</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">myFunction</span>(<span class="params">x, y, z</span>) </span>&#123; &#125;</div><div class="line"><span class="keyword">var</span> args = [<span class="number">0</span>, <span class="number">1</span>, <span class="number">2</span>];</div><div class="line">myFunction.apply(<span class="literal">null</span>, args);</div><div class="line"></div><div class="line"><span class="comment">// 이는 다음과 같다.</span></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">myFunction</span>(<span class="params">x, y, z</span>) </span>&#123; &#125;</div><div class="line"><span class="keyword">var</span> args = [<span class="number">0</span>, <span class="number">1</span>, <span class="number">2</span>];</div><div class="line">myFunction(...args);</div><div class="line"></div><div class="line"><span class="comment">// 이런 식의 사용도 가능하다.</span></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">myFunction</span>(<span class="params">v, w, x, y, z</span>) </span>&#123; &#125;</div><div class="line"><span class="keyword">var</span> args = [<span class="number">0</span>, <span class="number">1</span>];</div><div class="line">myFunction(<span class="number">-1</span>, ...args, <span class="number">2</span>, ...[<span class="number">3</span>]);</div></pre></td></tr></table></figure>
+<h3 id="더-강력한-배열-리터럴"><a href="#더-강력한-배열-리터럴" class="headerlink" title="더 강력한 배열 리터럴"></a>더 강력한 배열 리터럴</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="keyword">var</span> parts = [<span class="string">'shoulders'</span>, <span class="string">'knees'</span>];</div><div class="line"><span class="keyword">var</span> lyrics = [<span class="string">'head'</span>, ...parts, <span class="string">'and'</span>, <span class="string">'toes'</span>]; </div><div class="line"><span class="comment">// ["head", "shoulders", "knees", "and", "toes"]</span></div></pre></td></tr></table></figure>
+<h3 id="new에-적용"><a href="#new에-적용" class="headerlink" title="new에 적용"></a>new에 적용</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="keyword">var</span> dateFields = readDateFields(database);</div><div class="line"><span class="keyword">var</span> d = <span class="keyword">new</span> <span class="built_in">Date</span>(...dateFields);</div></pre></td></tr></table></figure>
+<h3 id="더-나은-push"><a href="#더-나은-push" class="headerlink" title="더 나은 push"></a>더 나은 push</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="keyword">var</span> arr1 = [<span class="number">0</span>, <span class="number">1</span>, <span class="number">2</span>];</div><div class="line"><span class="keyword">var</span> arr2 = [<span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>];</div><div class="line"><span class="comment">// arr1에 arr2의 모든 항목을 덧붙임</span></div><div class="line"><span class="built_in">Array</span>.prototype.push.apply(arr1, arr2);</div><div class="line"></div><div class="line"><span class="comment">// 이는 다음과 같이 치환될 수 있음.</span></div><div class="line"><span class="keyword">var</span> arr1 = [<span class="number">0</span>, <span class="number">1</span>, <span class="number">2</span>];</div><div class="line"><span class="keyword">var</span> arr2 = [<span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>];</div><div class="line">arr1.push(...arr2);</div></pre></td></tr></table></figure>
+<h3 id="iterable에만-적용"><a href="#iterable에만-적용" class="headerlink" title="iterable에만 적용"></a>iterable에만 적용</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="keyword">var</span> obj = &#123;<span class="string">"key1"</span>:<span class="string">"value1"</span>&#125;;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">myFunction</span>(<span class="params">x</span>) </span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(x); <span class="comment">// undefined</span></div><div class="line">&#125;</div><div class="line">myFunction(...obj);</div><div class="line"><span class="keyword">var</span> args = [...obj];</div><div class="line"><span class="built_in">console</span>.log(args, args.length) <span class="comment">//[] 0</span></div></pre></td></tr></table></figure>
+
+        </div>
+        <footer class="article-footer">
+            
+
+
+
+    <a data-url="https://voidsatisfaction.github.io/2016/11/15/javascript-spread-operator-study/" data-id="civj4fwq9001kdxsd2ub17f9s" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+<script>
+    (function ($) {
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+        </footer>
     </div>
 </article>
+
+    <section id="comments">
     
-        </div>
+        
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
     
-
-
-    </div></section>
-
-
-
+    </section>
 
                         </div>
                     </section>
@@ -211,6 +324,19 @@ ga('send', 'pageview');
     </div>
     <div class="github-card" data-github="voidSatisfaction" data-height="" data-theme="default"></div>
     <script src="//cdn.jsdelivr.net/github-cards/latest/widget.js"></script>
+    
+        
+<nav id="article-nav">
+    
+    
+        <a href="/2016/10/21/so-hard-javascript-class/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">older</strong>
+        <p class="article-nav-title">너무 헷갈리는 자바스크립트 Class개념</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
     
     <div class="widgets-container">
         
@@ -344,11 +470,13 @@ ga('send', 'pageview');
     var disqus_shortname = 'voidsatisfaction';
     
     
+    var disqus_url = 'https://voidsatisfaction.github.io/2016/11/15/javascript-spread-operator-study/';
+    
     (function() {
     var dsq = document.createElement('script');
     dsq.type = 'text/javascript';
     dsq.async = true;
-    dsq.src = '//' + disqus_shortname + '.disqus.com/count.js';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
     (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
     })();
     </script>
