@@ -5,7 +5,7 @@
   <link href="/feed.xml" rel="self"/>
   
   <link href="https://voidsatisfaction.github.io/"/>
-  <updated>2016-11-16T06:31:43.000Z</updated>
+  <updated>2016-11-16T11:26:37.000Z</updated>
   <id>https://voidsatisfaction.github.io/</id>
   
   <author>
@@ -14,6 +14,81 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>My Todo list (2016.11.16)</title>
+    <link href="https://voidsatisfaction.github.io/2016/11/16/check-read-todo/"/>
+    <id>https://voidsatisfaction.github.io/2016/11/16/check-read-todo/</id>
+    <published>2016-11-16T11:16:32.000Z</published>
+    <updated>2016-11-16T11:26:37.000Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="JavaScript-기술-훑어보기"><a href="#JavaScript-기술-훑어보기" class="headerlink" title="JavaScript 기술 훑어보기"></a>JavaScript 기술 훑어보기</h2><ul>
+<li><p><a href="http://vuejs.org/v2/guide/" target="_blank" rel="external">Vue.js</a></p>
+</li>
+<li><p><a href="https://zeit.co/blog/next" target="_blank" rel="external">Next.js</a></p>
+</li>
+<li><p><a href="http://phantomjs.org/release-2.1.html" target="_blank" rel="external">Phantom.js</a></p>
+</li>
+<li><p><a href="http://momentjs.com/" target="_blank" rel="external">Moment.js</a></p>
+</li>
+<li><p><a href="https://github.com/skellock/apisauce" target="_blank" rel="external">apisauce</a></p>
+</li>
+</ul>
+<h2 id="JavaScript-지식"><a href="#JavaScript-지식" class="headerlink" title="JavaScript 지식"></a>JavaScript 지식</h2><ul>
+<li><p>Nodejs</p>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Node.js" target="_blank" rel="external">Node.js - Wikipedia</a></li>
+</ul>
+</li>
+<li><p>Nodejs eventloop</p>
+<ul>
+<li><p><a href="https://www.youtube.com/watch?v=8aGhZQkoFbQ" target="_blank" rel="external">What the hexk is the event loop anyway? - youtube</a></p>
+</li>
+<li><p><a href="http://stackoverflow.com/questions/21596172/what-function-gets-put-into-eventloop-in-nodejs-and-js" target="_blank" rel="external">eventloop? - stack overflow</a></p>
+</li>
+</ul>
+</li>
+<li><p>Asynchronous programming on Nodejs</p>
+<ul>
+<li><p><a href="https://mostafa-samir.github.io/async-iterative-patterns-pt1/" target="_blank" rel="external">Asynchronous Iterative &amp; Recursive Patterns for Node.js</a></p>
+</li>
+<li><p><a href="http://programmingsummaries.tistory.com/325" target="_blank" rel="external">[JavaScript]바보들을 위한 Promise 강의</a></p>
+</li>
+<li><p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/then" target="_blank" rel="external">Promise.prototype.then</a></p>
+</li>
+</ul>
+</li>
+<li><p>Nodejs slack bot</p>
+<ul>
+<li><a href="http://mechanic.pilotz.jp/2015/05/node-js-slack-bot/" target="_blank" rel="external">Node.jsでSlack botを作る</a></li>
+</ul>
+</li>
+</ul>
+<h2 id="인턴"><a href="#인턴" class="headerlink" title="인턴"></a>인턴</h2><ul>
+<li><p><a href="https://job.rikunabi.com/2018/search/pre/internship/result/?mainsub=0&amp;bcd=85&amp;bcd=86&amp;bcd=88&amp;bcd=87&amp;span=23&amp;span=24&amp;span=25&amp;span=4&amp;pay=1" target="_blank" rel="external">リクナビ</a></p>
+</li>
+<li><p><a href="https://www.in-fra.jp/intern-list?occupation%5B%5D=1&amp;area%5B%5D=6&amp;free_word=" target="_blank" rel="external">Infra</a></p>
+</li>
+<li><p><a href="https://job.mynavi.jp/18/pc/toppage/displayTopPage/index" target="_blank" rel="external">mynavi</a></p>
+</li>
+<li><p><a href="https://careerbaito.com/corporation/search/9" target="_blank" rel="external">キャリアバイト</a></p>
+</li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;JavaScript-기술-훑어보기&quot;&gt;&lt;a href=&quot;#JavaScript-기술-훑어보기&quot; class=&quot;headerlink&quot; title=&quot;JavaScript 기술 훑어보기&quot;&gt;&lt;/a&gt;JavaScript 기술 훑어보기&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;
+    
+    </summary>
+    
+      <category term="Todo" scheme="https://voidsatisfaction.github.io/categories/Todo/"/>
+    
+    
+      <category term="Todo" scheme="https://voidsatisfaction.github.io/tags/Todo/"/>
+    
+  </entry>
   
   <entry>
     <title>2016년에 자바스크립트를 배우는 기분(스크랩)</title>
@@ -1547,6 +1622,31 @@
   </entry>
   
   <entry>
+    <title>프로그래밍 공부에 도움이 되는 사이트</title>
+    <link href="https://voidsatisfaction.github.io/2016/08/25/3018-8-18-c-ProgrammingSite/"/>
+    <id>https://voidsatisfaction.github.io/2016/08/25/3018-8-18-c-ProgrammingSite/</id>
+    <published>2016-08-25T02:52:00.000Z</published>
+    <updated>2016-11-16T04:38:16.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>프로그래밍(주로 웹) 공부에 도움이 되는 사이트를 모아보았습니다.</p>
+<h1 id="웹-기초"><a href="#웹-기초" class="headerlink" title="웹 기초"></a>웹 기초</h1><p>웹의 기초적인 부분을 배울 수 있는 사이트들 입니다.</p>
+<h3 id="생활코딩"><a href="#생활코딩" class="headerlink" title="생활코딩"></a><a href="https://opentutorials.org/course/1" target="_blank" rel="external">생활코딩</a></h3><h3 id="Codelion"><a href="#Codelion" class="headerlink" title="Codelion"></a><a href="http://codelion.net/" target="_blank" rel="external">Codelion</a></h3><h3 id="멋쟁이-사자처럼"><a href="#멋쟁이-사자처럼" class="headerlink" title="멋쟁이 사자처럼"></a><a href="http://www.likelion.net/" target="_blank" rel="external">멋쟁이 사자처럼</a></h3><h3 id="Codecademy"><a href="#Codecademy" class="headerlink" title="Codecademy"></a><a href="https://www.codecademy.com/" target="_blank" rel="external">Codecademy</a></h3><h3 id="Css-레이아웃을-배웁시다"><a href="#Css-레이아웃을-배웁시다" class="headerlink" title="Css 레이아웃을 배웁시다"></a><a href="http://ko.learnlayout.com/" target="_blank" rel="external">Css 레이아웃을 배웁시다</a></h3><h1 id="웹-기본"><a href="#웹-기본" class="headerlink" title="웹 기본"></a>웹 기본</h1><h3 id="Node-School"><a href="#Node-School" class="headerlink" title="Node School"></a><a href="http://nodeschool.io/" target="_blank" rel="external">Node School</a></h3><h1 id="알고리즘"><a href="#알고리즘" class="headerlink" title="알고리즘"></a>알고리즘</h1><h3 id="Euler-Project-오일러-프로젝트-한글"><a href="#Euler-Project-오일러-프로젝트-한글" class="headerlink" title="Euler Project(오일러 프로젝트 한글)"></a><a href="http://euler.synap.co.kr/" target="_blank" rel="external">Euler Project(오일러 프로젝트 한글)</a></h3><h3 id="Euler-Project-영문"><a href="#Euler-Project-영문" class="headerlink" title="Euler Project(영문)"></a><a href="https://projecteuler.net/" target="_blank" rel="external">Euler Project(영문)</a></h3><h3 id="Google-codejam"><a href="#Google-codejam" class="headerlink" title="Google codejam"></a><a href="https://code.google.com/codejam/" target="_blank" rel="external">Google codejam</a></h3><h3 id="Top-Coder"><a href="#Top-Coder" class="headerlink" title="Top Coder"></a><a href="https://www.topcoder.com/" target="_blank" rel="external">Top Coder</a></h3><h1 id="해킹-보안"><a href="#해킹-보안" class="headerlink" title="해킹 / 보안"></a>해킹 / 보안</h1><h3 id="해커스쿨"><a href="#해커스쿨" class="headerlink" title="해커스쿨"></a><a href="http://www.hackerschool.org/Sub_Html/HS_Community/index.html" target="_blank" rel="external">해커스쿨</a></h3><h3 id="webhacking-kr"><a href="#webhacking-kr" class="headerlink" title="webhacking.kr"></a><a href="http://webhacking.kr/" target="_blank" rel="external">webhacking.kr</a></h3><h1 id="Tools"><a href="#Tools" class="headerlink" title="Tools"></a>Tools</h1><h3 id="GitHub-Git"><a href="#GitHub-Git" class="headerlink" title="GitHub / Git"></a><a href="https://github.com/" target="_blank" rel="external">GitHub / Git</a></h3><h3 id="Git간편-안내서"><a href="#Git간편-안내서" class="headerlink" title="Git간편 안내서"></a><a href="https://rogerdudler.github.io/git-guide/index.ko.html" target="_blank" rel="external">Git간편 안내서</a></h3><h3 id="Git-쉽게-따라-배우기"><a href="#Git-쉽게-따라-배우기" class="headerlink" title="Git 쉽게 따라 배우기"></a><a href="http://learngitbranching.js.org/" target="_blank" rel="external">Git 쉽게 따라 배우기</a></h3><h3 id="Vim-Adventure"><a href="#Vim-Adventure" class="headerlink" title="Vim Adventure"></a><a href="http://vim-adventures.com/" target="_blank" rel="external">Vim Adventure</a></h3><h1 id="좋은-블로그-팟캐스트"><a href="#좋은-블로그-팟캐스트" class="headerlink" title="좋은 블로그 / 팟캐스트"></a>좋은 블로그 / 팟캐스트</h1><h3 id="나는-프로그래머다"><a href="#나는-프로그래머다" class="headerlink" title="나는 프로그래머다"></a><a href="https://iamprogrammer.io/" target="_blank" rel="external">나는 프로그래머다</a></h3><h3 id="More-Agile-보다-나은-개발자가-되기-위하여"><a href="#More-Agile-보다-나은-개발자가-되기-위하여" class="headerlink" title="More Agile 보다 나은 개발자가 되기 위하여"></a><a href="http://www.moreagile.net/" target="_blank" rel="external">More Agile 보다 나은 개발자가 되기 위하여</a></h3><h3 id="쪼꼬니-님의-블로그-웹디자인에-참고-내용정리가-잘되어있음"><a href="#쪼꼬니-님의-블로그-웹디자인에-참고-내용정리가-잘되어있음" class="headerlink" title="쪼꼬니 님의 블로그(웹디자인에 참고. 내용정리가 잘되어있음)"></a><a href="http://elren.blog.me/220730606293" target="_blank" rel="external">쪼꼬니 님의 블로그(웹디자인에 참고. 내용정리가 잘되어있음)</a></h3><h1 id="기타"><a href="#기타" class="headerlink" title="기타"></a>기타</h1><h3 id="Google-Power-Search"><a href="#Google-Power-Search" class="headerlink" title="Google Power Search"></a><a href="http://www.powersearchingwithgoogle.com/" target="_blank" rel="external">Google Power Search</a></h3>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;프로그래밍(주로 웹) 공부에 도움이 되는 사이트를 모아보았습니다.&lt;/p&gt;
+&lt;h1 id=&quot;웹-기초&quot;&gt;&lt;a href=&quot;#웹-기초&quot; class=&quot;headerlink&quot; title=&quot;웹 기초&quot;&gt;&lt;/a&gt;웹 기초&lt;/h1&gt;&lt;p&gt;웹의 기초적인 부분을 배울 수 있
+    
+    </summary>
+    
+      <category term="교육" scheme="https://voidsatisfaction.github.io/categories/%EA%B5%90%EC%9C%A1/"/>
+    
+    
+      <category term="프로그래밍 교육" scheme="https://voidsatisfaction.github.io/tags/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D-%EA%B5%90%EC%9C%A1/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Callback / Clojure / Continuation</title>
     <link href="https://voidsatisfaction.github.io/2016/08/25/2016-8-25-a-cbcjcn/"/>
     <id>https://voidsatisfaction.github.io/2016/08/25/2016-8-25-a-cbcjcn/</id>
@@ -1609,31 +1709,6 @@
   </entry>
   
   <entry>
-    <title>프로그래밍 공부에 도움이 되는 사이트</title>
-    <link href="https://voidsatisfaction.github.io/2016/08/25/3018-8-18-c-ProgrammingSite/"/>
-    <id>https://voidsatisfaction.github.io/2016/08/25/3018-8-18-c-ProgrammingSite/</id>
-    <published>2016-08-25T02:52:00.000Z</published>
-    <updated>2016-11-16T04:38:16.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>프로그래밍(주로 웹) 공부에 도움이 되는 사이트를 모아보았습니다.</p>
-<h1 id="웹-기초"><a href="#웹-기초" class="headerlink" title="웹 기초"></a>웹 기초</h1><p>웹의 기초적인 부분을 배울 수 있는 사이트들 입니다.</p>
-<h3 id="생활코딩"><a href="#생활코딩" class="headerlink" title="생활코딩"></a><a href="https://opentutorials.org/course/1" target="_blank" rel="external">생활코딩</a></h3><h3 id="Codelion"><a href="#Codelion" class="headerlink" title="Codelion"></a><a href="http://codelion.net/" target="_blank" rel="external">Codelion</a></h3><h3 id="멋쟁이-사자처럼"><a href="#멋쟁이-사자처럼" class="headerlink" title="멋쟁이 사자처럼"></a><a href="http://www.likelion.net/" target="_blank" rel="external">멋쟁이 사자처럼</a></h3><h3 id="Codecademy"><a href="#Codecademy" class="headerlink" title="Codecademy"></a><a href="https://www.codecademy.com/" target="_blank" rel="external">Codecademy</a></h3><h3 id="Css-레이아웃을-배웁시다"><a href="#Css-레이아웃을-배웁시다" class="headerlink" title="Css 레이아웃을 배웁시다"></a><a href="http://ko.learnlayout.com/" target="_blank" rel="external">Css 레이아웃을 배웁시다</a></h3><h1 id="웹-기본"><a href="#웹-기본" class="headerlink" title="웹 기본"></a>웹 기본</h1><h3 id="Node-School"><a href="#Node-School" class="headerlink" title="Node School"></a><a href="http://nodeschool.io/" target="_blank" rel="external">Node School</a></h3><h1 id="알고리즘"><a href="#알고리즘" class="headerlink" title="알고리즘"></a>알고리즘</h1><h3 id="Euler-Project-오일러-프로젝트-한글"><a href="#Euler-Project-오일러-프로젝트-한글" class="headerlink" title="Euler Project(오일러 프로젝트 한글)"></a><a href="http://euler.synap.co.kr/" target="_blank" rel="external">Euler Project(오일러 프로젝트 한글)</a></h3><h3 id="Euler-Project-영문"><a href="#Euler-Project-영문" class="headerlink" title="Euler Project(영문)"></a><a href="https://projecteuler.net/" target="_blank" rel="external">Euler Project(영문)</a></h3><h3 id="Google-codejam"><a href="#Google-codejam" class="headerlink" title="Google codejam"></a><a href="https://code.google.com/codejam/" target="_blank" rel="external">Google codejam</a></h3><h3 id="Top-Coder"><a href="#Top-Coder" class="headerlink" title="Top Coder"></a><a href="https://www.topcoder.com/" target="_blank" rel="external">Top Coder</a></h3><h1 id="해킹-보안"><a href="#해킹-보안" class="headerlink" title="해킹 / 보안"></a>해킹 / 보안</h1><h3 id="해커스쿨"><a href="#해커스쿨" class="headerlink" title="해커스쿨"></a><a href="http://www.hackerschool.org/Sub_Html/HS_Community/index.html" target="_blank" rel="external">해커스쿨</a></h3><h3 id="webhacking-kr"><a href="#webhacking-kr" class="headerlink" title="webhacking.kr"></a><a href="http://webhacking.kr/" target="_blank" rel="external">webhacking.kr</a></h3><h1 id="Tools"><a href="#Tools" class="headerlink" title="Tools"></a>Tools</h1><h3 id="GitHub-Git"><a href="#GitHub-Git" class="headerlink" title="GitHub / Git"></a><a href="https://github.com/" target="_blank" rel="external">GitHub / Git</a></h3><h3 id="Git간편-안내서"><a href="#Git간편-안내서" class="headerlink" title="Git간편 안내서"></a><a href="https://rogerdudler.github.io/git-guide/index.ko.html" target="_blank" rel="external">Git간편 안내서</a></h3><h3 id="Git-쉽게-따라-배우기"><a href="#Git-쉽게-따라-배우기" class="headerlink" title="Git 쉽게 따라 배우기"></a><a href="http://learngitbranching.js.org/" target="_blank" rel="external">Git 쉽게 따라 배우기</a></h3><h3 id="Vim-Adventure"><a href="#Vim-Adventure" class="headerlink" title="Vim Adventure"></a><a href="http://vim-adventures.com/" target="_blank" rel="external">Vim Adventure</a></h3><h1 id="좋은-블로그-팟캐스트"><a href="#좋은-블로그-팟캐스트" class="headerlink" title="좋은 블로그 / 팟캐스트"></a>좋은 블로그 / 팟캐스트</h1><h3 id="나는-프로그래머다"><a href="#나는-프로그래머다" class="headerlink" title="나는 프로그래머다"></a><a href="https://iamprogrammer.io/" target="_blank" rel="external">나는 프로그래머다</a></h3><h3 id="More-Agile-보다-나은-개발자가-되기-위하여"><a href="#More-Agile-보다-나은-개발자가-되기-위하여" class="headerlink" title="More Agile 보다 나은 개발자가 되기 위하여"></a><a href="http://www.moreagile.net/" target="_blank" rel="external">More Agile 보다 나은 개발자가 되기 위하여</a></h3><h3 id="쪼꼬니-님의-블로그-웹디자인에-참고-내용정리가-잘되어있음"><a href="#쪼꼬니-님의-블로그-웹디자인에-참고-내용정리가-잘되어있음" class="headerlink" title="쪼꼬니 님의 블로그(웹디자인에 참고. 내용정리가 잘되어있음)"></a><a href="http://elren.blog.me/220730606293" target="_blank" rel="external">쪼꼬니 님의 블로그(웹디자인에 참고. 내용정리가 잘되어있음)</a></h3><h1 id="기타"><a href="#기타" class="headerlink" title="기타"></a>기타</h1><h3 id="Google-Power-Search"><a href="#Google-Power-Search" class="headerlink" title="Google Power Search"></a><a href="http://www.powersearchingwithgoogle.com/" target="_blank" rel="external">Google Power Search</a></h3>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;프로그래밍(주로 웹) 공부에 도움이 되는 사이트를 모아보았습니다.&lt;/p&gt;
-&lt;h1 id=&quot;웹-기초&quot;&gt;&lt;a href=&quot;#웹-기초&quot; class=&quot;headerlink&quot; title=&quot;웹 기초&quot;&gt;&lt;/a&gt;웹 기초&lt;/h1&gt;&lt;p&gt;웹의 기초적인 부분을 배울 수 있
-    
-    </summary>
-    
-      <category term="교육" scheme="https://voidsatisfaction.github.io/categories/%EA%B5%90%EC%9C%A1/"/>
-    
-    
-      <category term="프로그래밍 교육" scheme="https://voidsatisfaction.github.io/tags/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D-%EA%B5%90%EC%9C%A1/"/>
-    
-  </entry>
-  
-  <entry>
     <title>React Native 공부기 1 ~ bind</title>
     <link href="https://voidsatisfaction.github.io/2016/08/24/2016-8-24-b-rn/"/>
     <id>https://voidsatisfaction.github.io/2016/08/24/2016-8-24-b-rn/</id>
@@ -1641,9 +1716,9 @@
     <updated>2016-09-26T15:38:17.000Z</updated>
     
     <content type="html"><![CDATA[<h2 id="포인트"><a href="#포인트" class="headerlink" title="포인트"></a>포인트</h2><p><strong>bind는 this의 scope를 제어하기 위한 메소드이다.</strong></p>
-<h2 id="Real-code"><a href="#Real-code" class="headerlink" title="Real code"></a>Real code</h2><h3 id="Core-부분"><a href="#Core-부분" class="headerlink" title="Core 부분"></a>Core 부분</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="class"><span class="keyword">class</span> <span class="title">Stopwatch</span> <span class="keyword">extends</span> <span class="title">Component</span> </span>&#123;</div><div class="line">  componentWillMount() &#123;</div><div class="line">    <span class="keyword">this</span>.setState(&#123;</div><div class="line">      <span class="attr">mainTime</span>: <span class="number">0</span>,</div><div class="line">      <span class="attr">subTime</span>: <span class="number">0</span>,</div><div class="line">      <span class="attr">timerOn</span>: <span class="literal">false</span>,</div><div class="line">    &#125;)</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  render() &#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>.state)</div><div class="line">    <span class="keyword">return</span> (</div><div class="line">      &lt;View&gt;</div><div class="line">        &lt;Buttons</div><div class="line">          startTime=&#123;this._startTime&#125;</div><div class="line">          stopTime=&#123;this._stopTime&#125;</div><div class="line">          stopWatch=&#123;this&#125;/&gt;</div><div class="line">      &lt;/View&gt;</div><div class="line">    );</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  _startTime()&#123;</div><div class="line">    if (!this.state.timerOn)&#123;</div><div class="line">      var timer = setInterval(() =&gt; &#123;</div><div class="line">        let mainTime = this.state.mainTime</div><div class="line">        let subTime = this.state.subTime</div><div class="line"></div><div class="line">        this.setState(&#123;</div><div class="line">          mainTime: mainTime + 1,</div><div class="line">          subTime: subTime + 1,</div><div class="line">        &#125;)</div><div class="line">      &#125;, 100)</div><div class="line"></div><div class="line">      this.setState(&#123;</div><div class="line">        timer: timer,</div><div class="line">        timerOn: true,</div><div class="line">      &#125;)</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  _stopTime() &#123;</div><div class="line">    clearInterval(this.state.timer)</div><div class="line"></div><div class="line">    this.setState(&#123;</div><div class="line">      timerOn: false,</div><div class="line">    &#125;)</div><div class="line">  &#125;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="Real-code"><a href="#Real-code" class="headerlink" title="Real code"></a>Real code</h2><h3 id="Core-부분"><a href="#Core-부분" class="headerlink" title="Core 부분"></a>Core 부분</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="class"><span class="keyword">class</span> <span class="title">Stopwatch</span> <span class="keyword">extends</span> <span class="title">Component</span> </span>&#123;</div><div class="line">  componentWillMount() &#123;</div><div class="line">    <span class="keyword">this</span>.setState(&#123;</div><div class="line">      <span class="attr">mainTime</span>: <span class="number">0</span>,</div><div class="line">      <span class="attr">subTime</span>: <span class="number">0</span>,</div><div class="line">      <span class="attr">timerOn</span>: <span class="literal">false</span>,</div><div class="line">    &#125;)</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  render() &#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>.state)</div><div class="line">    <span class="keyword">return</span> (</div><div class="line">      <span class="xml"><span class="tag">&lt;<span class="name">View</span>&gt;</span></span></div><div class="line">        <span class="tag">&lt;<span class="name">Buttons</span></span></div><div class="line">          <span class="attr">startTime</span>=<span class="string">&#123;this._startTime&#125;</span></div><div class="line">          <span class="attr">stopTime</span>=<span class="string">&#123;this._stopTime&#125;</span></div><div class="line">          <span class="attr">stopWatch</span>=<span class="string">&#123;this&#125;/</span>&gt;</div><div class="line">      <span class="tag">&lt;/<span class="name">View</span>&gt;</span></div><div class="line">    );</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  _startTime()&#123;</div><div class="line">    if (!this.state.timerOn)&#123;</div><div class="line">      var timer = setInterval(() =&gt; &#123;</div><div class="line">        let mainTime = this.state.mainTime</div><div class="line">        let subTime = this.state.subTime</div><div class="line"></div><div class="line">        this.setState(&#123;</div><div class="line">          mainTime: mainTime + 1,</div><div class="line">          subTime: subTime + 1,</div><div class="line">        &#125;)</div><div class="line">      &#125;, 100)</div><div class="line"></div><div class="line">      this.setState(&#123;</div><div class="line">        timer: timer,</div><div class="line">        timerOn: true,</div><div class="line">      &#125;)</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  _stopTime() &#123;</div><div class="line">    clearInterval(this.state.timer)</div><div class="line"></div><div class="line">    this.setState(&#123;</div><div class="line">      timerOn: false,</div><div class="line">    &#125;)</div><div class="line">  &#125;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>위의 코드에서 주목할 부분은 Buttons라는 컴포넌트에 stopWatch={this}즉,<br>props를 이용하여 this 전체를 건네주고 있다는 점이다.</p>
-<h3 id="Buttons-컴포넌트"><a href="#Buttons-컴포넌트" class="headerlink" title="Buttons 컴포넌트"></a>Buttons 컴포넌트</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Buttons</span> <span class="keyword">extends</span> <span class="title">Component</span> </span>&#123;</div><div class="line">  render() &#123;</div><div class="line">    <span class="keyword">return</span> (</div><div class="line">      &lt;View style=&#123;day1Style.buttons&#125;&gt;</div><div class="line">        &lt;TouchableOpacity</div><div class="line">          style=&#123;day1Style.button&#125;</div><div class="line">          onPress=&#123;this.props.startTime.bind(this.props.stopWatch)&#125;&gt;</div><div class="line">          &lt;Text&gt;</div><div class="line">            start</div><div class="line">          &lt;/Text&gt;</div><div class="line">        &lt;/TouchableOpacity&gt;</div><div class="line">        &lt;TouchableOpacity</div><div class="line">          style=&#123;day1Style.button&#125;</div><div class="line">          onPress=&#123;this.props.stopTime.bind(this.props.stopWatch)&#125;&gt;</div><div class="line">          &lt;Text&gt;</div><div class="line">            End</div><div class="line">          &lt;/Text&gt;</div><div class="line">        &lt;/TouchableOpacity&gt;</div><div class="line">      &lt;/View&gt;</div><div class="line">    )</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="Buttons-컴포넌트"><a href="#Buttons-컴포넌트" class="headerlink" title="Buttons 컴포넌트"></a>Buttons 컴포넌트</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Buttons</span> <span class="keyword">extends</span> <span class="title">Component</span> </span>&#123;</div><div class="line">  render() &#123;</div><div class="line">    <span class="keyword">return</span> (</div><div class="line">      <span class="xml"><span class="tag">&lt;<span class="name">View</span> <span class="attr">style</span>=<span class="string">&#123;day1Style.buttons&#125;</span>&gt;</span></span></div><div class="line">        <span class="tag">&lt;<span class="name">TouchableOpacity</span></span></div><div class="line">          <span class="attr">style</span>=<span class="string">&#123;day1Style.button&#125;</span></div><div class="line">          <span class="attr">onPress</span>=<span class="string">&#123;this.props.startTime.bind(this.props.stopWatch)&#125;</span>&gt;</div><div class="line">          <span class="tag">&lt;<span class="name">Text</span>&gt;</span></div><div class="line">            start</div><div class="line">          <span class="tag">&lt;/<span class="name">Text</span>&gt;</span></div><div class="line">        <span class="tag">&lt;/<span class="name">TouchableOpacity</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">TouchableOpacity</span></span></div><div class="line">          <span class="attr">style</span>=<span class="string">&#123;day1Style.button&#125;</span></div><div class="line">          <span class="attr">onPress</span>=<span class="string">&#123;this.props.stopTime.bind(this.props.stopWatch)&#125;</span>&gt;</div><div class="line">          <span class="tag">&lt;<span class="name">Text</span>&gt;</span></div><div class="line">            End</div><div class="line">          <span class="tag">&lt;/<span class="name">Text</span>&gt;</span></div><div class="line">        <span class="tag">&lt;/<span class="name">TouchableOpacity</span>&gt;</span></div><div class="line">      <span class="tag">&lt;/<span class="name">View</span>&gt;</span></div><div class="line">    )</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>그리고 Buttons라는 component를 보면 TouchableOpacity의 onPress속성에서<br><code>this.props.startTime.bind(this.props.stopWatch)</code>로 되어있는것을 알 수 있다.</p>
 <p>여기서 왜 <code>bind(this.props.stopWatch)</code>를 해야만 하는가 하면<br>그냥 this.props.startTime을 실행해버리면<br><strong>startTime함수 안의 this가 Buttons의 this가 되어버리기 때문이다.</strong></p>
 <p>우리가 제어하고 싶은 state는 Stopwatch component에 존재하기 때문에<br>startTime함수의 this의 scope를 Stopwatch에 bind시켜줄 필요가 있다.</p>
