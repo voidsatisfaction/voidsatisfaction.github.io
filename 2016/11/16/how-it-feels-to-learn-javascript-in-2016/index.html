@@ -16,13 +16,11 @@
 <meta property="og:site_name" content="텅 빈 충만의 블로그">
 <meta property="og:description" content="출처How it feels to learn JavaScript in 2016 - 번역
 키워드내용How it feels to learn JavaScript in 20162016년에 자바스크립트를 배우는 기분   Edit: Thanks for pointing typos and mistakes, I’ll update the article as noted. Dis">
-<meta property="og:image" content="https://voidsatisfaction.github.io/images//blank.png?1331450797">
-<meta property="og:updated_time" content="2016-11-16T06:14:16.000Z">
+<meta property="og:updated_time" content="2016-11-16T06:31:43.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="2016년에 자바스크립트를 배우는 기분(스크랩)">
 <meta name="twitter:description" content="출처How it feels to learn JavaScript in 2016 - 번역
 키워드내용How it feels to learn JavaScript in 20162016년에 자바스크립트를 배우는 기분   Edit: Thanks for pointing typos and mistakes, I’ll update the article as noted. Dis">
-<meta name="twitter:image" content="https://voidsatisfaction.github.io/images//blank.png?1331450797">
     
     <link rel="canonical" href="https://voidsatisfaction.github.io/2016/11/16/how-it-feels-to-learn-javascript-in-2016/"/>
 
@@ -196,8 +194,8 @@ ga('send', 'pageview');
 <p>   Wait, what happened with the sixth?<br>   여섯 째한텐 도대체 뭔 일이 있었길래…</p>
 <p>   You mean ES6? Yeah, I mean, each edition is a superset of the previous one, so if you are using ES2016+, you are using all the features of the previous versions.<br>    ES6 말하는거임? ㅋㅋ 뭐 다 하위호환성을 가지고 있어서 ES2016+을 쓴다면 그 이전 버전의 기능 다 쓰고 있는 거라고 보면 됨.</p>
 <p>   Right. And why use ES2016+ over ES6 then?<br>   알았다… 그럼 ES6 말고 ES2016+는 왜 쓰는데?</p>
-<p>   Well, you COULD use ES6, but to use cool features like async and await, you need to use ES2016+. Otherwise you are stuck with ES6 generators with coroutines to block asynchronous calls for proper control flow.<br>    뭐… 굳이 원한다면 ES6 써도 돼. 근데 async랑 await 같이 멋진걸 쓰려면 ES2016+을 써야만 해. 아니면 ES6 제너레이터로 코루틴만 쓸 수 있을거야. 비동기 호출 흐름을 제어하려면 말이지.<br>   <div class="nIconWrap"><img src="/images//blank.png?1331450797" alt="note icon"></div></p>
-<pre><code>&lt;div class=&quot;aXNote&quot;&gt;Otherwise you are stuck with ES6 generators with coroutines to block asynchronous calls for proper control flow. 의 보다 정확한 번역이 필요합니다.&lt;/div&gt;
+<p>   Well, you COULD use ES6, but to use cool features like async and await, you need to use ES2016+. Otherwise you are stuck with ES6 generators with coroutines to block asynchronous calls for proper control flow.<br>    뭐… 굳이 원한다면 ES6 써도 돼. 근데 async랑 await 같이 멋진걸 쓰려면 ES2016+을 써야만 해. 아니면 ES6 제너레이터로 코루틴만 쓸 수 있을거야. 비동기 호출 흐름을 제어하려면 말이지.</p>
+<pre><code>&gt; Otherwise you are stuck with ES6 generators with coroutines to block asynchronous calls for proper control flow. 의 보다 정확한 번역이 필요합니다.
 </code></pre><p>   I have no idea what you just said, and all these names are confusing. Look, I’m just loading a bunch of data from a server, I used to be able to just include jQuery from a CDN and just get the data with AJAX calls, why can’t I just do that?<br>   … 뭐라고 하는지 하나도 모르겠는데. 이름도 헷갈리고. 난 그냥 서버에서 데이터 불러서 보여주고 싶은 건데. CDN에서 jQuery 받아서 걍 AJAX 콜 하려는거고. 이렇게 하면 왜 안 되는데?</p>
 <p>   It’s 2016 man, no one uses jQuery anymore, it ends up in a bunch of spaghetti code. Everyone knows that.<br>    2016년이잖아. 아무도 jQuery 같은 건 안 쓴다고. 그런거 썼다간 쓰레기 같은 스파게티 코드만 남아. 그것도 몰라?</p>
 <p>   Right. So my alternative is to load three libraries to fetch data and display a HTML table.<br>   후… 그럼 대안으로 세 가지 라이브러리를 로드하고, 데이터를 받아와서 화면에 HTML 테이블로 뿌리면 되나?</p>
@@ -256,8 +254,8 @@ ga('send', 'pageview');
 <p>   No one does at the beginning. Look, you just need to know that functional programming is better than OOP and that’s what we should be using in 2016.<br>    첨부터 다 알 필욘 없지. 자, 2016년은 역시 함수형 프로그래밍의 해니까 OOP는 집어치우자.</p>
 <p>   Wait, I learned OOP in college, I thought that was good?<br>   저기요, 나 대학에서 OOP만 배웠고 그거 괜찮았는데?</p>
 <p>   So was Java before being bought by Oracle. I mean, OOP was good back in the days, and it still has its uses today, but now everyone is realising modifying states is equivalent to kicking babies, so now everyone is moving to immutable objects and functional programming. Haskell guys had been calling it for years, -and don’t get me started with the Elm guys- but luckily in the web now we have libraries like Ramda that allow us to use functional programming in plain JavaScript.<br>   자바도 오라클에 팔려버리기 전까지는 그랬었지. 내가 진짜 말하고 싶었던 건 OOP가 옛날에 좋았고 요즘에도 쓰인다고 해봤자 ‘상태를 변경한다’는 게 아이를 발로 차는 것과 맞먹는 무시무시한 일이라는 걸 이제 다들 알게 됐다는 거야. 그러니까 다들 불변하는 오브젝트를 다루는 함수형 프로그래밍에 관심을 가지는거지. 솔직히 하스켈 진영에서 지난 몇 년 동안 노력해 온 결과라고 본다. 어, Elm은 언급하지도 말자. 아무튼 요샌 그냥 자바스크립트로도 함수형 프로그래밍을 할 수 있는 Ramda 같은 라이브러리가 있어서 다행이야.</p>
-<p>   Are you just dropping names for the sake of it? What the hell is Ramnda?<br>   너 걍 아무 이름이나 막 던지는 거 아냐? 아 진짜 Ramnda가 뭔데?<br>   <div class="nIconWrap"><img src="/images//blank.png?1331450797" alt="note icon"></div></p>
-<pre><code>&lt;div class=&quot;aXNote&quot;&gt;Are you just dropping names for the sake of it? 의 보다 정확한 번역을 제안해주세요.&lt;/div&gt;
+<p>   Are you just dropping names for the sake of it? What the hell is Ramnda?<br>   너 걍 아무 이름이나 막 던지는 거 아냐? 아 진짜 Ramnda가 뭔데?</p>
+<pre><code>&gt; Are you just dropping names for the sake of it? 의 보다 정확한 번역을 제안해주세요.
 </code></pre><p>   No. Ramda. Like Lambda. You know, that David Chambers’ library?<br>    아니. Ramda. Lambda 같은거. David Chamber 라이브러리 알지?</p>
 <p>   David who?<br>   David 뭐시기?</p>
 <p>   David Chambers. Cool guy. Plays a mean Coup game. One of the contributors for Ramda. You should also check Erik Meijer if you are serious about learning functional programming.<br>    David Chambers. 존잘러. Coup 게임을 즐기지. Ramda의 컨트리뷰터 중 한 명이야. 그리고 진지하게 함수형 프로그래밍을 공부할꺼라면 Erik Meijer 정도는 알아둬야지.</p>
@@ -276,11 +274,11 @@ ga('send', 'pageview');
 <p>   Oh, Ok. And this promise thing solves it?<br>   오. 그렇군. 그러면 promise가 그걸 해결해주고?</p>
 <p>   Indeed. By manipulating your callbacks through promises, you can write easier to understand code, mock and test them, as well as perform simultaneous requests at once and wait until all of them are loaded.<br>    당연하지. promise 써서 콜백을 다루면 코드 이해하기도 쉽고 목킹이나 테스트하기도 좋아. 게다가 동시 요청을 한 번에 수행해서 다 로드될 때까지 기다릴 수도 있고.</p>
 <p>   And that can be done with Fetch?<br>   Fetch가 그걸 다 해준다고?</p>
-<p>   Yes, but only if your user uses an evergreen browser, otherwise you need to include a Fetch polyfill or use Request, Bluebird or Axios.<br>    응. 근데 사용자가 에버그린 브라우저를 쓰지 않으면 Fetch polyfill을 넣어 주거나 Request나 Bluebird, Axios 같은 걸 써야할 수도 있어.<br>   <div class="nIconWrap"><img src="/images//blank.png?1331450797" alt="note icon"></div></p>
-<pre><code>&lt;div class=&quot;aXNote&quot;&gt;에버그린 브라우저: 크롬이나 파이어폭스처럼 항상 최신 버전을 유지하는 브라우저&lt;/div&gt;
+<p>   Yes, but only if your user uses an evergreen browser, otherwise you need to include a Fetch polyfill or use Request, Bluebird or Axios.<br>    응. 근데 사용자가 에버그린 브라우저를 쓰지 않으면 Fetch polyfill을 넣어 주거나 Request나 Bluebird, Axios 같은 걸 써야할 수도 있어.</p>
+<pre><code>&gt; 에버그린 브라우저: 크롬이나 파이어폭스처럼 항상 최신 버전을 유지하는 브라우저
 </code></pre><p>   How many libraries do I need to know for god’s sake? How many are of them?<br>   도대체 얼마나 많은 라이브러리를 알아야 하는거야? 얼마나 많은거냐고?</p>
-<p>   It’s JavaScript. There has to be thousands of libraries that all do the same thing. We know libraries, in fact, we have the best libraries. Our libraries are huuuge, and sometimes we include pictures of Guy Fieri in them.<br>    자바스크립트잖아. 똑같은 일을 하는 라이브러리들이 수천 수만 개나 있다고. 우린 라이브러리들을 알고 있지. 사실, 최고의 라이브러리들을 가지고 있어. 라이브러리들 사이에 Guy Fieri 사진을 끼워둘 만큼 거대하지.<br>   <div class="nIconWrap"><img src="/images//blank.png?1331450797" alt="note icon"></div></p>
-<pre><code>&lt;div class=&quot;aXNote&quot;&gt;역주) Guy Fieri, an American restaurateur, author, game show host, and television personality. : [https://en.wikipedia.org/wiki/Guy_Fieri](https://en.wikipedia.org/wiki/Guy_Fieri &quot;https://en.wikipedia.org/wiki/Guy_Fieri&quot;)&lt;/div&gt;
+<p>   It’s JavaScript. There has to be thousands of libraries that all do the same thing. We know libraries, in fact, we have the best libraries. Our libraries are huuuge, and sometimes we include pictures of Guy Fieri in them.<br>    자바스크립트잖아. 똑같은 일을 하는 라이브러리들이 수천 수만 개나 있다고. 우린 라이브러리들을 알고 있지. 사실, 최고의 라이브러리들을 가지고 있어. 라이브러리들 사이에 Guy Fieri 사진을 끼워둘 만큼 거대하지.</p>
+<pre><code>&gt; 역주) Guy Fieri, an American restaurateur, author, game show host, and television personality. : [https://en.wikipedia.org/wiki/Guy_Fieri](https://en.wikipedia.org/wiki/Guy_Fieri &quot;https://en.wikipedia.org/wiki/Guy_Fieri&quot;)
 </code></pre><p>   Did you just say Guy Fieri? Let’s get this over with. What these Bluebird, Request, Axios libraries do?<br>   방금 Guy Fieri라고 했어? 일단 좀 넘어가자. Bluebird, Request, Axios 라이브러리들이 하는 일이 뭐야?</p>
 <p>   They are libraries to perform XMLHttpRequests that return promises.<br>    XMLHttpRequest를 수행해서 promise를 반환하는 라이브러리들이야.</p>
 <p>   Didn’t jQuery’s AJAX method start to return promises as well?<br>   jQuery의 AJAX 메소드도 promise를 반환하게 되었지 않나?</p>
@@ -303,9 +301,11 @@ ga('send', 'pageview');
 <p>   I was just explaining what you could use.<br>    난 그냥 니가 하게 될 일을 설명한 것 뿐야.</p>
 <p>   Stop. Just stop.<br>   이제 그만하자.</p>
 <p>   I mean, even if it’s just using templating engine, I would still use a Typescript + SystemJS + Babel combo if I were you.<br>    내 말은, 그냥 템플릿 엔진을 쓰는 경우에 나라면 Typescript + SystemJS + Babel 콤보를 쓸거라고.</p>
-<p>   I need to display data on a page, not perform Sub Zero’s original MK fatality.Just tell me what templating engine to use and I’ll take it from there.<br>   난. 그냥. 데이터를. 페이지에. 보여주기만. 할 거라고. 모탈컴뱃에서 척추 뽑는 기술 같은 건 필요 없어. 템플릿 엔진 이름만 말해주면 그거 쓸 게.<br>   <div class="nIconWrap"><img src="/images//blank.png?1331450797" alt="note icon"></div></p>
-<pre><code>&lt;div class=&quot;aXNote&quot;&gt;Sub Zero&apos;s original MK fatality: [https://www.youtube.com/watch?v=g2JNxeWO_wA](https://www.youtube.com/watch?v=g2JNxeWO_wA &quot;https://www.youtube.com/watch?v=g2JNxeWO_wA&quot;) 영상을 참고하세요.&lt;/div&gt;
-</code></pre><p>   There’s a lot, which one you are familiar with?<br>    굉장히 많지. 넌 뭘 써 봤는데?</p>
+<p>   I need to display data on a page, not perform Sub Zero’s original MK fatality.Just tell me what templating engine to use and I’ll take it from there.<br>   난. 그냥. 데이터를. 페이지에. 보여주기만. 할 거라고. 모탈컴뱃에서 척추 뽑는 기술 같은 건 필요 없어. 템플릿 엔진 이름만 말해주면 그거 쓸 게.</p>
+<blockquote>
+<p>Sub Zero’s original MK fatality: <a href="https://www.youtube.com/watch?v=g2JNxeWO_wA" title="https://www.youtube.com/watch?v=g2JNxeWO_wA" target="_blank" rel="external">https://www.youtube.com/watch?v=g2JNxeWO_wA</a> 영상을 참고하세요.</p>
+</blockquote>
+<p>   There’s a lot, which one you are familiar with?<br>    굉장히 많지. 넌 뭘 써 봤는데?</p>
 <p>   Ugh, can’t remember the name. It was a long time ago.<br>   어… 생각이 잘 안 나. 너무 오래 전 일이라.</p>
 <p>   jTemplates? jQote? PURE?<br>    jTemplates? jQote? PURE?</p>
 <p>   Err, doesn’t ring a bell. Another one?<br>   음.. 아닐 걸? 다른 건 없어?</p>
@@ -356,7 +356,7 @@ ga('send', 'pageview');
 
 
 
-    <a data-url="https://voidsatisfaction.github.io/2016/11/16/how-it-feels-to-learn-javascript-in-2016/" data-id="civkjfmwo00360jsdwz2gmxav" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="https://voidsatisfaction.github.io/2016/11/16/how-it-feels-to-learn-javascript-in-2016/" data-id="civkjwvc9002l5jsdraiqsf3o" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
