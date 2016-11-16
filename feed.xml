@@ -1831,7 +1831,7 @@
     <link href="https://voidsatisfaction.github.io/2016/08/23/2016-8-23-a-nodestudy/"/>
     <id>https://voidsatisfaction.github.io/2016/08/23/2016-8-23-a-nodestudy/</id>
     <published>2016-08-23T02:52:00.000Z</published>
-    <updated>2016-11-16T05:55:13.000Z</updated>
+    <updated>2016-11-16T06:35:10.000Z</updated>
     
     <content type="html"><![CDATA[<h2 id="선생님"><a href="#선생님" class="headerlink" title="선생님"></a>선생님</h2><p><a href="https://opentutorials.org/course/2136/" target="_blank" rel="external">생활코딩 Nodejs</a></p>
 <h2 id="배운-내용들"><a href="#배운-내용들" class="headerlink" title="배운 내용들"></a>배운 내용들</h2><h3 id="Basics"><a href="#Basics" class="headerlink" title="Basics"></a>Basics</h3><ul>
@@ -1909,7 +1909,9 @@
     
     </summary>
     
-      <category term="JavaScript - Nodejs" scheme="https://voidsatisfaction.github.io/categories/JavaScript-Nodejs/"/>
+      <category term="JavaScript" scheme="https://voidsatisfaction.github.io/categories/JavaScript/"/>
+    
+      <category term="Nodejs" scheme="https://voidsatisfaction.github.io/categories/JavaScript/Nodejs/"/>
     
     
       <category term="Nodejs" scheme="https://voidsatisfaction.github.io/tags/Nodejs/"/>
