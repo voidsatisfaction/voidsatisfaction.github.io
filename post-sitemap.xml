@@ -7,8 +7,16 @@
     </url>
 
     <url>
+        <loc>https://voidsatisfaction.github.io/2016/11/16/my-mini-hackerton-on-nf/</loc>
+        <lastmod>2016-11-16T03:34:50.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>https://voidsatisfaction.github.io/2016/11/15/react-native-javascript-environment/</loc>
-        <lastmod>2016-11-15T08:08:58.000Z</lastmod>
+        <lastmod>2016-11-15T08:23:01.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
