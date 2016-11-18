@@ -63,13 +63,6 @@
     </url>
 
     <url>
-        <loc>https://voidsatisfaction.github.io/categories/%EA%B5%90%EC%9C%A1/</loc>
-        <lastmod>2016-11-16T04:38:16.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>https://voidsatisfaction.github.io/categories/JavaScript/ECMA-Script6/</loc>
         <lastmod>2016-11-16T06:31:43.000Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -93,6 +86,13 @@
     <url>
         <loc>https://voidsatisfaction.github.io/categories/Todo/</loc>
         <lastmod>2016-11-16T11:26:37.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://voidsatisfaction.github.io/categories/%EA%B5%90%EC%9C%A1/</loc>
+        <lastmod>2016-11-18T01:31:57.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
