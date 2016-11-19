@@ -10,29 +10,29 @@
     
     <meta name="description" content="배경Nodejs 비동기 프로그래밍 환경에서 정말 중요한 Promise가 헷갈려서 사부에게 도움을 청했다.
 그래서 다음과 같은 코드를 받았다. 그리고 그 밑은 나의 해석.
-내용
-promise_test1.js - g6ling
+핵심
+Nodejs는 모든 scope에서 비동기적인 io 매커니즘을 가지고 있다.
 
-promise_test2.js - g6ling">
+Promise는 그 자체가 객체로서, resolve() 나 reject() 를 호출하게 하므로서, 함수 내">
 <meta property="og:type" content="article">
 <meta property="og:title" content="사부와 함께하는 Promise 이해하기">
 <meta property="og:url" content="https://voidsatisfaction.github.io/2016/11/19/javascript-promise-practice-with-cheol/index.html">
 <meta property="og:site_name" content="텅 빈 충만의 블로그">
 <meta property="og:description" content="배경Nodejs 비동기 프로그래밍 환경에서 정말 중요한 Promise가 헷갈려서 사부에게 도움을 청했다.
 그래서 다음과 같은 코드를 받았다. 그리고 그 밑은 나의 해석.
-내용
-promise_test1.js - g6ling
+핵심
+Nodejs는 모든 scope에서 비동기적인 io 매커니즘을 가지고 있다.
 
-promise_test2.js - g6ling">
-<meta property="og:updated_time" content="2016-11-19T05:16:04.000Z">
+Promise는 그 자체가 객체로서, resolve() 나 reject() 를 호출하게 하므로서, 함수 내">
+<meta property="og:updated_time" content="2016-11-19T05:23:41.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="사부와 함께하는 Promise 이해하기">
 <meta name="twitter:description" content="배경Nodejs 비동기 프로그래밍 환경에서 정말 중요한 Promise가 헷갈려서 사부에게 도움을 청했다.
 그래서 다음과 같은 코드를 받았다. 그리고 그 밑은 나의 해석.
-내용
-promise_test1.js - g6ling
+핵심
+Nodejs는 모든 scope에서 비동기적인 io 매커니즘을 가지고 있다.
 
-promise_test2.js - g6ling">
+Promise는 그 자체가 객체로서, resolve() 나 reject() 를 호출하게 하므로서, 함수 내">
     
     <link rel="canonical" href="https://voidsatisfaction.github.io/2016/11/19/javascript-promise-practice-with-cheol/"/>
 
@@ -178,13 +178,23 @@ ga('send', 'pageview');
         <div class="article-entry" itemprop="articleBody">
             <h2 id="배경"><a href="#배경" class="headerlink" title="배경"></a>배경</h2><p>Nodejs 비동기 프로그래밍 환경에서 정말 중요한 Promise가 헷갈려서 사부에게 도움을 청했다.</p>
 <p>그래서 다음과 같은 코드를 받았다. 그리고 그 밑은 나의 해석.</p>
+<h2 id="핵심"><a href="#핵심" class="headerlink" title="핵심"></a>핵심</h2><ul>
+<li><p>Nodejs는 모든 scope에서 비동기적인 io 매커니즘을 가지고 있다.</p>
+</li>
+<li><p>Promise는 그 자체가 객체로서, resolve() 나 reject() 를 호출하게 하므로서, 함수 내의 모든 실행이 해결된 것을 나타낸다.</p>
+</li>
+<li><p>따라서, Promise객체의 return으로 동기적인 함수 실행을 이어나갈 수 있다.(콜백함수 효과)</p>
+</li>
+<li><p>Promise객체의 return이 없다면 뒤에 붙는 then자체는 사실상 의미가 없다.</p>
+</li>
+</ul>
 <h2 id="내용"><a href="#내용" class="headerlink" title="내용"></a>내용</h2><ul>
 <li><p><a href="https://gist.github.com/g6ling/bbc08b8f217d50e72e4873dab056ed3f" target="_blank" rel="external">promise_test1.js - g6ling</a></p>
 </li>
 <li><p><a href="https://gist.github.com/g6ling/ecf2a15cd1afa8ab10047274bc4c914d" target="_blank" rel="external">promise_test2.js - g6ling</a></p>
 </li>
 </ul>
-
+<h2 id="발전"><a href="#발전" class="headerlink" title="발전"></a>발전</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="keyword">var</span> f1 = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;    </div><div class="line">   setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">      <span class="built_in">console</span>.log(<span class="string">"f1"</span>, <span class="string">"First function call..."</span>);</div><div class="line">   &#125;, <span class="number">0</span>);</div><div class="line">&#125;;</div><div class="line"></div><div class="line"><span class="keyword">var</span> f2 = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">"f2"</span>, <span class="string">"Second call..."</span>);</div><div class="line">&#125;;</div><div class="line"></div><div class="line">f1(); f2();</div><div class="line"></div><div class="line"><span class="comment">// f2 Second call...</span></div><div class="line"><span class="comment">// f1 First function call...</span></div></pre></td></tr></table></figure>
         </div>
         <footer class="article-footer">
             
