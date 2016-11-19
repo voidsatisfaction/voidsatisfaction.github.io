@@ -5,7 +5,7 @@
   <link href="/feed.xml" rel="self"/>
   
   <link href="https://voidsatisfaction.github.io/"/>
-  <updated>2016-11-19T05:23:41.000Z</updated>
+  <updated>2016-11-19T05:58:03.000Z</updated>
   <id>https://voidsatisfaction.github.io/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="https://voidsatisfaction.github.io/2016/11/19/javascript-promise-practice-with-cheol/"/>
     <id>https://voidsatisfaction.github.io/2016/11/19/javascript-promise-practice-with-cheol/</id>
     <published>2016-11-19T05:12:39.000Z</published>
-    <updated>2016-11-19T05:23:41.000Z</updated>
+    <updated>2016-11-19T05:58:03.000Z</updated>
     
     <content type="html"><![CDATA[<h2 id="배경"><a href="#배경" class="headerlink" title="배경"></a>배경</h2><p>Nodejs 비동기 프로그래밍 환경에서 정말 중요한 Promise가 헷갈려서 사부에게 도움을 청했다.</p>
 <p>그래서 다음과 같은 코드를 받았다. 그리고 그 밑은 나의 해석.</p>
@@ -38,6 +38,12 @@
 <li><p><a href="https://gist.github.com/g6ling/bbc08b8f217d50e72e4873dab056ed3f" target="_blank" rel="external">promise_test1.js - g6ling</a></p>
 </li>
 <li><p><a href="https://gist.github.com/g6ling/ecf2a15cd1afa8ab10047274bc4c914d" target="_blank" rel="external">promise_test2.js - g6ling</a></p>
+</li>
+<li><p><a href="https://gist.github.com/g6ling/0c312b7cfb50a70d83d01bf9b7e4c025" target="_blank" rel="external">promise_test3.js - g6ling</a></p>
+</li>
+<li><p><a href="https://gist.github.com/g6ling/96980fb868f4aacee554d9eb7a642532" target="_blank" rel="external">promise_test4.js - g6ling</a></p>
+</li>
+<li><p><a href="https://g6ling.github.io/2016/11/18/dive-into-promise-chain/" target="_blank" rel="external">Promise 실행순서 이해하기 - g6ling</a></p>
 </li>
 </ul>
 <h2 id="발전"><a href="#발전" class="headerlink" title="발전"></a>발전</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="keyword">var</span> f1 = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;    </div><div class="line">   setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">      <span class="built_in">console</span>.log(<span class="string">"f1"</span>, <span class="string">"First function call..."</span>);</div><div class="line">   &#125;, <span class="number">0</span>);</div><div class="line">&#125;;</div><div class="line"></div><div class="line"><span class="keyword">var</span> f2 = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">"f2"</span>, <span class="string">"Second call..."</span>);</div><div class="line">&#125;;</div><div class="line"></div><div class="line">f1(); f2();</div><div class="line"></div><div class="line"><span class="comment">// f2 Second call...</span></div><div class="line"><span class="comment">// f1 First function call...</span></div></pre></td></tr></table></figure>]]></content>
