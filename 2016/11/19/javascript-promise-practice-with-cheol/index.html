@@ -3,20 +3,38 @@
 <head>
     <meta charset="utf-8">
     
-    <title>Category: 세상 사는 이야기 | 텅 빈 충만의 블로그</title>
+    <title>사부와 함께하는 Promise 이해하기 | 텅 빈 충만의 블로그</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
-    <meta name="description" content="즐거운 프로그래밍 세상, Hello World!">
-<meta property="og:type" content="website">
-<meta property="og:title" content="텅 빈 충만의 블로그">
-<meta property="og:url" content="https://voidsatisfaction.github.io/categories/세상-사는-이야기/index.html">
-<meta property="og:site_name" content="텅 빈 충만의 블로그">
-<meta property="og:description" content="즐거운 프로그래밍 세상, Hello World!">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="텅 빈 충만의 블로그">
-<meta name="twitter:description" content="즐거운 프로그래밍 세상, Hello World!">
+        <meta name="keywords" content="JavaScript" />
     
-    <link rel="canonical" href="https://voidsatisfaction.github.io/categories/세상-사는-이야기/"/>
+    <meta name="description" content="배경Nodejs 비동기 프로그래밍 환경에서 정말 중요한 Promise가 헷갈려서 사부에게 도움을 청했다.
+그래서 다음과 같은 코드를 받았다. 그리고 그 밑은 나의 해석.
+내용
+promise_test1.js - g6ling
+
+promise_test2.js - g6ling">
+<meta property="og:type" content="article">
+<meta property="og:title" content="사부와 함께하는 Promise 이해하기">
+<meta property="og:url" content="https://voidsatisfaction.github.io/2016/11/19/javascript-promise-practice-with-cheol/index.html">
+<meta property="og:site_name" content="텅 빈 충만의 블로그">
+<meta property="og:description" content="배경Nodejs 비동기 프로그래밍 환경에서 정말 중요한 Promise가 헷갈려서 사부에게 도움을 청했다.
+그래서 다음과 같은 코드를 받았다. 그리고 그 밑은 나의 해석.
+내용
+promise_test1.js - g6ling
+
+promise_test2.js - g6ling">
+<meta property="og:updated_time" content="2016-11-19T05:16:04.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="사부와 함께하는 Promise 이해하기">
+<meta name="twitter:description" content="배경Nodejs 비동기 프로그래밍 환경에서 정말 중요한 Promise가 헷갈려서 사부에게 도움을 청했다.
+그래서 다음과 같은 코드를 받았다. 그리고 그 밑은 나의 해석.
+내용
+promise_test1.js - g6ling
+
+promise_test2.js - g6ling">
+    
+    <link rel="canonical" href="https://voidsatisfaction.github.io/2016/11/19/javascript-promise-practice-with-cheol/"/>
 
     
 
@@ -129,396 +147,123 @@ ga('send', 'pageview');
                         <div class="main-body-header">
     <h1 class="header">
     
-    <i class="icon fa fa-folder-open"></i>Category: <em class="page-title-link">세상 사는 이야기</em>
+    <a class="page-title-link" href="/categories/JavaScript/">JavaScript</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/JavaScript/ECMA-Script6/">ECMA Script6</a>
     </h1>
 </div>
                         <div class="main-body-content">
-                            
+                            <article id="post-javascript-promise-practice-with-cheol" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+        사부와 함께하는 Promise 이해하기
+        </h1>
+    
 
-    
-    
+            </header>
         
         
-        <section class="archives-wrap">
-            <div class="archive-year-wrap">
-                <a href="/archives/2016" class="archive-year"><i class="icon fa fa-calendar-o"></i>2016</a>
+            <div class="article-subtitle">
+                <a href="/2016/11/19/javascript-promise-practice-with-cheol/" class="article-date">
+    <time datetime="2016-11-19T05:12:39.000Z" itemprop="datePublished">2016-11-19</time>
+</a>
+                
+    <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
+
             </div>
-            <div class="archives">
-    
-    
-    
-        <div class="article-row">
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
         
-        <div class="article-meta">
-            <p class="category">
-            <a class="article-category-link" href="/categories/세상-사는-이야기/">세상 사는 이야기</a>
-            </p>
-            <p class="date"><time datetime="2016-11-19T04:15:31.000Z" itemprop="datePublished">2016-11-19</time></p>
+        
+        <div class="article-entry" itemprop="articleBody">
+            <h2 id="배경"><a href="#배경" class="headerlink" title="배경"></a>배경</h2><p>Nodejs 비동기 프로그래밍 환경에서 정말 중요한 Promise가 헷갈려서 사부에게 도움을 청했다.</p>
+<p>그래서 다음과 같은 코드를 받았다. 그리고 그 밑은 나의 해석.</p>
+<h2 id="내용"><a href="#내용" class="headerlink" title="내용"></a>내용</h2><ul>
+<li><p><a href="https://gist.github.com/g6ling/bbc08b8f217d50e72e4873dab056ed3f" target="_blank" rel="external">promise_test1.js - g6ling</a></p>
+</li>
+<li><p><a href="https://gist.github.com/g6ling/ecf2a15cd1afa8ab10047274bc4c914d" target="_blank" rel="external">promise_test2.js - g6ling</a></p>
+</li>
+</ul>
+
         </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/2016/11/19/fighting-haedal-love/">내가 생각하는 해달의 매력 팡팡</a>
-        </h1>
-    
-
-        <p class="article-excerpt">
-            내가 생각하는 나만의 해달의 매력
-진심으로 오빠를 생각해준다.
-
-볼이 빵빵하다.
-
-화나도 귀엽다.
-
-울어도 귀엽다.
-
-질투해도 귀엽다.
-
-살쪄도 귀엽다.
-
-과자를 너무나도 맛있게 만들어준다.
-
-매일밤 같이 얘기하면 너무나도 즐겁다.
-
-고기를 너무 잘 먹는다.
-
-나중에 나에게 코딩을 가르쳐주겠지?
-
-보기만해도 좋다.
-
-다좋다.
-
-
-
-        </p>
-    </div>
-</article>
-    
-
-    
-    
-    
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <div class="article-meta">
-            <p class="category">
-            <a class="article-category-link" href="/categories/세상-사는-이야기/">세상 사는 이야기</a>
-            </p>
-            <p class="date"><time datetime="2016-11-16T03:24:03.000Z" itemprop="datePublished">2016-11-16</time></p>
-        </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/2016/11/16/my-mini-hackerton-on-nf/">나홀로 해커톤 시즌1</a>
-        </h1>
-    
-
-        <p class="article-excerpt">
-            기간교토대학교 NF기간(2016.11.18 ~ 11.23)
-미니 해커톤 소개대학교 축제를 맞이하여 평소에 하지 못했던 개인 프로젝트를 진행해보자!
-마음가짐무작정 코드부터 작성하지말고, 기획을 제대로 하자. 아키텍쳐를 설계해보자. 
-1. Make it markdown 웹페이지화
-
-개요 : Make it markdown을 웹페이지화 시켜서 쓰기 편하게 하자.
-
-        </p>
-    </div>
-</article>
-    
-        </div>
-    
-
-    
-    
-    
-    
-        <div class="article-row">
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <div class="article-meta">
-            <p class="category">
-            <a class="article-category-link" href="/categories/세상-사는-이야기/">세상 사는 이야기</a>
-            </p>
-            <p class="date"><time datetime="2016-10-05T16:15:38.000Z" itemprop="datePublished">2016-10-06</time></p>
-        </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/2016/10/06/lesson-from-teacher-with-errors/">MECE하게 &#39;생각&#39;하라.</a>
-        </h1>
-    
-
-        <p class="article-excerpt">
-            오늘 사부와의 미팅에서 배운 것들.
-에러가 뜨면 막무가내로 실행하지 말고, 한 번 더 논리적으로 천천히 생각해보자. 본질에 입각해서 생각하자.
-
-어떠한 process중에서 에러가 발생하면 그 process의 하나하나의 단계를 MECE(Mutually Exclusive and Collectively Exhaustive)하게 테스트한다.
-
-편한 Tool을 항상
-        </p>
-    </div>
-</article>
-    
-
-    
-    
-    
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <div class="article-meta">
-            <p class="category">
-            <a class="article-category-link" href="/categories/세상-사는-이야기/">세상 사는 이야기</a>
-            </p>
-            <p class="date"><time datetime="2016-09-29T02:08:18.000Z" itemprop="datePublished">2016-09-29</time></p>
-        </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/2016/09/29/buddhism-and-programming/">불교와 프로그래밍</a>
-        </h1>
-    
-
-        <p class="article-excerpt">
-            법륜스님의 즉문즉설나는 요즈음 학교 도서관에 갈 때 팟캐스트 ‘법륜 스님의 즉문즉설’을 즐겨 듣는다.
-‘법륜스님의 즉문즉설’은 법륜스님이 한국과 세계의 이곳저곳을 돌아다니시면서 강연하시는 내용이다. 여기서 특이한 점은, 스님이 일방적으로 자신의 생각과 견해를 전하는 것이 아니라는 점이다.
-항상 스님은 질문자의 질문을 먼저 듣고 그것에 대한 답변을 하신다.
-
-        </p>
-    </div>
-</article>
-    
-        </div>
-    
-
-    
-    
-    
-    
-        <div class="article-row">
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <div class="article-meta">
-            <p class="category">
-            <a class="article-category-link" href="/categories/세상-사는-이야기/">세상 사는 이야기</a>
-            </p>
-            <p class="date"><time datetime="2016-09-23T11:52:00.000Z" itemprop="datePublished">2016-09-23</time></p>
-        </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/2016/09/23/2016-9-23-a-1:100/">기여도 1%의 의미</a>
-        </h1>
-    
-
-        <p class="article-excerpt">
+        <footer class="article-footer">
             
-드디어 나의 첫 pull request가 반영되었다!
 
 
-총 코드변동량 : 약 80,000
 
-나의 코드변동량 : 약 800
+    <a data-url="https://voidsatisfaction.github.io/2016/11/19/javascript-promise-practice-with-cheol/" data-id="civorhydp001xgmsd1mex9p9a" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+<script>
+    (function ($) {
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
 
-나의 기여도 : 1%
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
 
+            if ($('#' + id).length) {
+                box = $('#' + id);
 
-기여도 1%얼마전에 나는 정말 오랜만에 짜릿한 경험을 했다.
-현재 나와 사부님이 같이 진행하는 프로젝트에서 까다로운 여러 테스트(퍼포먼스 리뷰, 코드 리뷰, Eslint)를 잘 극복해서 드디어! 프로젝트를 
-        </p>
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+        </footer>
     </div>
 </article>
-    
 
+    <section id="comments">
     
-    
-    
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
         
-        <div class="article-meta">
-            <p class="category">
-            <a class="article-category-link" href="/categories/세상-사는-이야기/">세상 사는 이야기</a>
-            </p>
-            <p class="date"><time datetime="2016-09-09T02:52:00.000Z" itemprop="datePublished">2016-09-09</time></p>
-        </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/2016/09/09/2016-9-09-a-gitandmygit/">오늘 또 느낀 것들...</a>
-        </h1>
-    
-
-        <p class="article-excerpt">
-            최근에 했던 것오늘은 그동안 내가 작업했던 일을 갈무리 짓는 날이었다.
-솔직히 얘기하자면 하는 일이 그렇게 엄청 대단한 것은 아니고, React Native의 Component 들을 Atomic Design에 맞게 리팩토링 하는 일을 했다.
-애초에 나 자신이 작성한 코드가 아니었기때문에 코드를 분석하는 것 부터가 일이었으며, 분석한 뒤에도 모르는 것 투성이
-        </p>
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
     </div>
-</article>
-    
-        </div>
-    
 
     
-    
-    
-    
-        <div class="article-row">
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <div class="article-meta">
-            <p class="category">
-            <a class="article-category-link" href="/categories/세상-사는-이야기/">세상 사는 이야기</a>
-            </p>
-            <p class="date"><time datetime="2016-08-26T02:52:00.000Z" itemprop="datePublished">2016-08-26</time></p>
-        </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/2016/08/26/2016-8-26-a-giveItFiveMinutes/">Give It Five Minutes</a>
-        </h1>
-    
-
-        <p class="article-excerpt">
-            출처Give It Five Minutes
-내가 읽은 2016최고의 글이다. 언제나 마음속에 내 철학으로 새겨둬야지.
-이곳에 올린 이유는, 계속 마음에 품기 위해서.
-그리고 이렇게 좋고 멋있는 글이 사라질까 두려워서.
-Give it five minutesI used to be a hothead. Whenever anyone said anything, I’d 
-        </p>
-    </div>
-</article>
-    
-
-    
-    
-    
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <div class="article-meta">
-            <p class="category">
-            <a class="article-category-link" href="/categories/세상-사는-이야기/">세상 사는 이야기</a>
-            </p>
-            <p class="date"><time datetime="2016-08-21T12:52:00.000Z" itemprop="datePublished">2016-08-21</time></p>
-        </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/2016/08/21/2016-8-21-b-justbecause/">세상은 넓고 대단한 사람은 많다.</a>
-        </h1>
-    
-
-        <p class="article-excerpt">
-            모덴 웹을 위한 Node.js프로그래밍 이라는 책을 사두기만 하고 처음 펴 봤는데 작가님의 blog가 있길래 한 번 들어가 봤다.
-그랬더니 웬걸 정말 대단하신 분이다. 하하. (왜 대단하신 분인지는 블로그에 들어가 보시면 압니다.)
-대놓고 얘기하자면 나도 작가님 이상이 되고싶다!
-프로그래밍을 시작한지 이제 1년인데 욕심이 너무 많은거 아니냐고 생각할 수도 
-        </p>
-    </div>
-</article>
-    
-        </div>
-    
-
-    
-    
-    
-    
-        <div class="article-row">
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <div class="article-meta">
-            <p class="category">
-            <a class="article-category-link" href="/categories/세상-사는-이야기/">세상 사는 이야기</a>
-            </p>
-            <p class="date"><time datetime="2016-08-21T02:52:00.000Z" itemprop="datePublished">2016-08-21</time></p>
-        </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/2016/08/21/2016-8-21-a-learning/">후배의 좋은 가르침</a>
-        </h1>
-    
-
-        <p class="article-excerpt">
-            포인트
-백엔드의 본질은 서버를 구성하는 틀을 이해하는 것이다(ex 로그인)
-
-Connecting the dots
-
-자신이 무엇을 좋아하는지, 하고 싶은지, 잘 할 수 있는지에 대한 자기분석이 중요하고, 그것을 잘 살려 나갈 수 있어야 한다
-
-진정한 도전정신
-
-
-
-오늘은 후배를 만났다.
-사실 그는 대학에 늦게 들어온 것 뿐이지, 컴퓨터 공학과 웹 공부에 대해
-        </p>
-    </div>
-</article>
-    
-
-    
-    
-    
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <div class="article-meta">
-            <p class="category">
-            <a class="article-category-link" href="/categories/세상-사는-이야기/">세상 사는 이야기</a>
-            </p>
-            <p class="date"><time datetime="2016-08-19T02:52:00.000Z" itemprop="datePublished">2016-08-19</time></p>
-        </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/2016/08/19/2016-8-19-b-graduate/">교토대 정보학과를 붙고 나서...</a>
-        </h1>
-    
-
-        <p class="article-excerpt">
-            목차
-자기소개
-프로그래밍의 우주에 오신 것을 환영합니다!
-왜 프로그래밍을 공부하게 되었는가?
-어떻게 대학원을 준비했는가?
-
-자기소개나는 2016년 8월 현재 교토대학교 경제학부 4학년에 재학중인 학생이다.
-프로그래밍을 시작한 건, 대학교 3학년 여름방학이 시작될 무렵이었다.
-왜 프로그래밍을 공부하게 되었는가?내가 처음 프로그래밍을 시작하게 된 계기는 막연한
-        </p>
-    </div>
-</article>
-    
-        </div>
-    
-
-
-    </div></section>
-
-
-
+    </section>
 
                         </div>
                     </section>
@@ -548,6 +293,19 @@ Connecting the dots
     </div>
     <div class="github-card" data-github="voidSatisfaction" data-height="" data-theme="default"></div>
     <script src="//cdn.jsdelivr.net/github-cards/latest/widget.js"></script>
+    
+        
+<nav id="article-nav">
+    
+    
+        <a href="/2016/11/19/fighting-haedal-love/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">older</strong>
+        <p class="article-nav-title">내가 생각하는 해달의 매력 팡팡</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
     
     <div class="widgets-container">
         
@@ -681,11 +439,13 @@ Connecting the dots
     var disqus_shortname = 'voidsatisfaction';
     
     
+    var disqus_url = 'https://voidsatisfaction.github.io/2016/11/19/javascript-promise-practice-with-cheol/';
+    
     (function() {
     var dsq = document.createElement('script');
     dsq.type = 'text/javascript';
     dsq.async = true;
-    dsq.src = '//' + disqus_shortname + '.disqus.com/count.js';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
     (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
     })();
     </script>
