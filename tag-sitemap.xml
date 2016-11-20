@@ -107,13 +107,6 @@
     </url>
 
     <url>
-        <loc>https://voidsatisfaction.github.io/tags/Todo/</loc>
-        <lastmod>2016-11-16T11:26:37.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>https://voidsatisfaction.github.io/tags/Haedal/</loc>
         <lastmod>2016-11-19T04:41:32.000Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -128,8 +121,15 @@
     </url>
 
     <url>
+        <loc>https://voidsatisfaction.github.io/tags/Todo/</loc>
+        <lastmod>2016-11-19T11:59:37.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
         <loc>https://voidsatisfaction.github.io/tags/JavaScript/</loc>
-        <lastmod>2016-11-19T05:58:03.000Z</lastmod>
+        <lastmod>2016-11-20T06:38:31.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
