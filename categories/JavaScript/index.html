@@ -169,14 +169,10 @@ ga('send', 'pageview');
             참조
 recompose
 
-배경위와 같은 setFormState가 smart컴포넌트를 변경하는 거의 모든 경우에서 중복되어서 사용되기 때문에
+배경1234567// setFormState setFormState(name, value) &#123;  this.setState(&#123;    [name]: value,  &#125;);&#125;
+위와 같은 setFormState가 smart컴포넌트를 변경하는 거의 모든 경우에서 중복되어서 사용되기 때문에
 
 재활용성을 높이고
-render수를 줄이므로써 효율성을 높이고
-데이터 구조를 보다 명시적으로 나타내기 위해서
-
-highOrderComponent를 구성하기로 했다. 
-핵심123456789101112131415161718
         </p>
     </div>
 </article>
