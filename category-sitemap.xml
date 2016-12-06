@@ -49,13 +49,6 @@
     </url>
 
     <url>
-        <loc>https://voidsatisfaction.github.io/categories/JavaScript/React-Native/</loc>
-        <lastmod>2016-11-15T08:23:01.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>https://voidsatisfaction.github.io/categories/JavaScript/Nodejs/</loc>
         <lastmod>2016-11-16T06:35:10.000Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -84,15 +77,22 @@
     </url>
 
     <url>
-        <loc>https://voidsatisfaction.github.io/categories/JavaScript/</loc>
+        <loc>https://voidsatisfaction.github.io/categories/JavaScript/ECMA-Script6/</loc>
         <lastmod>2016-11-20T06:38:31.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>https://voidsatisfaction.github.io/categories/JavaScript/ECMA-Script6/</loc>
-        <lastmod>2016-11-20T06:38:31.000Z</lastmod>
+        <loc>https://voidsatisfaction.github.io/categories/JavaScript/</loc>
+        <lastmod>2016-12-06T14:24:43.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://voidsatisfaction.github.io/categories/JavaScript/React-Native/</loc>
+        <lastmod>2016-12-06T14:24:43.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
