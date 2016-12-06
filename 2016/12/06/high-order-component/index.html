@@ -14,14 +14,11 @@ recompose
 배경위와 같은 setFormState가 smart컴포넌트를 변경하는 거의 모든 경우에서 중복되어서 사용되기 때문에
 
 재활용성을 높이고
-
 render수를 줄이므로써 효율성을 높이고
-
 데이터 구조를 보다 명시적으로 나타내기 위해서
 
-
 highOrderComponent를 구성하기로 했다. 
-핵심123456789101112131415161">
+핵심123456789101112131415161718">
 <meta property="og:type" content="article">
 <meta property="og:title" content="High Order Component에 대하여">
 <meta property="og:url" content="https://voidsatisfaction.github.io/2016/12/06/high-order-component/index.html">
@@ -32,15 +29,12 @@ recompose
 배경위와 같은 setFormState가 smart컴포넌트를 변경하는 거의 모든 경우에서 중복되어서 사용되기 때문에
 
 재활용성을 높이고
-
 render수를 줄이므로써 효율성을 높이고
-
 데이터 구조를 보다 명시적으로 나타내기 위해서
 
-
 highOrderComponent를 구성하기로 했다. 
-핵심123456789101112131415161">
-<meta property="og:updated_time" content="2016-12-06T14:24:43.000Z">
+핵심123456789101112131415161718">
+<meta property="og:updated_time" content="2016-12-06T14:25:42.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="High Order Component에 대하여">
 <meta name="twitter:description" content="참조
@@ -49,14 +43,11 @@ recompose
 배경위와 같은 setFormState가 smart컴포넌트를 변경하는 거의 모든 경우에서 중복되어서 사용되기 때문에
 
 재활용성을 높이고
-
 render수를 줄이므로써 효율성을 높이고
-
 데이터 구조를 보다 명시적으로 나타내기 위해서
 
-
 highOrderComponent를 구성하기로 했다. 
-핵심123456789101112131415161">
+핵심123456789101112131415161718">
     
     <link rel="canonical" href="https://voidsatisfaction.github.io/2016/12/06/high-order-component/"/>
 
@@ -205,12 +196,9 @@ ga('send', 'pageview');
 </ul>
 <h2 id="배경"><a href="#배경" class="headerlink" title="배경"></a>배경</h2><p>위와 같은 <code>setFormState</code>가 smart컴포넌트를 변경하는 거의 모든 경우에서 중복되어서 사용되기 때문에</p>
 <ol>
-<li><p>재활용성을 높이고</p>
-</li>
-<li><p>render수를 줄이므로써 효율성을 높이고</p>
-</li>
-<li><p>데이터 구조를 보다 명시적으로 나타내기 위해서</p>
-</li>
+<li>재활용성을 높이고</li>
+<li>render수를 줄이므로써 효율성을 높이고</li>
+<li>데이터 구조를 보다 명시적으로 나타내기 위해서</li>
 </ol>
 <p>highOrderComponent를 구성하기로 했다. </p>
 <h2 id="핵심"><a href="#핵심" class="headerlink" title="핵심"></a>핵심</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// from '../../_hocs/setFormState';</span></div><div class="line"></div><div class="line"><span class="keyword">import</span> React, &#123; Component &#125; <span class="keyword">from</span> <span class="string">'react'</span>;</div><div class="line"></div><div class="line">interface config &#123;</div><div class="line">  (props: <span class="built_in">Object</span>): configForms</div><div class="line">&#125;</div><div class="line"></div><div class="line">interface configForms &#123;</div><div class="line">  <span class="attr">forms</span>: <span class="built_in">Object</span></div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">export</span> <span class="keyword">default</span> setFormState = <span class="function">(<span class="params">config: config | configForms</span>) =&gt;</span> (BaseComponent: Comment) =&gt; (</div><div class="line">   <span class="class"><span class="keyword">class</span> <span class="keyword">extends</span> <span class="title">Component</span> </span>&#123;</div><div class="line">     <span class="keyword">constructor</span>(props) &#123;</div><div class="line">       <span class="keyword">super</span>(props);</div><div class="line">       <span class="keyword">this</span>.setFormState = <span class="keyword">this</span>.setFormState.bind(<span class="keyword">this</span>);</div><div class="line">       <span class="keyword">if</span> (<span class="keyword">typeof</span> config === <span class="string">'function'</span>) &#123;</div><div class="line">         <span class="keyword">this</span>.state = config(props).forms;</div><div class="line">       &#125; <span class="keyword">else</span> <span class="keyword">if</span> (<span class="keyword">typeof</span> config === <span class="string">'object'</span>) &#123;</div><div class="line">         <span class="keyword">this</span>.state = config.forms;</div><div class="line">       &#125;</div><div class="line">     &#125;</div><div class="line">     setFormState(name, value) &#123;</div><div class="line">       <span class="keyword">this</span>.setState(&#123;</div><div class="line">         [name]: value,</div><div class="line">       &#125;);</div><div class="line">     &#125;</div><div class="line">     render() &#123;</div><div class="line">       <span class="keyword">return</span> &lt;BaseComponent setFormState=&#123;this.setFormState&#125; forms=&#123;this.state&#125; &#123;...this.props&#125; /&gt;;</div><div class="line">     &#125;</div><div class="line">  &#125;</div><div class="line">);</div></pre></td></tr></table></figure>
