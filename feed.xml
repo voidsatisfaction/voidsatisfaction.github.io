@@ -5,7 +5,7 @@
   <link href="/feed.xml" rel="self"/>
   
   <link href="https://voidsatisfaction.github.io/"/>
-  <updated>2016-12-06T14:59:26.000Z</updated>
+  <updated>2016-12-07T06:49:18.000Z</updated>
   <id>https://voidsatisfaction.github.io/</id>
   
   <author>
@@ -14,6 +14,55 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>PropTypes과 Semantic Commit Messages</title>
+    <link href="https://voidsatisfaction.github.io/2016/12/07/propTypes-and-sementic/"/>
+    <id>https://voidsatisfaction.github.io/2016/12/07/propTypes-and-sementic/</id>
+    <published>2016-12-07T06:28:03.000Z</published>
+    <updated>2016-12-07T06:49:18.000Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="참조"><a href="#참조" class="headerlink" title="참조"></a>참조</h2><ul>
+<li><a href="http://qiita.com/koba04/items/bc13d1f42964278ae14e" target="_blank" rel="external">React.jsのProp</a></li>
+<li><a href="http://karma-runner.github.io/1.0/dev/git-commit-msg.html" target="_blank" rel="external">KARMA Git Commit Msg</a></li>
+<li><a href="https://seesparkbox.com/foundry/semantic_commit_messages" target="_blank" rel="external">Semantic Commit Message</a></li>
+</ul>
+<h2 id="배경"><a href="#배경" class="headerlink" title="배경"></a>배경</h2><p>사부의 커밋 메세지를 보면 feat:, fix: 이런 것들이 붙어져 있어서 그것에 대한 유래를 물어보았다.</p>
+<p>그리고 전부터 대충은 알고 있던 React Native의 PropTypes에 대해서 한 번은 정리할 필요가 있을 것 같아서 포스팅을 하게 되었다.</p>
+<h2 id="핵심"><a href="#핵심" class="headerlink" title="핵심"></a>핵심</h2><h3 id="Semantic-Commit-Message-Examples"><a href="#Semantic-Commit-Message-Examples" class="headerlink" title="Semantic Commit Message Examples"></a>Semantic Commit Message Examples</h3><ol>
+<li>chore: add Oyster build script (oyster build가 뭐죠? 아시는 분 알려주세요!) </li>
+<li>docs: explain hat wobble</li>
+<li>feat: add beta sequence</li>
+<li>fix: remove broken confirmation Message</li>
+<li>refactor: share logic between a and b</li>
+<li>style: convert tabs to spaces … (and so on)</li>
+<li>test: ensure Tayne retains clothing</li>
+</ol>
+<h3 id="PropTypes"><a href="#PropTypes" class="headerlink" title="PropTypes"></a>PropTypes</h3><p>PropTypes는 Component의 외부로부터 받아온 prop을 validation하기 위해서 prop의 type을 명시적으로 제한한다.</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">React.PropTypes.array           <span class="comment">// 配列</span></div><div class="line">React.PropTypes.bool.isRequired <span class="comment">// Booleanで必須</span></div><div class="line">React.PropTypes.func            <span class="comment">// 関数</span></div><div class="line">React.PropTypes.number          <span class="comment">// 数値</span></div><div class="line">React.PropTypes.object          <span class="comment">// オブジェクト</span></div><div class="line">React.PropTypes.string          <span class="comment">// 文字列</span></div><div class="line">React.PropTypes.node            <span class="comment">// Renderできるもの</span></div><div class="line">React.PropTypes.element         <span class="comment">// React Element</span></div><div class="line">React.PropTypes.instanceOf(XXX) <span class="comment">// XXXのinstanceかどうか</span></div><div class="line">React.PropTypes.oneOf([<span class="string">'foo'</span>, <span class="string">'bar'</span>]) <span class="comment">// fooかbar</span></div><div class="line">React.PropTypes.oneOfType([React.PropTypes.string, React.PropTypes.array]) <span class="comment">// 文字列か配列</span></div><div class="line">React.PropTypes.arrayOf(React.PropTypes.string)  <span class="comment">// 文字列の配列かどうか</span></div><div class="line">React.PropTypes.objectOf(React.PropTypes.string) <span class="comment">// 文字列の値を持っているか</span></div><div class="line">React.PropTypes.shape(&#123;                          <span class="comment">// 指定された形式を満たしているかどうか</span></div><div class="line">  color: React.PropTypes.string,</div><div class="line">  <span class="attr">fontSize</span>: React.PropTypes.number</div><div class="line">&#125;);</div><div class="line">React.PropTypes.any.isRequired  <span class="comment">// なんでもいいけど必須</span></div><div class="line"></div><div class="line"><span class="comment">// カスタムの制約も定義出来る(ダメな場合はError投げる)</span></div><div class="line">customPropType: <span class="function"><span class="keyword">function</span>(<span class="params">props, propName, componentName</span>) </span>&#123;</div><div class="line">  <span class="keyword">if</span> (!<span class="regexp">/^[0-9]/</span>.test(props[propName])) &#123;</div><div class="line">    <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Error</span>(<span class="string">'Validation failed!'</span>);</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>위와 같은 종류의 PropTypes를 이용할 수 있다.</p>
+<h2 id="정리"><a href="#정리" class="headerlink" title="정리"></a>정리</h2><blockquote>
+<p>프로그래밍의 세계에서는 알기 쉬운게 최고다! 나를 배려하고 나와 협업하는 동료를 배려하자.</p>
+</blockquote>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;참조&quot;&gt;&lt;a href=&quot;#참조&quot; class=&quot;headerlink&quot; title=&quot;참조&quot;&gt;&lt;/a&gt;참조&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;http://qiita.com/koba04/items/bc13d1f42964278ae14e&quot; tar
+    
+    </summary>
+    
+      <category term="JavaScript" scheme="https://voidsatisfaction.github.io/categories/JavaScript/"/>
+    
+      <category term="React Native" scheme="https://voidsatisfaction.github.io/categories/JavaScript/React-Native/"/>
+    
+    
+      <category term="GitHub" scheme="https://voidsatisfaction.github.io/tags/GitHub/"/>
+    
+      <category term="JavaScript" scheme="https://voidsatisfaction.github.io/tags/JavaScript/"/>
+    
+  </entry>
   
   <entry>
     <title>High Order Component에 대하여</title>
@@ -33,7 +82,7 @@
 <li>데이터 구조를 보다 명시적으로 나타내기 위해서</li>
 </ol>
 <p>highOrderComponent를 새로 구성하기로 했다. </p>
-<h2 id="핵심"><a href="#핵심" class="headerlink" title="핵심"></a>핵심</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// from '../../_hocs/setFormState';</span></div><div class="line"></div><div class="line"><span class="keyword">import</span> React, &#123; Component &#125; <span class="keyword">from</span> <span class="string">'react'</span>;</div><div class="line"></div><div class="line">interface config &#123;</div><div class="line">  (props: <span class="built_in">Object</span>): configForms</div><div class="line">&#125;</div><div class="line"></div><div class="line">interface configForms &#123;</div><div class="line">  <span class="attr">forms</span>: <span class="built_in">Object</span></div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">export</span> <span class="keyword">default</span> setFormState = <span class="function">(<span class="params">config: config | configForms</span>) =&gt;</span> (BaseComponent: Comment) =&gt; (</div><div class="line">   <span class="class"><span class="keyword">class</span> <span class="keyword">extends</span> <span class="title">Component</span> </span>&#123;</div><div class="line">     <span class="keyword">constructor</span>(props) &#123;</div><div class="line">       <span class="keyword">super</span>(props);</div><div class="line">       <span class="keyword">this</span>.setFormState = <span class="keyword">this</span>.setFormState.bind(<span class="keyword">this</span>);</div><div class="line">       <span class="keyword">if</span> (<span class="keyword">typeof</span> config === <span class="string">'function'</span>) &#123;</div><div class="line">         <span class="keyword">this</span>.state = config(props).forms;</div><div class="line">       &#125; <span class="keyword">else</span> <span class="keyword">if</span> (<span class="keyword">typeof</span> config === <span class="string">'object'</span>) &#123;</div><div class="line">         <span class="keyword">this</span>.state = config.forms;</div><div class="line">       &#125;</div><div class="line">     &#125;</div><div class="line">     setFormState(name, value) &#123;</div><div class="line">       <span class="keyword">this</span>.setState(&#123;</div><div class="line">         [name]: value,</div><div class="line">       &#125;);</div><div class="line">     &#125;</div><div class="line">     render() &#123;</div><div class="line">       <span class="keyword">return</span> &lt;BaseComponent setFormState=&#123;this.setFormState&#125; forms=&#123;this.state&#125; &#123;...this.props&#125; /&gt;;</div><div class="line">     &#125;</div><div class="line">  &#125;</div><div class="line">);</div></pre></td></tr></table></figure>
+<h2 id="핵심"><a href="#핵심" class="headerlink" title="핵심"></a>핵심</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// from '../../_hocs/setFormState';</span></div><div class="line"></div><div class="line"><span class="keyword">import</span> React, &#123; Component &#125; <span class="keyword">from</span> <span class="string">'react'</span>;</div><div class="line"></div><div class="line">interface config &#123;</div><div class="line">  (props: <span class="built_in">Object</span>): configForms</div><div class="line">&#125;</div><div class="line"></div><div class="line">interface configForms &#123;</div><div class="line">  <span class="attr">forms</span>: <span class="built_in">Object</span></div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">export</span> <span class="keyword">default</span> setFormState = <span class="function">(<span class="params">config: config | configForms</span>) =&gt;</span> (BaseComponent: Comment) =&gt; (</div><div class="line">   <span class="class"><span class="keyword">class</span> <span class="keyword">extends</span> <span class="title">Component</span> </span>&#123;</div><div class="line">     <span class="keyword">constructor</span>(props) &#123;</div><div class="line">       <span class="keyword">super</span>(props);</div><div class="line">       <span class="keyword">this</span>.setFormState = <span class="keyword">this</span>.setFormState.bind(<span class="keyword">this</span>);</div><div class="line">       <span class="keyword">if</span> (<span class="keyword">typeof</span> config === <span class="string">'function'</span>) &#123;</div><div class="line">         <span class="keyword">this</span>.state = config(props).forms;</div><div class="line">       &#125; <span class="keyword">else</span> <span class="keyword">if</span> (<span class="keyword">typeof</span> config === <span class="string">'object'</span>) &#123;</div><div class="line">         <span class="keyword">this</span>.state = config.forms;</div><div class="line">       &#125;</div><div class="line">     &#125;</div><div class="line">     setFormState(name, value) &#123;</div><div class="line">       <span class="keyword">this</span>.setState(&#123;</div><div class="line">         [name]: value,</div><div class="line">       &#125;);</div><div class="line">     &#125;</div><div class="line">     render() &#123;</div><div class="line">       <span class="keyword">return</span> <span class="xml"><span class="tag">&lt;<span class="name">BaseComponent</span> <span class="attr">setFormState</span>=<span class="string">&#123;this.setFormState&#125;</span> <span class="attr">forms</span>=<span class="string">&#123;this.state&#125;</span> &#123;<span class="attr">...this.props</span>&#125; /&gt;</span>;</span></div><div class="line">     &#125;</div><div class="line">  &#125;</div><div class="line">);</div></pre></td></tr></table></figure>
 <h2 id="기본-내용"><a href="#기본-내용" class="headerlink" title="기본 내용"></a>기본 내용</h2><h3 id="interface"><a href="#interface" class="headerlink" title="interface"></a>interface</h3><p>가장 먼저, interface와 관련된 내용이 나오는데 <code>interface</code>는 typeScript와 관련된 문법이다.(RN자체적으로 일부 typeScript문법을 지원해주는 것인지, 아니면 babel과 관련된것인지는 아직 확인 되지 않음)</p>
 <p><a href="https://www.typescriptlang.org/docs/handbook/interfaces.html" target="_blank" rel="external">c.f) TypeScript</a></p>
 <p>위의 <code>interface config</code> 이것은, config라는 데이터의 형태를 보기 좋게 정의한 것이다.</p>
@@ -1800,38 +1849,6 @@
   </entry>
   
   <entry>
-    <title>프로그래밍 공부에 도움이 되는 사이트</title>
-    <link href="https://voidsatisfaction.github.io/2016/08/25/3018-8-18-c-ProgrammingSite/"/>
-    <id>https://voidsatisfaction.github.io/2016/08/25/3018-8-18-c-ProgrammingSite/</id>
-    <published>2016-08-25T02:52:00.000Z</published>
-    <updated>2016-11-19T05:13:15.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>프로그래밍(주로 웹) 공부에 도움이 되는 사이트를 모아보았습니다.</p>
-<h1 id="웹-기초"><a href="#웹-기초" class="headerlink" title="웹 기초"></a>웹 기초</h1><p>웹의 기초적인 부분을 배울 수 있는 사이트들 입니다.</p>
-<h3 id="생활코딩"><a href="#생활코딩" class="headerlink" title="생활코딩"></a><a href="https://opentutorials.org/course/1" target="_blank" rel="external">생활코딩</a></h3><h3 id="Codelion"><a href="#Codelion" class="headerlink" title="Codelion"></a><a href="http://codelion.net/" target="_blank" rel="external">Codelion</a></h3><h3 id="멋쟁이-사자처럼"><a href="#멋쟁이-사자처럼" class="headerlink" title="멋쟁이 사자처럼"></a><a href="http://www.likelion.net/" target="_blank" rel="external">멋쟁이 사자처럼</a></h3><h3 id="Codecademy"><a href="#Codecademy" class="headerlink" title="Codecademy"></a><a href="https://www.codecademy.com/" target="_blank" rel="external">Codecademy</a></h3><h3 id="Css-레이아웃을-배웁시다"><a href="#Css-레이아웃을-배웁시다" class="headerlink" title="Css 레이아웃을 배웁시다"></a><a href="http://ko.learnlayout.com/" target="_blank" rel="external">Css 레이아웃을 배웁시다</a></h3><h1 id="웹-기본"><a href="#웹-기본" class="headerlink" title="웹 기본"></a>웹 기본</h1><p>기초보다는 약간 더 자신있는 분들을 위하여.</p>
-<h2 id="NodeJS"><a href="#NodeJS" class="headerlink" title="NodeJS"></a>NodeJS</h2><ul>
-<li><a href="http://nodeschool.io/" target="_blank" rel="external">Node School</a></li>
-</ul>
-<h2 id="Ruby-on-Rails"><a href="#Ruby-on-Rails" class="headerlink" title="Ruby on Rails"></a>Ruby on Rails</h2><ul>
-<li><a href="https://rorlab.gitbooks.io/railsguidebook/content/" target="_blank" rel="external">초보자를 위한 레일스 가이드북 - RORLAB</a></li>
-</ul>
-<h1 id="알고리즘"><a href="#알고리즘" class="headerlink" title="알고리즘"></a>알고리즘</h1><h3 id="Euler-Project-오일러-프로젝트-한글"><a href="#Euler-Project-오일러-프로젝트-한글" class="headerlink" title="Euler Project(오일러 프로젝트 한글)"></a><a href="http://euler.synap.co.kr/" target="_blank" rel="external">Euler Project(오일러 프로젝트 한글)</a></h3><h3 id="Euler-Project-영문"><a href="#Euler-Project-영문" class="headerlink" title="Euler Project(영문)"></a><a href="https://projecteuler.net/" target="_blank" rel="external">Euler Project(영문)</a></h3><h3 id="백준-온라인-judge"><a href="#백준-온라인-judge" class="headerlink" title="백준 온라인 judge"></a><a href="https://www.acmicpc.net/" target="_blank" rel="external">백준 온라인 judge</a></h3><h3 id="Google-codejam"><a href="#Google-codejam" class="headerlink" title="Google codejam"></a><a href="https://code.google.com/codejam/" target="_blank" rel="external">Google codejam</a></h3><h3 id="Top-Coder"><a href="#Top-Coder" class="headerlink" title="Top Coder"></a><a href="https://www.topcoder.com/" target="_blank" rel="external">Top Coder</a></h3><h1 id="해킹-보안"><a href="#해킹-보안" class="headerlink" title="해킹 / 보안"></a>해킹 / 보안</h1><h3 id="해커스쿨"><a href="#해커스쿨" class="headerlink" title="해커스쿨"></a><a href="http://www.hackerschool.org/Sub_Html/HS_Community/index.html" target="_blank" rel="external">해커스쿨</a></h3><h3 id="webhacking-kr"><a href="#webhacking-kr" class="headerlink" title="webhacking.kr"></a><a href="http://webhacking.kr/" target="_blank" rel="external">webhacking.kr</a></h3><h1 id="Tools"><a href="#Tools" class="headerlink" title="Tools"></a>Tools</h1><h3 id="GitHub-Git"><a href="#GitHub-Git" class="headerlink" title="GitHub / Git"></a><a href="https://github.com/" target="_blank" rel="external">GitHub / Git</a></h3><h3 id="Git간편-안내서"><a href="#Git간편-안내서" class="headerlink" title="Git간편 안내서"></a><a href="https://rogerdudler.github.io/git-guide/index.ko.html" target="_blank" rel="external">Git간편 안내서</a></h3><h3 id="Git-쉽게-따라-배우기"><a href="#Git-쉽게-따라-배우기" class="headerlink" title="Git 쉽게 따라 배우기"></a><a href="http://learngitbranching.js.org/" target="_blank" rel="external">Git 쉽게 따라 배우기</a></h3><h3 id="Vim-Adventure"><a href="#Vim-Adventure" class="headerlink" title="Vim Adventure"></a><a href="http://vim-adventures.com/" target="_blank" rel="external">Vim Adventure</a></h3><h1 id="좋은-블로그-팟캐스트"><a href="#좋은-블로그-팟캐스트" class="headerlink" title="좋은 블로그 / 팟캐스트"></a>좋은 블로그 / 팟캐스트</h1><h3 id="나는-프로그래머다"><a href="#나는-프로그래머다" class="headerlink" title="나는 프로그래머다"></a><a href="https://iamprogrammer.io/" target="_blank" rel="external">나는 프로그래머다</a></h3><h3 id="More-Agile-보다-나은-개발자가-되기-위하여"><a href="#More-Agile-보다-나은-개발자가-되기-위하여" class="headerlink" title="More Agile 보다 나은 개발자가 되기 위하여"></a><a href="http://www.moreagile.net/" target="_blank" rel="external">More Agile 보다 나은 개발자가 되기 위하여</a></h3><h3 id="쪼꼬니-님의-블로그-웹디자인에-참고-내용정리가-잘되어있음"><a href="#쪼꼬니-님의-블로그-웹디자인에-참고-내용정리가-잘되어있음" class="headerlink" title="쪼꼬니 님의 블로그(웹디자인에 참고. 내용정리가 잘되어있음)"></a><a href="http://elren.blog.me/220730606293" target="_blank" rel="external">쪼꼬니 님의 블로그(웹디자인에 참고. 내용정리가 잘되어있음)</a></h3><h1 id="기타"><a href="#기타" class="headerlink" title="기타"></a>기타</h1><h3 id="Google-Power-Search"><a href="#Google-Power-Search" class="headerlink" title="Google Power Search"></a><a href="http://www.powersearchingwithgoogle.com/" target="_blank" rel="external">Google Power Search</a></h3>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;프로그래밍(주로 웹) 공부에 도움이 되는 사이트를 모아보았습니다.&lt;/p&gt;
-&lt;h1 id=&quot;웹-기초&quot;&gt;&lt;a href=&quot;#웹-기초&quot; class=&quot;headerlink&quot; title=&quot;웹 기초&quot;&gt;&lt;/a&gt;웹 기초&lt;/h1&gt;&lt;p&gt;웹의 기초적인 부분을 배울 수 있
-    
-    </summary>
-    
-      <category term="교육" scheme="https://voidsatisfaction.github.io/categories/%EA%B5%90%EC%9C%A1/"/>
-    
-    
-      <category term="프로그래밍 교육" scheme="https://voidsatisfaction.github.io/tags/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D-%EA%B5%90%EC%9C%A1/"/>
-    
-  </entry>
-  
-  <entry>
     <title>Callback / Clojure / Continuation</title>
     <link href="https://voidsatisfaction.github.io/2016/08/25/2016-8-25-a-cbcjcn/"/>
     <id>https://voidsatisfaction.github.io/2016/08/25/2016-8-25-a-cbcjcn/</id>
@@ -1890,6 +1907,38 @@
     
     
       <category term="JavaScript" scheme="https://voidsatisfaction.github.io/tags/JavaScript/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>프로그래밍 공부에 도움이 되는 사이트</title>
+    <link href="https://voidsatisfaction.github.io/2016/08/25/3018-8-18-c-ProgrammingSite/"/>
+    <id>https://voidsatisfaction.github.io/2016/08/25/3018-8-18-c-ProgrammingSite/</id>
+    <published>2016-08-25T02:52:00.000Z</published>
+    <updated>2016-11-19T05:13:15.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>프로그래밍(주로 웹) 공부에 도움이 되는 사이트를 모아보았습니다.</p>
+<h1 id="웹-기초"><a href="#웹-기초" class="headerlink" title="웹 기초"></a>웹 기초</h1><p>웹의 기초적인 부분을 배울 수 있는 사이트들 입니다.</p>
+<h3 id="생활코딩"><a href="#생활코딩" class="headerlink" title="생활코딩"></a><a href="https://opentutorials.org/course/1" target="_blank" rel="external">생활코딩</a></h3><h3 id="Codelion"><a href="#Codelion" class="headerlink" title="Codelion"></a><a href="http://codelion.net/" target="_blank" rel="external">Codelion</a></h3><h3 id="멋쟁이-사자처럼"><a href="#멋쟁이-사자처럼" class="headerlink" title="멋쟁이 사자처럼"></a><a href="http://www.likelion.net/" target="_blank" rel="external">멋쟁이 사자처럼</a></h3><h3 id="Codecademy"><a href="#Codecademy" class="headerlink" title="Codecademy"></a><a href="https://www.codecademy.com/" target="_blank" rel="external">Codecademy</a></h3><h3 id="Css-레이아웃을-배웁시다"><a href="#Css-레이아웃을-배웁시다" class="headerlink" title="Css 레이아웃을 배웁시다"></a><a href="http://ko.learnlayout.com/" target="_blank" rel="external">Css 레이아웃을 배웁시다</a></h3><h1 id="웹-기본"><a href="#웹-기본" class="headerlink" title="웹 기본"></a>웹 기본</h1><p>기초보다는 약간 더 자신있는 분들을 위하여.</p>
+<h2 id="NodeJS"><a href="#NodeJS" class="headerlink" title="NodeJS"></a>NodeJS</h2><ul>
+<li><a href="http://nodeschool.io/" target="_blank" rel="external">Node School</a></li>
+</ul>
+<h2 id="Ruby-on-Rails"><a href="#Ruby-on-Rails" class="headerlink" title="Ruby on Rails"></a>Ruby on Rails</h2><ul>
+<li><a href="https://rorlab.gitbooks.io/railsguidebook/content/" target="_blank" rel="external">초보자를 위한 레일스 가이드북 - RORLAB</a></li>
+</ul>
+<h1 id="알고리즘"><a href="#알고리즘" class="headerlink" title="알고리즘"></a>알고리즘</h1><h3 id="Euler-Project-오일러-프로젝트-한글"><a href="#Euler-Project-오일러-프로젝트-한글" class="headerlink" title="Euler Project(오일러 프로젝트 한글)"></a><a href="http://euler.synap.co.kr/" target="_blank" rel="external">Euler Project(오일러 프로젝트 한글)</a></h3><h3 id="Euler-Project-영문"><a href="#Euler-Project-영문" class="headerlink" title="Euler Project(영문)"></a><a href="https://projecteuler.net/" target="_blank" rel="external">Euler Project(영문)</a></h3><h3 id="백준-온라인-judge"><a href="#백준-온라인-judge" class="headerlink" title="백준 온라인 judge"></a><a href="https://www.acmicpc.net/" target="_blank" rel="external">백준 온라인 judge</a></h3><h3 id="Google-codejam"><a href="#Google-codejam" class="headerlink" title="Google codejam"></a><a href="https://code.google.com/codejam/" target="_blank" rel="external">Google codejam</a></h3><h3 id="Top-Coder"><a href="#Top-Coder" class="headerlink" title="Top Coder"></a><a href="https://www.topcoder.com/" target="_blank" rel="external">Top Coder</a></h3><h1 id="해킹-보안"><a href="#해킹-보안" class="headerlink" title="해킹 / 보안"></a>해킹 / 보안</h1><h3 id="해커스쿨"><a href="#해커스쿨" class="headerlink" title="해커스쿨"></a><a href="http://www.hackerschool.org/Sub_Html/HS_Community/index.html" target="_blank" rel="external">해커스쿨</a></h3><h3 id="webhacking-kr"><a href="#webhacking-kr" class="headerlink" title="webhacking.kr"></a><a href="http://webhacking.kr/" target="_blank" rel="external">webhacking.kr</a></h3><h1 id="Tools"><a href="#Tools" class="headerlink" title="Tools"></a>Tools</h1><h3 id="GitHub-Git"><a href="#GitHub-Git" class="headerlink" title="GitHub / Git"></a><a href="https://github.com/" target="_blank" rel="external">GitHub / Git</a></h3><h3 id="Git간편-안내서"><a href="#Git간편-안내서" class="headerlink" title="Git간편 안내서"></a><a href="https://rogerdudler.github.io/git-guide/index.ko.html" target="_blank" rel="external">Git간편 안내서</a></h3><h3 id="Git-쉽게-따라-배우기"><a href="#Git-쉽게-따라-배우기" class="headerlink" title="Git 쉽게 따라 배우기"></a><a href="http://learngitbranching.js.org/" target="_blank" rel="external">Git 쉽게 따라 배우기</a></h3><h3 id="Vim-Adventure"><a href="#Vim-Adventure" class="headerlink" title="Vim Adventure"></a><a href="http://vim-adventures.com/" target="_blank" rel="external">Vim Adventure</a></h3><h1 id="좋은-블로그-팟캐스트"><a href="#좋은-블로그-팟캐스트" class="headerlink" title="좋은 블로그 / 팟캐스트"></a>좋은 블로그 / 팟캐스트</h1><h3 id="나는-프로그래머다"><a href="#나는-프로그래머다" class="headerlink" title="나는 프로그래머다"></a><a href="https://iamprogrammer.io/" target="_blank" rel="external">나는 프로그래머다</a></h3><h3 id="More-Agile-보다-나은-개발자가-되기-위하여"><a href="#More-Agile-보다-나은-개발자가-되기-위하여" class="headerlink" title="More Agile 보다 나은 개발자가 되기 위하여"></a><a href="http://www.moreagile.net/" target="_blank" rel="external">More Agile 보다 나은 개발자가 되기 위하여</a></h3><h3 id="쪼꼬니-님의-블로그-웹디자인에-참고-내용정리가-잘되어있음"><a href="#쪼꼬니-님의-블로그-웹디자인에-참고-내용정리가-잘되어있음" class="headerlink" title="쪼꼬니 님의 블로그(웹디자인에 참고. 내용정리가 잘되어있음)"></a><a href="http://elren.blog.me/220730606293" target="_blank" rel="external">쪼꼬니 님의 블로그(웹디자인에 참고. 내용정리가 잘되어있음)</a></h3><h1 id="기타"><a href="#기타" class="headerlink" title="기타"></a>기타</h1><h3 id="Google-Power-Search"><a href="#Google-Power-Search" class="headerlink" title="Google Power Search"></a><a href="http://www.powersearchingwithgoogle.com/" target="_blank" rel="external">Google Power Search</a></h3>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;프로그래밍(주로 웹) 공부에 도움이 되는 사이트를 모아보았습니다.&lt;/p&gt;
+&lt;h1 id=&quot;웹-기초&quot;&gt;&lt;a href=&quot;#웹-기초&quot; class=&quot;headerlink&quot; title=&quot;웹 기초&quot;&gt;&lt;/a&gt;웹 기초&lt;/h1&gt;&lt;p&gt;웹의 기초적인 부분을 배울 수 있
+    
+    </summary>
+    
+      <category term="교육" scheme="https://voidsatisfaction.github.io/categories/%EA%B5%90%EC%9C%A1/"/>
+    
+    
+      <category term="프로그래밍 교육" scheme="https://voidsatisfaction.github.io/tags/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D-%EA%B5%90%EC%9C%A1/"/>
     
   </entry>
   
