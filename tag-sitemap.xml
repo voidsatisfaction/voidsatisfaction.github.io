@@ -121,15 +121,29 @@
     </url>
 
     <url>
-        <loc>https://voidsatisfaction.github.io/tags/GitHub/</loc>
+        <loc>https://voidsatisfaction.github.io/tags/JavaScript/</loc>
         <lastmod>2016-12-07T06:49:18.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>https://voidsatisfaction.github.io/tags/JavaScript/</loc>
-        <lastmod>2016-12-07T06:49:18.000Z</lastmod>
+        <loc>https://voidsatisfaction.github.io/tags/GitHub/</loc>
+        <lastmod>2016-12-10T11:57:43.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://voidsatisfaction.github.io/tags/Database/</loc>
+        <lastmod>2016-12-10T14:04:16.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://voidsatisfaction.github.io/tags/Dynamodb/</loc>
+        <lastmod>2016-12-10T14:04:16.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
