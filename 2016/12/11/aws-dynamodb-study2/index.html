@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    
+    <title>AWS DynamoDB 정리 2부 테이블 만들기, 정보보기, 데이터 읽기(secondary index), 데이터 수정하기, 삭제하기 | 텅 빈 충만의 블로그</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+        <meta name="keywords" content="Database,Dynamodb" />
+    
+    <meta name="description" content="참조
+Performing Conditional Writes with Condition Expressions - AWS
+
+Improving Data Access with Secondary Indexes in DynamoDB
+
+
+핵심기본 내용Query and Scan the TableStep 5.1: Run a Query
+This section provides">
+<meta property="og:type" content="article">
+<meta property="og:title" content="AWS DynamoDB 정리 2부 테이블 만들기, 정보보기, 데이터 읽기(secondary index), 데이터 수정하기, 삭제하기">
+<meta property="og:url" content="https://voidsatisfaction.github.io/2016/12/11/aws-dynamodb-study2/index.html">
+<meta property="og:site_name" content="텅 빈 충만의 블로그">
+<meta property="og:description" content="참조
+Performing Conditional Writes with Condition Expressions - AWS
+
+Improving Data Access with Secondary Indexes in DynamoDB
+
+
+핵심기본 내용Query and Scan the TableStep 5.1: Run a Query
+This section provides">
+<meta property="og:updated_time" content="2016-12-13T06:52:44.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="AWS DynamoDB 정리 2부 테이블 만들기, 정보보기, 데이터 읽기(secondary index), 데이터 수정하기, 삭제하기">
+<meta name="twitter:description" content="참조
+Performing Conditional Writes with Condition Expressions - AWS
+
+Improving Data Access with Secondary Indexes in DynamoDB
+
+
+핵심기본 내용Query and Scan the TableStep 5.1: Run a Query
+This section provides">
+    
+    <link rel="canonical" href="https://voidsatisfaction.github.io/2016/12/11/aws-dynamodb-study2/"/>
+
+    
+
+    
+
+    <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/libs/titillium-web/styles.css">
+    <link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+
+    <link rel="stylesheet" href="/css/style.css">
+
+    <script src="/libs/jquery/2.0.3/jquery.min.js"></script>
+    
+    
+        <link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+    
+    
+        <script type="text/javascript">
+(function(i,s,o,g,r,a,m) {i['GoogleAnalyticsObject']=r;i[r]=i[r]||function() {
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-84759824-1', 'auto');
+ga('send', 'pageview');
+
+</script>
+    
+    
+
+</head>
+
+<body>
+    <div id="wrap">
+        <header id="header">
+    <div id="header-outer" class="outer">
+        <div class="container">
+            <div class="container-inner">
+                <div id="header-title">
+                    <h1 class="logo-wrap">
+                        <a href="/" class="logo"></a>
+                    </h1>
+                    
+                        <h2 class="subtitle-wrap">
+                            <p class="subtitle">Ruby JavaScript Scheme을 사랑하는 초보 학생의 소박한 프로그래밍.</p>
+                        </h2>
+                    
+                </div>
+                <div id="header-inner" class="nav-container">
+                    <a id="main-nav-toggle" class="nav-icon fa fa-bars"></a>
+                    <div class="nav-container-inner">
+                        <ul id="main-nav">
+                            
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/">Home</a>
+                                </li>
+                            
+                                        <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Database/">Database</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/JavaScript/">JavaScript</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/JavaScript/ECMA-Script6/">ECMA Script6</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/JavaScript/Nodejs/">Nodejs</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/JavaScript/React-Native/">React Native</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Ruby/">Ruby</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Ruby/Project-Euler/">Project Euler</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Scheme/">Scheme</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Scheme/Schemer-series/">Schemer series</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Todo/">Todo</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Utils/">Utils</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/교육/">교육</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/세상-사는-이야기/">세상 사는 이야기</a></li></ul>
+                                    
+                        </ul>
+                        <nav id="sub-nav">
+                            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Type something..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+</div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+        <div class="container">
+            <div class="main-body container-inner">
+                <div class="main-body-inner">
+                    <section id="main">
+                        <div class="main-body-header">
+    <h1 class="header">
+    
+    <a class="page-title-link" href="/categories/Database/">Database</a>
+    </h1>
+</div>
+                        <div class="main-body-content">
+                            <article id="post-aws-dynamodb-study2" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+        AWS DynamoDB 정리 2부 테이블 만들기, 정보보기, 데이터 읽기(secondary index), 데이터 수정하기, 삭제하기
+        </h1>
+    
+
+            </header>
+        
+        
+            <div class="article-subtitle">
+                <a href="/2016/12/11/aws-dynamodb-study2/" class="article-date">
+    <time datetime="2016-12-11T06:19:08.000Z" itemprop="datePublished">2016-12-11</time>
+</a>
+                
+    <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Database/">Database</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Dynamodb/">Dynamodb</a></li></ul>
+
+            </div>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+            <h2 id="참조"><a href="#참조" class="headerlink" title="참조"></a>참조</h2><ul>
+<li><p><a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html" target="_blank" rel="external">Performing Conditional Writes with Condition Expressions - AWS</a></p>
+</li>
+<li><p><a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/SecondaryIndexes.html" target="_blank" rel="external">Improving Data Access with Secondary Indexes in DynamoDB</a></p>
+</li>
+</ul>
+<h2 id="핵심"><a href="#핵심" class="headerlink" title="핵심"></a>핵심</h2><h2 id="기본-내용"><a href="#기본-내용" class="headerlink" title="기본 내용"></a>기본 내용</h2><h3 id="Query-and-Scan-the-Table"><a href="#Query-and-Scan-the-Table" class="headerlink" title="Query and Scan the Table"></a>Query and Scan the Table</h3><p><strong>Step 5.1: Run a Query</strong></p>
+<p>This section provides examples of Query operations. The queries are specified against the Music table. Remember, the table primary key is made of Artist (partition key) and SongTitle (sort key).</p>
+<ul>
+<li>Query using only the partition key. For example, find songs by an artist.</li>
+<li>Query using both the partition key and the sort key. For example, find songs by an artist and song title starting with a specific string.</li>
+<li>Filter query results. Find songs by an artist and then return only those songs that have more than three radio stations playing them.</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> params = &#123;</div><div class="line">    <span class="attr">TableName</span>: <span class="string">"Music"</span>,</div><div class="line">    <span class="attr">KeyConditionExpression</span>: <span class="string">"Artist = :artist"</span>,</div><div class="line">    <span class="attr">ExpressionAttributeValues</span>: &#123;</div><div class="line">        <span class="string">":artist"</span>: <span class="string">"No One You Know"</span></div><div class="line">    &#125;</div><div class="line">&#125;;</div><div class="line"></div><div class="line">docClient.query(params, <span class="function"><span class="keyword">function</span>(<span class="params">err, data</span>) </span>&#123;</div><div class="line">    <span class="keyword">if</span> (err)</div><div class="line">        <span class="built_in">console</span>.log(<span class="built_in">JSON</span>.stringify(err, <span class="literal">null</span>, <span class="number">2</span>));</div><div class="line">    <span class="keyword">else</span></div><div class="line">        <span class="built_in">console</span>.log(<span class="built_in">JSON</span>.stringify(data, <span class="literal">null</span>, <span class="number">2</span>));</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// query for songs by an artist with song title starting with a specific string(s)</span></div><div class="line"><span class="keyword">var</span> params = &#123;</div><div class="line">    <span class="attr">TableName</span>: <span class="string">"Music"</span>,</div><div class="line">    <span class="attr">ProjectionExpression</span>: <span class="string">"SongTitle"</span>,</div><div class="line">    <span class="attr">KeyConditionExpression</span>: <span class="string">"Artist = :artist and begins_with(SongTitle, :letter)"</span>,</div><div class="line">    <span class="attr">ExpressionAttributeValues</span>: &#123;</div><div class="line">        <span class="string">":artist"</span>: <span class="string">"The Acme Band"</span>,</div><div class="line">        <span class="string">":letter"</span>: <span class="string">"S"</span></div><div class="line">    &#125;</div><div class="line">&#125;;</div><div class="line"></div><div class="line">docClient.query(params, <span class="function"><span class="keyword">function</span>(<span class="params">err, data</span>) </span>&#123;</div><div class="line">    <span class="keyword">if</span> (err)</div><div class="line">        <span class="built_in">console</span>.log(<span class="built_in">JSON</span>.stringify(err, <span class="literal">null</span>, <span class="number">2</span>));</div><div class="line">    <span class="keyword">else</span></div><div class="line">        <span class="built_in">console</span>.log(<span class="built_in">JSON</span>.stringify(data, <span class="literal">null</span>, <span class="number">2</span>));</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<p><strong>Step 5.2: Filter Query Results</strong></p>
+<p>You can filter results of a query by adding the FilterExpression parameter.</p>
+<p>In this example you specify a query to find songs by an artist (The Acme Band).<br>The query also specifies the FilterExpression to request DynamoDB to return only the song items that are being played on more than three radio stations.</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="keyword">var</span> params = &#123;</div><div class="line">    <span class="attr">TableName</span>: <span class="string">"Music"</span>,</div><div class="line">    <span class="attr">ProjectionExpression</span>: <span class="string">"SongTitle, PromotionInfo.Rotation"</span>,</div><div class="line">    <span class="attr">KeyConditionExpression</span>: <span class="string">"Artist = :artist"</span>,</div><div class="line">    <span class="attr">FilterExpression</span>: <span class="string">"size(PromotionInfo.RadioStationsPlaying) &gt;= :howmany"</span>,</div><div class="line">    <span class="attr">ExpressionAttributeValues</span>: &#123;</div><div class="line">        <span class="string">":artist"</span>: <span class="string">"The Acme Band"</span>,</div><div class="line">        <span class="string">":howmany"</span>: <span class="number">3</span></div><div class="line">    &#125;,</div><div class="line">&#125;;</div><div class="line"></div><div class="line">docClient.query(params, <span class="function"><span class="keyword">function</span>(<span class="params">err, data</span>) </span>&#123;</div><div class="line">    <span class="keyword">if</span> (err)</div><div class="line">        <span class="built_in">console</span>.log(<span class="built_in">JSON</span>.stringify(err, <span class="literal">null</span>, <span class="number">2</span>));</div><div class="line">    <span class="keyword">else</span></div><div class="line">        <span class="built_in">console</span>.log(<span class="built_in">JSON</span>.stringify(data, <span class="literal">null</span>, <span class="number">2</span>));</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<p><strong>Step 5.3: Scan the Table</strong></p>
+<p>You can use the Scan operation to retrieve all of the items in a table.<br>In the following example you scan the Music table.</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="keyword">var</span> params = &#123;</div><div class="line">    <span class="attr">TableName</span>: <span class="string">"Music"</span></div><div class="line">&#125;;</div><div class="line"></div><div class="line">docClient.scan(params, <span class="function"><span class="keyword">function</span>(<span class="params">err, data</span>) </span>&#123;</div><div class="line">    <span class="keyword">if</span> (err)</div><div class="line">        <span class="built_in">console</span>.log(<span class="built_in">JSON</span>.stringify(err, <span class="literal">null</span>, <span class="number">2</span>));</div><div class="line">    <span class="keyword">else</span></div><div class="line">        <span class="built_in">console</span>.log(<span class="built_in">JSON</span>.stringify(data, <span class="literal">null</span>, <span class="number">2</span>));</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<h3 id="Work-with-a-Scondary-Index"><a href="#Work-with-a-Scondary-Index" class="headerlink" title="Work with a Scondary Index"></a>Work with a Scondary Index</h3><p><strong>Without an index, you can query for items based on primary key.</strong><br>You can add indexes to your table depending on your query patterns.<br>DynamoDB supports two different kinds of indexes:</p>
+<ul>
+<li>Global secondary index — an index with a partition key and sort key that can be different from those on the table. You can create or delete a global secondary index on a table at any time.</li>
+<li>Local secondary index — an index that has the same partition key as the primary key of the table, but a different sort key. You can only create a local secondary index when you create a table; when you delete the table, the local secondary index is also deleted.</li>
+</ul>
+<p><strong>Step 6.1: Create a Global Secondary Index</strong></p>
+<p>The Music table has a primary key made of Artist (partition key) and SongTitle (sort key). Now suppose you want to query this table by Genre and find all of the Country songs. Searching on the primary key does not help in this case. To do this, we build a secondary index with Genre as the partition key.</p>
+<p>To make this interesting, we use the Price attribute as the sort key. So you can now run a query to find all Country songs with Price less than 0.99.</p>
+<p>You can add an index at the time that you create a table or later using the UpdateTable operation.</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="keyword">var</span> params = &#123;</div><div class="line">    <span class="attr">TableName</span>: <span class="string">"Music"</span>,</div><div class="line">    <span class="attr">AttributeDefinitions</span>:[</div><div class="line">        &#123;<span class="attr">AttributeName</span>: <span class="string">"Genre"</span>, <span class="attr">AttributeType</span>: <span class="string">"S"</span>&#125;,</div><div class="line">        &#123;<span class="attr">AttributeName</span>: <span class="string">"Price"</span>, <span class="attr">AttributeType</span>: <span class="string">"N"</span>&#125;</div><div class="line">    ],</div><div class="line">    <span class="attr">GlobalSecondaryIndexUpdates</span>: [</div><div class="line">        &#123;</div><div class="line">            <span class="attr">Create</span>: &#123;</div><div class="line">                <span class="attr">IndexName</span>: <span class="string">"GenreAndPriceIndex"</span>,</div><div class="line">                <span class="attr">KeySchema</span>: [</div><div class="line">                    &#123;<span class="attr">AttributeName</span>: <span class="string">"Genre"</span>, <span class="attr">KeyType</span>: <span class="string">"HASH"</span>&#125;,  <span class="comment">//Partition key</span></div><div class="line">                    &#123;<span class="attr">AttributeName</span>: <span class="string">"Price"</span>, <span class="attr">KeyType</span>: <span class="string">"RANGE"</span>&#125;,  <span class="comment">//Sort key</span></div><div class="line">                ],</div><div class="line">                <span class="attr">Projection</span>: &#123;</div><div class="line">                    <span class="string">"ProjectionType"</span>: <span class="string">"ALL"</span></div><div class="line">                &#125;,</div><div class="line">                <span class="attr">ProvisionedThroughput</span>: &#123;</div><div class="line">                    <span class="string">"ReadCapacityUnits"</span>: <span class="number">1</span>,<span class="string">"WriteCapacityUnits"</span>: <span class="number">1</span></div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    ]</div><div class="line">&#125;;</div><div class="line"></div><div class="line">dynamodb.updateTable(params, <span class="function"><span class="keyword">function</span>(<span class="params">err, data</span>) </span>&#123;</div><div class="line">    <span class="keyword">if</span> (err)</div><div class="line">        <span class="built_in">console</span>.log(<span class="built_in">JSON</span>.stringify(err, <span class="literal">null</span>, <span class="number">2</span>));</div><div class="line">    <span class="keyword">else</span></div><div class="line">        <span class="built_in">console</span>.log(<span class="built_in">JSON</span>.stringify(data, <span class="literal">null</span>, <span class="number">2</span>));</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<ul>
+<li><em>AttributeDefinitions</em> lists data types of attributes that are later defined as the partition key and sort key of the index.</li>
+<li><em>GlobalSecondaryIndexUpdates</em> specifies the index operations. You can create index, update index, or delete an index.</li>
+<li>The <em>ProvisionedThroughput</em> parameter is required, but the downloadable version of DynamoDB ignores it.</li>
+</ul>
+<p><strong>Step 6.2: Query the Index</strong></p>
+<p>Now we use the index to query for all Country songs.<br>The index has all of the data you need, so you query the index and not the table.</p>
+<p>You use the same Query operation to query a table (see Step 5: Query and Scan the Table) or an index on the table.<br>When you query an index you specify both the table name and the index name.</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="keyword">var</span> params = &#123;</div><div class="line">    <span class="attr">TableName</span>: <span class="string">"Music"</span>,</div><div class="line">    <span class="attr">IndexName</span>: <span class="string">"GenreAndPriceIndex"</span>,</div><div class="line">    <span class="attr">KeyConditionExpression</span>: <span class="string">"Genre = :genre"</span>,</div><div class="line">    <span class="attr">ExpressionAttributeValues</span>: &#123;</div><div class="line">        <span class="string">":genre"</span>: <span class="string">"Country"</span></div><div class="line">    &#125;,</div><div class="line">    <span class="attr">ProjectionExpression</span>: <span class="string">"SongTitle, Price"</span></div><div class="line">&#125;;</div><div class="line"></div><div class="line">docClient.query(params, <span class="function"><span class="keyword">function</span>(<span class="params">err, data</span>) </span>&#123;</div><div class="line">    <span class="keyword">if</span> (err)</div><div class="line">        <span class="built_in">console</span>.log(<span class="built_in">JSON</span>.stringify(err, <span class="literal">null</span>, <span class="number">2</span>));</div><div class="line">    <span class="keyword">else</span></div><div class="line">        <span class="built_in">console</span>.log(<span class="built_in">JSON</span>.stringify(data, <span class="literal">null</span>, <span class="number">2</span>));</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<h3 id="Modify-Items-in-the-Table"><a href="#Modify-Items-in-the-Table" class="headerlink" title="Modify Items in the Table"></a>Modify Items in the Table</h3><p><strong>Step 7.1: Update an Item</strong></p>
+<p>The UpdateItem API operation lets you do the following:</p>
+<ul>
+<li>Add more attributes to an item.</li>
+<li>Modify the values of one or more attributes in the item.</li>
+<li>Remove attributes from the item.</li>
+</ul>
+<p>By default, UpdateItem operation does not return any data (empty response).<br>You can optionally specify the ReturnValues parameter to request attribute values as they appeared before or after the update:</p>
+<ul>
+<li><code>ALL_OLD</code> returns all attribute values as they appeared before the update.</li>
+<li><code>UPDATED_OLD</code> returns only the updated attributes as they appeared before the update.</li>
+<li><code>ALL_NEW</code> returns all attribute values as they appear after the update.</li>
+<li><code>UPDATED_NEW</code> returns only the updated attributes as they appeared after the update.</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// add new 'RecordLabel attribute and the value'</span></div><div class="line"><span class="keyword">var</span> params = &#123;</div><div class="line">    <span class="attr">TableName</span>: <span class="string">"Music"</span>,</div><div class="line">    <span class="attr">Key</span>: &#123;</div><div class="line">        <span class="string">"Artist"</span>:<span class="string">"No One You Know"</span>,</div><div class="line">        <span class="string">"SongTitle"</span>:<span class="string">"Call Me Today"</span></div><div class="line">    &#125;,</div><div class="line">    <span class="attr">UpdateExpression</span>: <span class="string">"SET RecordLabel = :label"</span>,</div><div class="line">    <span class="attr">ExpressionAttributeValues</span>: &#123; </div><div class="line">        <span class="string">":label"</span>: <span class="string">"Global Records"</span></div><div class="line">    &#125;,</div><div class="line">    <span class="attr">ReturnValues</span>: <span class="string">"ALL_NEW"</span></div><div class="line">&#125;;</div><div class="line"></div><div class="line">docClient.update(params, <span class="function"><span class="keyword">function</span>(<span class="params">err, data</span>) </span>&#123;</div><div class="line">    <span class="keyword">if</span> (err)</div><div class="line">        <span class="built_in">console</span>.log(<span class="built_in">JSON</span>.stringify(err, <span class="literal">null</span>, <span class="number">2</span>));</div><div class="line">    <span class="keyword">else</span></div><div class="line">        <span class="built_in">console</span>.log(<span class="built_in">JSON</span>.stringify(data, <span class="literal">null</span>, <span class="number">2</span>));</div><div class="line">&#125;);</div><div class="line"></div><div class="line"><span class="comment">// update price and remove Tags.Composers value</span></div><div class="line"><span class="keyword">var</span> params = &#123;</div><div class="line">    <span class="attr">TableName</span>: <span class="string">"Music"</span>,</div><div class="line">    <span class="attr">Key</span>: &#123;</div><div class="line">        <span class="string">"Artist"</span>:<span class="string">"No One You Know"</span>,</div><div class="line">        <span class="string">"SongTitle"</span>:<span class="string">"Call Me Today"</span></div><div class="line">    &#125;,</div><div class="line">    <span class="attr">UpdateExpression</span>: </div><div class="line">        <span class="string">"SET Price = :price REMOVE Tags.Composers[2]"</span>,</div><div class="line">    <span class="attr">ExpressionAttributeValues</span>: &#123; </div><div class="line">        <span class="string">":price"</span>: <span class="number">0.89</span></div><div class="line">    &#125;,</div><div class="line">    <span class="attr">ReturnValues</span>: <span class="string">"ALL_NEW"</span></div><div class="line">&#125;;</div><div class="line">docClient.update(params, <span class="function"><span class="keyword">function</span>(<span class="params">err, data</span>) </span>&#123;</div><div class="line">    <span class="keyword">if</span> (err)</div><div class="line">        <span class="built_in">console</span>.log(<span class="built_in">JSON</span>.stringify(err, <span class="literal">null</span>, <span class="number">2</span>));</div><div class="line">    <span class="keyword">else</span></div><div class="line">        <span class="built_in">console</span>.log(<span class="built_in">JSON</span>.stringify(data, <span class="literal">null</span>, <span class="number">2</span>));</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<p><strong>Specify a Conditional Write</strong></p>
+<p>By default updates are performed unconditionally.<br>You can specify a condition in the UpdateItem operation to perform conditional update.<br>For example, you may want to check if an attribute exists before changing its value, or check the existing value and apply an update only if the existing value meets certain criteria.</p>
+<p>The UpdateItem operation provides ConditionExpression parameter for you to specify one or more conditions.</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> params = &#123;</div><div class="line">    <span class="attr">TableName</span>: <span class="string">"Music"</span>,</div><div class="line">    <span class="attr">Key</span>: &#123;</div><div class="line">        <span class="string">"Artist"</span>:<span class="string">"No One You Know"</span>,</div><div class="line">        <span class="string">"SongTitle"</span>:<span class="string">"Call Me Today"</span></div><div class="line">    &#125;,</div><div class="line">    <span class="attr">UpdateExpression</span>: <span class="string">"SET RecordLabel = :label"</span>,</div><div class="line">    <span class="attr">ExpressionAttributeValues</span>: &#123; </div><div class="line">        <span class="string">":label"</span>: <span class="string">"New Wave Recordings, Inc."</span></div><div class="line">    &#125;,</div><div class="line">    <span class="attr">ConditionExpression</span>: <span class="string">"attribute_not_exists(RecordLabel)"</span>,</div><div class="line">    <span class="attr">ReturnValues</span>: <span class="string">"ALL_NEW"</span></div><div class="line">&#125;;</div><div class="line"></div><div class="line">docClient.update(params, <span class="function"><span class="keyword">function</span>(<span class="params">err, data</span>) </span>&#123;</div><div class="line">    <span class="keyword">if</span> (err)</div><div class="line">        <span class="built_in">console</span>.log(<span class="built_in">JSON</span>.stringify(err, <span class="literal">null</span>, <span class="number">2</span>));</div><div class="line">    <span class="keyword">else</span></div><div class="line">        <span class="built_in">console</span>.log(<span class="built_in">JSON</span>.stringify(data, <span class="literal">null</span>, <span class="number">2</span>));</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<p><strong>Specify an Atomic Counter</strong></p>
+<p>DynamoDB supports atomic counters, where you use the UpdateItem operation to increment or decrement the value of an existing attribute without interfering with other write requests.<br>(All write requests are applied in the order in which they were received.) For example, a music player application might want to maintain a counter each time song is played.<br>In this case, the application would need to increment this counter regardless of its current value.<br>For more information, go to Atomic Counters in the Amazon DynamoDB Developer Guide.</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> params = &#123;</div><div class="line">    <span class="attr">TableName</span>: <span class="string">"Music"</span>,</div><div class="line">    <span class="attr">Key</span>: &#123;</div><div class="line">        <span class="string">"Artist"</span>:<span class="string">"No One You Know"</span>,</div><div class="line">        <span class="string">"SongTitle"</span>:<span class="string">"Call Me Today"</span></div><div class="line">    &#125;,</div><div class="line">    <span class="attr">UpdateExpression</span>: <span class="string">"SET Plays = :val"</span>,</div><div class="line">    <span class="attr">ExpressionAttributeValues</span>: &#123; </div><div class="line">        <span class="string">":val"</span>: <span class="number">0</span></div><div class="line">    &#125;,</div><div class="line">    <span class="attr">ReturnValues</span>: <span class="string">"UPDATED_NEW"</span></div><div class="line">&#125;;</div><div class="line">docClient.update(params, <span class="function"><span class="keyword">function</span>(<span class="params">err, data</span>) </span>&#123;</div><div class="line">    <span class="keyword">if</span> (err)</div><div class="line">        <span class="built_in">console</span>.log(<span class="built_in">JSON</span>.stringify(err, <span class="literal">null</span>, <span class="number">2</span>));</div><div class="line">    <span class="keyword">else</span></div><div class="line">        <span class="built_in">console</span>.log(<span class="built_in">JSON</span>.stringify(data, <span class="literal">null</span>, <span class="number">2</span>));</div><div class="line">&#125;);</div><div class="line"></div><div class="line"><span class="keyword">var</span> params = &#123;</div><div class="line">    <span class="attr">TableName</span>: <span class="string">"Music"</span>,</div><div class="line">    <span class="attr">Key</span>: &#123;</div><div class="line">        <span class="string">"Artist"</span>:<span class="string">"No One You Know"</span>,</div><div class="line">        <span class="string">"SongTitle"</span>:<span class="string">"Call Me Today"</span></div><div class="line">    &#125;,</div><div class="line">    <span class="attr">UpdateExpression</span>: <span class="string">"SET Plays = :val"</span>,</div><div class="line">    <span class="attr">ExpressionAttributeValues</span>: &#123; </div><div class="line">        <span class="string">":val"</span>: <span class="number">0</span></div><div class="line">    &#125;,</div><div class="line">    <span class="attr">ReturnValues</span>: <span class="string">"UPDATED_NEW"</span></div><div class="line">&#125;;</div><div class="line">docClient.update(params, <span class="function"><span class="keyword">function</span>(<span class="params">err, data</span>) </span>&#123;</div><div class="line">    <span class="keyword">if</span> (err)</div><div class="line">        <span class="built_in">console</span>.log(<span class="built_in">JSON</span>.stringify(err, <span class="literal">null</span>, <span class="number">2</span>));</div><div class="line">    <span class="keyword">else</span></div><div class="line">        <span class="built_in">console</span>.log(<span class="built_in">JSON</span>.stringify(data, <span class="literal">null</span>, <span class="number">2</span>));</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<p><strong>Step 7.2: Delete an Item</strong></p>
+<p>You now use the DeleteItem API operation to delete an item from the table.<br>Note that this operation is permanent—there is no way to restore an item.</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> params = &#123;</div><div class="line">    <span class="attr">TableName</span>: <span class="string">"Music"</span>,</div><div class="line">    <span class="attr">Key</span>: &#123;</div><div class="line">        <span class="attr">Artist</span>: <span class="string">"The Acme Band"</span>, </div><div class="line">        <span class="attr">SongTitle</span>: <span class="string">"Look Out, World"</span></div><div class="line">    &#125;</div><div class="line">&#125;;</div><div class="line"></div><div class="line">docClient.delete(params, <span class="function"><span class="keyword">function</span>(<span class="params">err, data</span>) </span>&#123;</div><div class="line">    <span class="keyword">if</span> (err)</div><div class="line">        <span class="built_in">console</span>.log(<span class="built_in">JSON</span>.stringify(err, <span class="literal">null</span>, <span class="number">2</span>));</div><div class="line">    <span class="keyword">else</span></div><div class="line">        <span class="built_in">console</span>.log(<span class="built_in">JSON</span>.stringify(data, <span class="literal">null</span>, <span class="number">2</span>));</div><div class="line">&#125;);</div><div class="line"></div><div class="line"><span class="comment">// conditional</span></div><div class="line"><span class="keyword">var</span> params = &#123;</div><div class="line">    <span class="attr">TableName</span>: <span class="string">"Music"</span>,</div><div class="line">    <span class="attr">Key</span>: &#123;</div><div class="line">        <span class="attr">Artist</span>: <span class="string">"No One You Know"</span>, </div><div class="line">        <span class="attr">SongTitle</span>: <span class="string">"My Dog Spot"</span></div><div class="line">    &#125;,</div><div class="line">    <span class="attr">ConditionExpression</span>: <span class="string">"Price = :price"</span>,</div><div class="line">    <span class="attr">ExpressionAttributeValues</span>: &#123;</div><div class="line">        <span class="string">":price"</span>: <span class="number">0.00</span></div><div class="line">    &#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+<h3 id="Clean-Up"><a href="#Clean-Up" class="headerlink" title="Clean Up"></a>Clean Up</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> params = &#123;</div><div class="line">    <span class="attr">TableName</span>: <span class="string">"Music"</span></div><div class="line">&#125;;</div><div class="line"></div><div class="line">dynamodb.deleteTable(params, <span class="function"><span class="keyword">function</span>(<span class="params">err, data</span>) </span>&#123;</div><div class="line">    <span class="keyword">if</span> (err)</div><div class="line">        <span class="built_in">console</span>.log(<span class="built_in">JSON</span>.stringify(err, <span class="literal">null</span>, <span class="number">2</span>));</div><div class="line">    <span class="keyword">else</span></div><div class="line">        <span class="built_in">console</span>.log(<span class="built_in">JSON</span>.stringify(data, <span class="literal">null</span>, <span class="number">2</span>));</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<h2 id="정리"><a href="#정리" class="headerlink" title="정리"></a>정리</h2>
+        </div>
+        <footer class="article-footer">
+            
+
+
+
+    <a data-url="https://voidsatisfaction.github.io/2016/12/11/aws-dynamodb-study2/" data-id="ciwn5iki4001lpxsdpp77gz93" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+<script>
+    (function ($) {
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+        </footer>
+    </div>
+</article>
+
+    <section id="comments">
+    
+        
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
+    
+    </section>
+
+                        </div>
+                    </section>
+                    <aside id="sidebar">
+    <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
+    <div class="sidebar-top">
+        <p>follow:</p>
+        <ul class="social-links">
+            
+                
+                <li>
+                    <a class="social-tooltip" title="facebook" href="https://www.facebook.com/yeon.gyumin" target="_blank">
+                        <i class="icon fa fa-facebook"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="github" href="https://github.com/voidsatisfaction" target="_blank">
+                        <i class="icon fa fa-github"></i>
+                    </a>
+                </li>
+                
+            
+        </ul>
+    </div>
+    <div class="github-card" data-github="voidSatisfaction" data-height="" data-theme="default"></div>
+    <script src="//cdn.jsdelivr.net/github-cards/latest/widget.js"></script>
+    
+        
+<nav id="article-nav">
+    
+    
+        <a href="/2016/12/10/aws-dynamodb-study/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">older</strong>
+        <p class="article-nav-title">AWS DynamoDB 정리 1부 테이블 만들기, 테이블 정보보기, 데이터 읽기</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
+    
+    <div class="widgets-container">
+        
+            
+                
+    <div class="widget-wrap">
+        <h3 class="widget-title">recents</h3>
+        <div class="widget">
+            <ul id="recent-post" class="no-thumbnail">
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Database/">Database</a></p>
+                            <p class="item-title"><a href="/2016/12/11/aws-dynamodb-study2/" class="title">AWS DynamoDB 정리 2부 테이블 만들기, 정보보기, 데이터 읽기(secondary index), 데이터 수정하기, 삭제하기</a></p>
+                            <p class="item-date"><time datetime="2016-12-11T06:19:08.000Z" itemprop="datePublished">2016-12-11</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Database/">Database</a></p>
+                            <p class="item-title"><a href="/2016/12/10/aws-dynamodb-study/" class="title">AWS DynamoDB 정리 1부 테이블 만들기, 테이블 정보보기, 데이터 읽기</a></p>
+                            <p class="item-date"><time datetime="2016-12-10T11:56:07.000Z" itemprop="datePublished">2016-12-10</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/JavaScript/">JavaScript</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/JavaScript/React-Native/">React Native</a></p>
+                            <p class="item-title"><a href="/2016/12/07/propTypes-and-sementic/" class="title">PropTypes과 Semantic Commit Messages</a></p>
+                            <p class="item-date"><time datetime="2016-12-07T06:28:03.000Z" itemprop="datePublished">2016-12-07</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/JavaScript/">JavaScript</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/JavaScript/React-Native/">React Native</a></p>
+                            <p class="item-title"><a href="/2016/12/06/high-order-component/" class="title">High Order Component에 대하여</a></p>
+                            <p class="item-date"><time datetime="2016-12-06T14:06:58.000Z" itemprop="datePublished">2016-12-06</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/JavaScript/">JavaScript</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/JavaScript/ECMA-Script6/">ECMA Script6</a></p>
+                            <p class="item-title"><a href="/2016/11/19/javascript-promise-practice-with-cheol/" class="title">사부와 함께하는 Promise 이해하기</a></p>
+                            <p class="item-date"><time datetime="2016-11-19T05:12:39.000Z" itemprop="datePublished">2016-11-19</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">categories</h3>
+        <div class="widget">
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Database/">Database</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/JavaScript/">JavaScript</a><span class="category-list-count">18</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/JavaScript/ECMA-Script6/">ECMA Script6</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/JavaScript/Nodejs/">Nodejs</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/JavaScript/React-Native/">React Native</a><span class="category-list-count">8</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Ruby/">Ruby</a><span class="category-list-count">6</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Ruby/Project-Euler/">Project Euler</a><span class="category-list-count">5</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Scheme/">Scheme</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Scheme/Schemer-series/">Schemer series</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Todo/">Todo</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Utils/">Utils</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/교육/">교육</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/세상-사는-이야기/">세상 사는 이야기</a><span class="category-list-count">10</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">archives</h3>
+        <div class="widget">
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">December 2016</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">November 2016</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">October 2016</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/09/">September 2016</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">August 2016</a><span class="archive-list-count">13</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-float">
+        <h3 class="widget-title">tag cloud</h3>
+        <div class="widget tagcloud">
+            <a href="/tags/Database/" style="font-size: 11.25px;">Database</a> <a href="/tags/Dynamodb/" style="font-size: 11.25px;">Dynamodb</a> <a href="/tags/GitHub/" style="font-size: 11.25px;">GitHub</a> <a href="/tags/Grammar/" style="font-size: 10px;">Grammar</a> <a href="/tags/Haedal/" style="font-size: 10px;">Haedal</a> <a href="/tags/JavaScript/" style="font-size: 20px;">JavaScript</a> <a href="/tags/Nodejs/" style="font-size: 12.5px;">Nodejs</a> <a href="/tags/Project-Euler/" style="font-size: 15px;">Project Euler</a> <a href="/tags/React-Native/" style="font-size: 17.5px;">React Native</a> <a href="/tags/Redux/" style="font-size: 11.25px;">Redux</a> <a href="/tags/Ruby/" style="font-size: 16.25px;">Ruby</a> <a href="/tags/Scheme/" style="font-size: 10px;">Scheme</a> <a href="/tags/Socket-io/" style="font-size: 10px;">Socket.io</a> <a href="/tags/Todo/" style="font-size: 10px;">Todo</a> <a href="/tags/객체지향/" style="font-size: 10px;">객체지향</a> <a href="/tags/나홀로-해커톤/" style="font-size: 10px;">나홀로 해커톤</a> <a href="/tags/불교/" style="font-size: 10px;">불교</a> <a href="/tags/세상-사는-이야기/" style="font-size: 18.75px;">세상 사는 이야기</a> <a href="/tags/알고리즘/" style="font-size: 10px;">알고리즘</a> <a href="/tags/프로그래밍/" style="font-size: 13.75px;">프로그래밍</a> <a href="/tags/프로그래밍-교육/" style="font-size: 10px;">프로그래밍 교육</a>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">links</h3>
+        <div class="widget">
+            <ul>
+                
+                    <li>
+                        <a href="http://hexo.io">Hexo</a>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+
+            
+        
+    </div>
+</aside>
+
+                </div>
+            </div>
+        </div>
+        <footer id="footer">
+    <div class="container">
+        <div class="container-inner">
+            <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
+            <div class="credit">
+                <h1 class="logo-wrap">
+                    <a href="/" class="logo"></a>
+                </h1>
+                <p>&copy; 2016 텅 빈 충만(voidSatisfaction)</p>
+                <p>Powered by <a href="//hexo.io/" target="_blank">Hexo</a>. Theme by <a href="//github.com/ppoffice" target="_blank">PPOffice</a></p>
+            </div>
+        </div>
+    </div>
+</footer>
+        
+    
+    <script>
+    var disqus_shortname = 'voidsatisfaction';
+    
+    
+    var disqus_url = 'https://voidsatisfaction.github.io/2016/12/11/aws-dynamodb-study2/';
+    
+    (function() {
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+
+
+
+    
+        <script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-share.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-video.min.js"></script>
+    
+
+
+<!-- Custom Scripts -->
+<script src="/js/main.js"></script>
+
+    </div>
+</body>
+</html>
