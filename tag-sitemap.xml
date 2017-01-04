@@ -58,13 +58,6 @@
     </url>
 
     <url>
-        <loc>https://voidsatisfaction.github.io/tags/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/</loc>
-        <lastmod>2016-10-14T07:11:52.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>https://voidsatisfaction.github.io/tags/%EA%B0%9D%EC%B2%B4%EC%A7%80%ED%96%A5/</loc>
         <lastmod>2016-10-21T03:10:36.000Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -143,7 +136,28 @@
 
     <url>
         <loc>https://voidsatisfaction.github.io/tags/JavaScript/</loc>
-        <lastmod>2016-12-14T06:08:14.000Z</lastmod>
+        <lastmod>2016-12-14T06:15:02.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://voidsatisfaction.github.io/tags/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/</loc>
+        <lastmod>2016-12-14T06:15:02.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://voidsatisfaction.github.io/tags/%EB%AC%B8%EB%B6%80%EC%84%B1-%EC%9E%A5%ED%95%99%EC%83%9D/</loc>
+        <lastmod>2017-01-04T09:35:26.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://voidsatisfaction.github.io/tags/%EC%9E%A5%ED%95%99%EA%B8%88-%EC%9D%B4%EC%97%AC-%EC%95%88%EB%85%95/</loc>
+        <lastmod>2017-01-04T09:35:26.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
