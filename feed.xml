@@ -5,7 +5,7 @@
   <link href="/feed.xml" rel="self"/>
   
   <link href="https://voidsatisfaction.github.io/"/>
-  <updated>2017-02-01T11:57:41.000Z</updated>
+  <updated>2017-02-22T17:43:50.000Z</updated>
   <id>https://voidsatisfaction.github.io/</id>
   
   <author>
@@ -14,6 +14,70 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>개발자로의의 앞으로의 진로와 마음가짐</title>
+    <link href="https://voidsatisfaction.github.io/2017/02/23/i-want-to-be-a-good-programmer/"/>
+    <id>https://voidsatisfaction.github.io/2017/02/23/i-want-to-be-a-good-programmer/</id>
+    <published>2017-02-22T17:43:02.000Z</published>
+    <updated>2017-02-22T17:43:50.000Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="개발자로서의-앞으로의-진로"><a href="#개발자로서의-앞으로의-진로" class="headerlink" title="개발자로서의 앞으로의 진로"></a>개발자로서의 앞으로의 진로</h1><h2 id="요즘-들은-좋은-말들"><a href="#요즘-들은-좋은-말들" class="headerlink" title="요즘 들은 좋은 말들"></a>요즘 들은 좋은 말들</h2><ol>
+<li>사업을 성공시키는 사람 / 프로그래밍을 잘하는 사람의 공통점은 <strong>포기하지 않는, 끈질김이 있다</strong>는 점이다.</li>
+<li>UX란 결국 <strong>공감이고 경험</strong>이다. 자기자신의 comfort zone에서 벗어나보라.</li>
+<li>왜 프로그램은 항상 텍스트 형식으로 작성해야 하는가? 엑셀과 같이 데이터와 프로그래밍을 일체화 할 수 는 없을까? 그렇다면 어떤 자료구조를 택해야 할까? <strong>상식을 부셔라.</strong></li>
+<li>데이터 사이언스란 거창한 것이 아니라, <strong>자신이 관심있는데이터</strong>를 중심으로 <strong>가시화</strong>해서 문제를 발견 / 분석하는 것이다. 결국 내가 데이터 사이언티스트를 하는 이유도 내가 궁금한것이 너무 많아 알고싶어 미치겠고 궁금하기 때문이다.</li>
+<li>당신의 제품은 <strong>vitamin인가요 painkiller인가요?</strong></li>
+<li>말대신 행동. <strong>雑に作れ。</strong></li>
+<li>개발에는 비지니스적 측면과 기술적 측면 양쪽을 다 적절히 고려해야한다.</li>
+<li>기계학습은 결국 탐색이고 학습이란 탐색의 기법을 기계적으로 자동화 한 것이다.</li>
+</ol>
+<h2 id="서두"><a href="#서두" class="headerlink" title="서두"></a>서두</h2><p>요즘들어 부쩍 ‘나는 어떤 개발자가 될 것인가?’ 하는 질문을 나 자신에게 많이 한다.</p>
+<p>원래 같았으면 며칠정도 쉬는 시간에 잠깐생각하다가 스쳐지나갈 생각이었겠지만, 요즈음 내가 일하고 있는 리쿠르트에서의 많은 경험을 토대로 점점 구체화 되어가는 것을 느낀다. 리쿠르트에게 감사감사.</p>
+<p>리쿠르트 인턴에서 나의 멘토가 매우 열정적이시고 오픈마인드에 나와 성격도 잘 맞는 덕분에 리쿠르트관계자들만 참가할 수 있는 NewRING summit이나 참가자 경쟁률 2:1에 육박하는 Sketch UX컨퍼런스 같은 여러 이벤트에 인턴생임에도 불구하고 참석할 수 있었다. 또한 매주 수요일의 Lightning Talk에서 같이 인턴십을 하고 있는 다른 개발자 친구들의 발표나 사원분들의 발표도 듣고 같이 토론할 수 있는건 크나큰 축복인것 같다.</p>
+<p>이렇게 다른 좋은 개발자들과의 상호작용을 통해 나 자신에 대해서, 개발자로서 더 잘 이해하는 계기가 되었다.</p>
+<h2 id="내가-되고-싶은-개발자상"><a href="#내가-되고-싶은-개발자상" class="headerlink" title="내가 되고 싶은 개발자상"></a>내가 되고 싶은 개발자상</h2><p>단도직입적으로 나는 <strong>내가 관심있는 모든 것을 잘하는 개발자</strong>가 되고싶다.</p>
+<p>그렇게 되기 위해서 나는 단계적으로 다음과 같은 것들을 수행할 것이다.</p>
+<ol>
+<li>프론트 엔드(로직) deep dive</li>
+<li>디자인 deep dive</li>
+<li>데이터 사이언스 deep dive</li>
+</ol>
+<p>그 이유는 간단히 재밌을거 같으니까. 사실 나라는 사람은 매우 단순해서 흥미본위로 움직이는데 요즘 가장 흥미있는 순위 top3가 저것들이다.</p>
+<h3 id="프론트-엔드"><a href="#프론트-엔드" class="headerlink" title="프론트 엔드"></a>프론트 엔드</h3><p>먼저 프론트 엔드에 대해서 깊게 이해하고 싶은 이유는 내가 현재 사부와 만들고있는 어플 개발에 의한 필요 + 데이터 플로 관리의 즐거움 때문이다. React Native도 그렇고 React도 그렇고 backend보다 frontend의 데이터 플로가 앱의 규모가 커지면 커질수록 기하급수적으로 증가하는 것 같다고 느꼈다.</p>
+<p>서버는 건축에 비유하자면, 집의 골격을 구상하는 일이고<br>클라이언트는 집의 소품을 하나하나 장식하고 집이 엘레강트하면서도 집의 구실을 할 수 있도록 섬세하게 다듬는 일이라는 생각이 든다.</p>
+<p>지금은 집을 엘레강트하게 다듬는 일이 너무 재밌다.</p>
+<h3 id="디자인"><a href="#디자인" class="headerlink" title="디자인"></a>디자인</h3><p>집을 엘레강트하게 꾸미는데에는 집 자체를 최대한 효율적이고 튼튼하게 꾸미는 것과 겉으로 보이기에 개성있고 멋있게 꾸미는 두가지 의미가 있다고 생각한다.</p>
+<p>앞서 설명한 비유의 전자는 프론트엔드 후자는 디자인이다.<br>아무리 효율적이고 튼튼한 집이라고 해도 집 자체가 내 마음에 들지 않으면 살고 싶지 않을 것이다.</p>
+<p>프로그램도 마찬가지로 아무리 아름다운, 엘레강트한 로직으로 프론트 엔드를 구축한다고 한들 디자인이 유저의 마음에 들지 않으면 외면당하기 쉽다. 그래서 프론트엔드와 마찬가지로 디자인도 deep dive하고 싶다는 생각이 들었다.</p>
+<p>그래서 요즘 새로 생긴 취미는 사물 관찰하기.<br>특히 나무, 건물, 포스터 등등..</p>
+<h3 id="데이터-사이언스"><a href="#데이터-사이언스" class="headerlink" title="데이터 사이언스"></a>데이터 사이언스</h3><p>내가 데이터 사이언스를 마음에 와닿아 공부해봐야겠다고 직접적으로 생각한 계기는 바로 어제 있었던 LT에서의 사원분의 발표에서 깊은 감명을 받았기 때문이다.</p>
+<p>오오스기씨는 며칠전 내각부 정보 해커톤에서 1등을 하셨는데, 다른 사람들이 웹 기술을 이용하여 매칭을 하고 있을때 오오스기 씨는 애초에 서비스를 만들기 보다 내각부에서 주는 정보 자체를 분석했다.</p>
+<p>분석에 쓰인 기술은 기계학습과 같은 고도의 기술이 아니고 간단한 회귀분석으로 <strong>가시화</strong>툴이며 이를 이용해서 데이터를 눈으로 알아보기 쉽게 만들었다. 그리고 그 데이터를 바탕으로 여러가지 가설을 세워서 문제제기를 했더니 결과는 1등이었다는 것이었다.</p>
+<p>다른 사람들이 <strong>서비스</strong>에 집중할때 오오스기씨 혼자 <strong>데이터와 그것의 함의</strong>에 집중했다는 것이었다.</p>
+<p>이 이이야기를 듣고 나서 나는 나는 프로그래머다의 싸이님의 말씀처럼 생활데이터가 중요하다는 것을 몸소 느꼈고, 더 나아가서 데이터 사이언스의 출발점은, 어디까지나 ‘사이언스’이기 때문에 내가 흥미를 가지고 있는 데이터에 대한 <strong>호기심</strong>이라는 것을 깨달았다.</p>
+<p>처음부터 어려운것이 아닌, 내 주변의 것들부터 내가 흥미를 갖고 있는 것 부터 시작하는것이 중요하다는 것이다.</p>
+<h2 id="결론"><a href="#결론" class="headerlink" title="결론"></a>결론</h2><p>사실 지금의 나의 실력은 한참 부족하다. 하지만 나는 절대 포기하지 않는, 즐기는 개발자가 되고 싶다.<br>얼마전에 테스트 서버를 만드느라 롤백(리셋)을 다섯번 연속으로 했는데 기여코 여섯번째에서는 성공시켰다.</p>
+<p>원래 그런 것 같다.</p>
+<p>포기하지 않고 끈질기게 하는 사람은 결국 원하는 바를 이룬다.</p>
+<p>나에게 이런 소중한 교훈을 준 프로그래밍에게 무한 감사를 보낸다.<br>프로그래밍은 내 인생의 크나큰 스승과도 같다.<br>그가 없었다면 지금의 나도 없었겠지.</p>
+<p>프로그래밍과 함꼐하는 난 지금 행복하다.</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;개발자로서의-앞으로의-진로&quot;&gt;&lt;a href=&quot;#개발자로서의-앞으로의-진로&quot; class=&quot;headerlink&quot; title=&quot;개발자로서의 앞으로의 진로&quot;&gt;&lt;/a&gt;개발자로서의 앞으로의 진로&lt;/h1&gt;&lt;h2 id=&quot;요즘-들은-좋은-말들&quot;&gt;&lt;a h
+    
+    </summary>
+    
+      <category term="세상 사는 이야기" scheme="https://voidsatisfaction.github.io/categories/%EC%84%B8%EC%83%81-%EC%82%AC%EB%8A%94-%EC%9D%B4%EC%95%BC%EA%B8%B0/"/>
+    
+    
+      <category term="개발자의 삶" scheme="https://voidsatisfaction.github.io/tags/%EA%B0%9C%EB%B0%9C%EC%9E%90%EC%9D%98-%EC%82%B6/"/>
+    
+      <category term="나의 꿈" scheme="https://voidsatisfaction.github.io/tags/%EB%82%98%EC%9D%98-%EA%BF%88/"/>
+    
+  </entry>
   
   <entry>
     <title>버그는 나의 힘! 위기는 기회다!</title>
@@ -987,9 +1051,9 @@
       <category term="React Native" scheme="https://voidsatisfaction.github.io/categories/JavaScript/React-Native/"/>
     
     
-      <category term="JavaScript" scheme="https://voidsatisfaction.github.io/tags/JavaScript/"/>
-    
       <category term="React Native" scheme="https://voidsatisfaction.github.io/tags/React-Native/"/>
+    
+      <category term="JavaScript" scheme="https://voidsatisfaction.github.io/tags/JavaScript/"/>
     
   </entry>
   
@@ -1202,9 +1266,9 @@
       <category term="React Native" scheme="https://voidsatisfaction.github.io/categories/JavaScript/React-Native/"/>
     
     
-      <category term="JavaScript" scheme="https://voidsatisfaction.github.io/tags/JavaScript/"/>
-    
       <category term="React Native" scheme="https://voidsatisfaction.github.io/tags/React-Native/"/>
+    
+      <category term="JavaScript" scheme="https://voidsatisfaction.github.io/tags/JavaScript/"/>
     
   </entry>
   
@@ -1677,9 +1741,9 @@
       <category term="React Native" scheme="https://voidsatisfaction.github.io/categories/JavaScript/React-Native/"/>
     
     
-      <category term="JavaScript" scheme="https://voidsatisfaction.github.io/tags/JavaScript/"/>
-    
       <category term="React Native" scheme="https://voidsatisfaction.github.io/tags/React-Native/"/>
+    
+      <category term="JavaScript" scheme="https://voidsatisfaction.github.io/tags/JavaScript/"/>
     
       <category term="Redux" scheme="https://voidsatisfaction.github.io/tags/Redux/"/>
     
@@ -1791,9 +1855,9 @@
       <category term="React Native" scheme="https://voidsatisfaction.github.io/categories/JavaScript/React-Native/"/>
     
     
-      <category term="JavaScript" scheme="https://voidsatisfaction.github.io/tags/JavaScript/"/>
-    
       <category term="React Native" scheme="https://voidsatisfaction.github.io/tags/React-Native/"/>
+    
+      <category term="JavaScript" scheme="https://voidsatisfaction.github.io/tags/JavaScript/"/>
     
       <category term="Redux" scheme="https://voidsatisfaction.github.io/tags/Redux/"/>
     
@@ -1897,9 +1961,9 @@
     
       <category term="세상 사는 이야기" scheme="https://voidsatisfaction.github.io/tags/%EC%84%B8%EC%83%81-%EC%82%AC%EB%8A%94-%EC%9D%B4%EC%95%BC%EA%B8%B0/"/>
     
-      <category term="JavaScript" scheme="https://voidsatisfaction.github.io/tags/JavaScript/"/>
-    
       <category term="React Native" scheme="https://voidsatisfaction.github.io/tags/React-Native/"/>
+    
+      <category term="JavaScript" scheme="https://voidsatisfaction.github.io/tags/JavaScript/"/>
     
   </entry>
   
@@ -1945,9 +2009,9 @@
       <category term="React Native" scheme="https://voidsatisfaction.github.io/categories/JavaScript/React-Native/"/>
     
     
-      <category term="JavaScript" scheme="https://voidsatisfaction.github.io/tags/JavaScript/"/>
-    
       <category term="React Native" scheme="https://voidsatisfaction.github.io/tags/React-Native/"/>
+    
+      <category term="JavaScript" scheme="https://voidsatisfaction.github.io/tags/JavaScript/"/>
     
   </entry>
   
@@ -2187,6 +2251,38 @@
   </entry>
   
   <entry>
+    <title>프로그래밍 공부에 도움이 되는 사이트</title>
+    <link href="https://voidsatisfaction.github.io/2016/08/25/3018-8-18-c-ProgrammingSite/"/>
+    <id>https://voidsatisfaction.github.io/2016/08/25/3018-8-18-c-ProgrammingSite/</id>
+    <published>2016-08-25T02:52:00.000Z</published>
+    <updated>2016-11-19T05:13:15.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>프로그래밍(주로 웹) 공부에 도움이 되는 사이트를 모아보았습니다.</p>
+<h1 id="웹-기초"><a href="#웹-기초" class="headerlink" title="웹 기초"></a>웹 기초</h1><p>웹의 기초적인 부분을 배울 수 있는 사이트들 입니다.</p>
+<h3 id="생활코딩"><a href="#생활코딩" class="headerlink" title="생활코딩"></a><a href="https://opentutorials.org/course/1" target="_blank" rel="external">생활코딩</a></h3><h3 id="Codelion"><a href="#Codelion" class="headerlink" title="Codelion"></a><a href="http://codelion.net/" target="_blank" rel="external">Codelion</a></h3><h3 id="멋쟁이-사자처럼"><a href="#멋쟁이-사자처럼" class="headerlink" title="멋쟁이 사자처럼"></a><a href="http://www.likelion.net/" target="_blank" rel="external">멋쟁이 사자처럼</a></h3><h3 id="Codecademy"><a href="#Codecademy" class="headerlink" title="Codecademy"></a><a href="https://www.codecademy.com/" target="_blank" rel="external">Codecademy</a></h3><h3 id="Css-레이아웃을-배웁시다"><a href="#Css-레이아웃을-배웁시다" class="headerlink" title="Css 레이아웃을 배웁시다"></a><a href="http://ko.learnlayout.com/" target="_blank" rel="external">Css 레이아웃을 배웁시다</a></h3><h1 id="웹-기본"><a href="#웹-기본" class="headerlink" title="웹 기본"></a>웹 기본</h1><p>기초보다는 약간 더 자신있는 분들을 위하여.</p>
+<h2 id="NodeJS"><a href="#NodeJS" class="headerlink" title="NodeJS"></a>NodeJS</h2><ul>
+<li><a href="http://nodeschool.io/" target="_blank" rel="external">Node School</a></li>
+</ul>
+<h2 id="Ruby-on-Rails"><a href="#Ruby-on-Rails" class="headerlink" title="Ruby on Rails"></a>Ruby on Rails</h2><ul>
+<li><a href="https://rorlab.gitbooks.io/railsguidebook/content/" target="_blank" rel="external">초보자를 위한 레일스 가이드북 - RORLAB</a></li>
+</ul>
+<h1 id="알고리즘"><a href="#알고리즘" class="headerlink" title="알고리즘"></a>알고리즘</h1><h3 id="Euler-Project-오일러-프로젝트-한글"><a href="#Euler-Project-오일러-프로젝트-한글" class="headerlink" title="Euler Project(오일러 프로젝트 한글)"></a><a href="http://euler.synap.co.kr/" target="_blank" rel="external">Euler Project(오일러 프로젝트 한글)</a></h3><h3 id="Euler-Project-영문"><a href="#Euler-Project-영문" class="headerlink" title="Euler Project(영문)"></a><a href="https://projecteuler.net/" target="_blank" rel="external">Euler Project(영문)</a></h3><h3 id="백준-온라인-judge"><a href="#백준-온라인-judge" class="headerlink" title="백준 온라인 judge"></a><a href="https://www.acmicpc.net/" target="_blank" rel="external">백준 온라인 judge</a></h3><h3 id="Google-codejam"><a href="#Google-codejam" class="headerlink" title="Google codejam"></a><a href="https://code.google.com/codejam/" target="_blank" rel="external">Google codejam</a></h3><h3 id="Top-Coder"><a href="#Top-Coder" class="headerlink" title="Top Coder"></a><a href="https://www.topcoder.com/" target="_blank" rel="external">Top Coder</a></h3><h1 id="해킹-보안"><a href="#해킹-보안" class="headerlink" title="해킹 / 보안"></a>해킹 / 보안</h1><h3 id="해커스쿨"><a href="#해커스쿨" class="headerlink" title="해커스쿨"></a><a href="http://www.hackerschool.org/Sub_Html/HS_Community/index.html" target="_blank" rel="external">해커스쿨</a></h3><h3 id="webhacking-kr"><a href="#webhacking-kr" class="headerlink" title="webhacking.kr"></a><a href="http://webhacking.kr/" target="_blank" rel="external">webhacking.kr</a></h3><h1 id="Tools"><a href="#Tools" class="headerlink" title="Tools"></a>Tools</h1><h3 id="GitHub-Git"><a href="#GitHub-Git" class="headerlink" title="GitHub / Git"></a><a href="https://github.com/" target="_blank" rel="external">GitHub / Git</a></h3><h3 id="Git간편-안내서"><a href="#Git간편-안내서" class="headerlink" title="Git간편 안내서"></a><a href="https://rogerdudler.github.io/git-guide/index.ko.html" target="_blank" rel="external">Git간편 안내서</a></h3><h3 id="Git-쉽게-따라-배우기"><a href="#Git-쉽게-따라-배우기" class="headerlink" title="Git 쉽게 따라 배우기"></a><a href="http://learngitbranching.js.org/" target="_blank" rel="external">Git 쉽게 따라 배우기</a></h3><h3 id="Vim-Adventure"><a href="#Vim-Adventure" class="headerlink" title="Vim Adventure"></a><a href="http://vim-adventures.com/" target="_blank" rel="external">Vim Adventure</a></h3><h1 id="좋은-블로그-팟캐스트"><a href="#좋은-블로그-팟캐스트" class="headerlink" title="좋은 블로그 / 팟캐스트"></a>좋은 블로그 / 팟캐스트</h1><h3 id="나는-프로그래머다"><a href="#나는-프로그래머다" class="headerlink" title="나는 프로그래머다"></a><a href="https://iamprogrammer.io/" target="_blank" rel="external">나는 프로그래머다</a></h3><h3 id="More-Agile-보다-나은-개발자가-되기-위하여"><a href="#More-Agile-보다-나은-개발자가-되기-위하여" class="headerlink" title="More Agile 보다 나은 개발자가 되기 위하여"></a><a href="http://www.moreagile.net/" target="_blank" rel="external">More Agile 보다 나은 개발자가 되기 위하여</a></h3><h3 id="쪼꼬니-님의-블로그-웹디자인에-참고-내용정리가-잘되어있음"><a href="#쪼꼬니-님의-블로그-웹디자인에-참고-내용정리가-잘되어있음" class="headerlink" title="쪼꼬니 님의 블로그(웹디자인에 참고. 내용정리가 잘되어있음)"></a><a href="http://elren.blog.me/220730606293" target="_blank" rel="external">쪼꼬니 님의 블로그(웹디자인에 참고. 내용정리가 잘되어있음)</a></h3><h1 id="기타"><a href="#기타" class="headerlink" title="기타"></a>기타</h1><h3 id="Google-Power-Search"><a href="#Google-Power-Search" class="headerlink" title="Google Power Search"></a><a href="http://www.powersearchingwithgoogle.com/" target="_blank" rel="external">Google Power Search</a></h3>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;프로그래밍(주로 웹) 공부에 도움이 되는 사이트를 모아보았습니다.&lt;/p&gt;
+&lt;h1 id=&quot;웹-기초&quot;&gt;&lt;a href=&quot;#웹-기초&quot; class=&quot;headerlink&quot; title=&quot;웹 기초&quot;&gt;&lt;/a&gt;웹 기초&lt;/h1&gt;&lt;p&gt;웹의 기초적인 부분을 배울 수 있
+    
+    </summary>
+    
+      <category term="교육" scheme="https://voidsatisfaction.github.io/categories/%EA%B5%90%EC%9C%A1/"/>
+    
+    
+      <category term="프로그래밍 교육" scheme="https://voidsatisfaction.github.io/tags/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D-%EA%B5%90%EC%9C%A1/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Callback / Clojure / Continuation</title>
     <link href="https://voidsatisfaction.github.io/2016/08/25/2016-8-25-a-cbcjcn/"/>
     <id>https://voidsatisfaction.github.io/2016/08/25/2016-8-25-a-cbcjcn/</id>
@@ -2245,38 +2341,6 @@
     
     
       <category term="JavaScript" scheme="https://voidsatisfaction.github.io/tags/JavaScript/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>프로그래밍 공부에 도움이 되는 사이트</title>
-    <link href="https://voidsatisfaction.github.io/2016/08/25/3018-8-18-c-ProgrammingSite/"/>
-    <id>https://voidsatisfaction.github.io/2016/08/25/3018-8-18-c-ProgrammingSite/</id>
-    <published>2016-08-25T02:52:00.000Z</published>
-    <updated>2016-11-19T05:13:15.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>프로그래밍(주로 웹) 공부에 도움이 되는 사이트를 모아보았습니다.</p>
-<h1 id="웹-기초"><a href="#웹-기초" class="headerlink" title="웹 기초"></a>웹 기초</h1><p>웹의 기초적인 부분을 배울 수 있는 사이트들 입니다.</p>
-<h3 id="생활코딩"><a href="#생활코딩" class="headerlink" title="생활코딩"></a><a href="https://opentutorials.org/course/1" target="_blank" rel="external">생활코딩</a></h3><h3 id="Codelion"><a href="#Codelion" class="headerlink" title="Codelion"></a><a href="http://codelion.net/" target="_blank" rel="external">Codelion</a></h3><h3 id="멋쟁이-사자처럼"><a href="#멋쟁이-사자처럼" class="headerlink" title="멋쟁이 사자처럼"></a><a href="http://www.likelion.net/" target="_blank" rel="external">멋쟁이 사자처럼</a></h3><h3 id="Codecademy"><a href="#Codecademy" class="headerlink" title="Codecademy"></a><a href="https://www.codecademy.com/" target="_blank" rel="external">Codecademy</a></h3><h3 id="Css-레이아웃을-배웁시다"><a href="#Css-레이아웃을-배웁시다" class="headerlink" title="Css 레이아웃을 배웁시다"></a><a href="http://ko.learnlayout.com/" target="_blank" rel="external">Css 레이아웃을 배웁시다</a></h3><h1 id="웹-기본"><a href="#웹-기본" class="headerlink" title="웹 기본"></a>웹 기본</h1><p>기초보다는 약간 더 자신있는 분들을 위하여.</p>
-<h2 id="NodeJS"><a href="#NodeJS" class="headerlink" title="NodeJS"></a>NodeJS</h2><ul>
-<li><a href="http://nodeschool.io/" target="_blank" rel="external">Node School</a></li>
-</ul>
-<h2 id="Ruby-on-Rails"><a href="#Ruby-on-Rails" class="headerlink" title="Ruby on Rails"></a>Ruby on Rails</h2><ul>
-<li><a href="https://rorlab.gitbooks.io/railsguidebook/content/" target="_blank" rel="external">초보자를 위한 레일스 가이드북 - RORLAB</a></li>
-</ul>
-<h1 id="알고리즘"><a href="#알고리즘" class="headerlink" title="알고리즘"></a>알고리즘</h1><h3 id="Euler-Project-오일러-프로젝트-한글"><a href="#Euler-Project-오일러-프로젝트-한글" class="headerlink" title="Euler Project(오일러 프로젝트 한글)"></a><a href="http://euler.synap.co.kr/" target="_blank" rel="external">Euler Project(오일러 프로젝트 한글)</a></h3><h3 id="Euler-Project-영문"><a href="#Euler-Project-영문" class="headerlink" title="Euler Project(영문)"></a><a href="https://projecteuler.net/" target="_blank" rel="external">Euler Project(영문)</a></h3><h3 id="백준-온라인-judge"><a href="#백준-온라인-judge" class="headerlink" title="백준 온라인 judge"></a><a href="https://www.acmicpc.net/" target="_blank" rel="external">백준 온라인 judge</a></h3><h3 id="Google-codejam"><a href="#Google-codejam" class="headerlink" title="Google codejam"></a><a href="https://code.google.com/codejam/" target="_blank" rel="external">Google codejam</a></h3><h3 id="Top-Coder"><a href="#Top-Coder" class="headerlink" title="Top Coder"></a><a href="https://www.topcoder.com/" target="_blank" rel="external">Top Coder</a></h3><h1 id="해킹-보안"><a href="#해킹-보안" class="headerlink" title="해킹 / 보안"></a>해킹 / 보안</h1><h3 id="해커스쿨"><a href="#해커스쿨" class="headerlink" title="해커스쿨"></a><a href="http://www.hackerschool.org/Sub_Html/HS_Community/index.html" target="_blank" rel="external">해커스쿨</a></h3><h3 id="webhacking-kr"><a href="#webhacking-kr" class="headerlink" title="webhacking.kr"></a><a href="http://webhacking.kr/" target="_blank" rel="external">webhacking.kr</a></h3><h1 id="Tools"><a href="#Tools" class="headerlink" title="Tools"></a>Tools</h1><h3 id="GitHub-Git"><a href="#GitHub-Git" class="headerlink" title="GitHub / Git"></a><a href="https://github.com/" target="_blank" rel="external">GitHub / Git</a></h3><h3 id="Git간편-안내서"><a href="#Git간편-안내서" class="headerlink" title="Git간편 안내서"></a><a href="https://rogerdudler.github.io/git-guide/index.ko.html" target="_blank" rel="external">Git간편 안내서</a></h3><h3 id="Git-쉽게-따라-배우기"><a href="#Git-쉽게-따라-배우기" class="headerlink" title="Git 쉽게 따라 배우기"></a><a href="http://learngitbranching.js.org/" target="_blank" rel="external">Git 쉽게 따라 배우기</a></h3><h3 id="Vim-Adventure"><a href="#Vim-Adventure" class="headerlink" title="Vim Adventure"></a><a href="http://vim-adventures.com/" target="_blank" rel="external">Vim Adventure</a></h3><h1 id="좋은-블로그-팟캐스트"><a href="#좋은-블로그-팟캐스트" class="headerlink" title="좋은 블로그 / 팟캐스트"></a>좋은 블로그 / 팟캐스트</h1><h3 id="나는-프로그래머다"><a href="#나는-프로그래머다" class="headerlink" title="나는 프로그래머다"></a><a href="https://iamprogrammer.io/" target="_blank" rel="external">나는 프로그래머다</a></h3><h3 id="More-Agile-보다-나은-개발자가-되기-위하여"><a href="#More-Agile-보다-나은-개발자가-되기-위하여" class="headerlink" title="More Agile 보다 나은 개발자가 되기 위하여"></a><a href="http://www.moreagile.net/" target="_blank" rel="external">More Agile 보다 나은 개발자가 되기 위하여</a></h3><h3 id="쪼꼬니-님의-블로그-웹디자인에-참고-내용정리가-잘되어있음"><a href="#쪼꼬니-님의-블로그-웹디자인에-참고-내용정리가-잘되어있음" class="headerlink" title="쪼꼬니 님의 블로그(웹디자인에 참고. 내용정리가 잘되어있음)"></a><a href="http://elren.blog.me/220730606293" target="_blank" rel="external">쪼꼬니 님의 블로그(웹디자인에 참고. 내용정리가 잘되어있음)</a></h3><h1 id="기타"><a href="#기타" class="headerlink" title="기타"></a>기타</h1><h3 id="Google-Power-Search"><a href="#Google-Power-Search" class="headerlink" title="Google Power Search"></a><a href="http://www.powersearchingwithgoogle.com/" target="_blank" rel="external">Google Power Search</a></h3>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;프로그래밍(주로 웹) 공부에 도움이 되는 사이트를 모아보았습니다.&lt;/p&gt;
-&lt;h1 id=&quot;웹-기초&quot;&gt;&lt;a href=&quot;#웹-기초&quot; class=&quot;headerlink&quot; title=&quot;웹 기초&quot;&gt;&lt;/a&gt;웹 기초&lt;/h1&gt;&lt;p&gt;웹의 기초적인 부분을 배울 수 있
-    
-    </summary>
-    
-      <category term="교육" scheme="https://voidsatisfaction.github.io/categories/%EA%B5%90%EC%9C%A1/"/>
-    
-    
-      <category term="프로그래밍 교육" scheme="https://voidsatisfaction.github.io/tags/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D-%EA%B5%90%EC%9C%A1/"/>
     
   </entry>
   
