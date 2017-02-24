@@ -24,7 +24,7 @@ Redux - motivation
 
 핵심리덕스는 어플리케이션의 클라이언트쪽 state를 관리하기 위한 거대한 이벤트루프이다.액션 = 이벤트리듀서 = 이벤트에 대한 반응
 Redux의 이해리액트를 사용하는 프로그래머 입장에서는 누구나가 거쳐가는 바로 그 기술 Redux.처음 리액트를 공부하는 사람들에게 크나큰 산과 같은">
-<meta property="og:updated_time" content="2017-02-24T13:09:06.000Z">
+<meta property="og:updated_time" content="2017-02-24T13:15:18.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="리덕스란 무엇인가?">
 <meta name="twitter:description" content="참조
@@ -198,7 +198,7 @@ ga('send', 'pageview');
 <p>가장 먼저, application state의 변화가 예측가능하게 변한다는 점이다.</p>
 <p>이는 특정 액션이벤트 발생에만 reducer가 작동하게 했기때문에 store state가 변한경우 그것이 정확히 <code>어떠한 액션 이벤트로 부터</code>변경된 것인지 알 수 있다.</p>
 <p>또한, 정확히 어떤 액션 이벤트로 부터 변경된 것인지 알기 때문에 <code>Time travel debugging</code>이 가능해진다. 간단하게 얘기하자면 이제까지 store state가 변화해온 과정을 마치 뒤로가기 버튼이 있는것 처럼 하나하나 확인해볼 수 있는 것이다.</p>
-<p>그리고, 리듀서가 순수 함수(외부에 영향을 끼치지 않는 함수. ex: api calling이 없는 함수)이기 때문에 test코드를 짤 수 있다는 장점도 존재한다.</p>
+<p>그리고, 리듀서가 <strong>순수 함수</strong>(외부에 영향을 끼치지 않는 함수. ex: api calling이 없는 함수)이기 때문에 test코드를 짤 수 있다는 장점도 존재한다.</p>
 <p>마지막으로 선언적으로 프로그래밍을 할 수 있다는 점이다(Declarative Programming)</p>
 <p>(물론 더 있을거라고 생각한다.)</p>
 <h3 id="Redux와-Middleware"><a href="#Redux와-Middleware" class="headerlink" title="Redux와 Middleware"></a>Redux와 Middleware</h3><p>여기서 과연 우리는 클라이언트의 문제를 전부 해결했다고 할 수 있을까?</p>
@@ -206,12 +206,12 @@ ga('send', 'pageview');
 <p>콜라인 <code>Asynchronicity</code>는 어떻게 해결할까?</p>
 <p>아까 설명한 단순한 Redux의 모델</p>
 <p>dispatch(action) =&gt; 리듀서 작동 =&gt; store의 state변경 =&gt; 변경된 state가 state를 subscribe하고 있는 컴포넌트에 전달</p>
-<p>은 action이 <strong>순수 객체</strong>이기 때문에 다음과 같은 행동이 불가능하다.</p>
+<p>은 action이 <strong>단순 객체</strong>이기 때문에 다음과 같은 행동이 불가능하다.</p>
 <ol>
 <li>로그인 요청을 보내며 로딩중이라는 표시를 뜨게 하기</li>
 <li>회원가입 요청을 보내는데에 만약 이미 있는 id라면 에러 메세지를 보내고 아니라면 성공시킨다.</li>
 </ol>
-<p>action이 <strong>순수 객체</strong>라는 얘기는 조건 분기나 다른 action 이벤트를 생성할 수 없기 떄문에 우리는 <code>action creator</code>라는 action을 생성하는 <strong>함수</strong>를 생성한다.</p>
+<p>action이 <strong>단순 객체</strong>라는 얘기는 조건 분기나 다른 action 이벤트를 생성할 수 없기 떄문에 우리는 <code>action creator</code>라는 action을 생성하는 <strong>함수</strong>를 생성한다.</p>
 <p>action creator는 함수이기 때문에 Promise나 Callback을 적절히 조화하는 것으로 다른 action 이벤트를 생성할 수 있고, 조건 분기도 가능해진다.<br>사실 이름만 action creator이지 action자체를 반환하지 않아도 된다.</p>
 <p>하지만 이 역시 그냥 맨땅에 하려면 <code>dispatch</code>를 일일이 불러와야하는 귀찮음이 생기므로 우리는 middleware로서 <code>redux thunk</code>등을 사용하는 것이다.</p>
 <p>여기에 등장하는 <code>redux thunk</code>는 함수를 반환하는 함수인데 dispatch를 가지고 함수를 warpping하고 있으므로 일일이 dispatch를 불러와야하는 귀찮음이 경감된다.</p>
@@ -227,7 +227,7 @@ ga('send', 'pageview');
 <p>Following in the steps of Flux, CQRS, and <strong>Event Sourcing</strong>, Redux attempts to make state mutations predictable by imposing certain restrictions on how and when updates can happen. These restrictions are reflected in the three principles of Redux.</p>
 </blockquote>
 <p>그러니까 앞서 말한 이벤트 기반의 프로그래밍론이 redux에 사상적으로 들어가 있는 것이다.</p>
-<p>나는 처음 tutorial을 읽었을때 전혀 눈치를 채지 못하고 있었는데 오늘 인턴의 멘토인 森田(모리타)씨가 나와 점심을 먹으며 나에게<br>해주신 말씀이다.</p>
+<p>나는 처음 tutorial을 읽었을때 전혀 눈치를 채지 못하고 있었는데 오늘 인턴의 멘토인 森田(모리타)씨가 나와 점심을 먹으며 나에게 해주신 말씀이다.</p>
 <p>그때까지는 그냥 그렇게 무미건조하게 써왔던 redux가 내게 의미를 갖는 순간이었다.</p>
 <p>감사합니다 모리타씨!</p>
 
