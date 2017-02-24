@@ -5,7 +5,7 @@
   <link href="/feed.xml" rel="self"/>
   
   <link href="https://voidsatisfaction.github.io/"/>
-  <updated>2017-02-24T13:03:39.000Z</updated>
+  <updated>2017-02-24T13:09:06.000Z</updated>
   <id>https://voidsatisfaction.github.io/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="https://voidsatisfaction.github.io/2017/02/24/what-is-redux/"/>
     <id>https://voidsatisfaction.github.io/2017/02/24/what-is-redux/</id>
     <published>2017-02-24T12:14:45.000Z</published>
-    <updated>2017-02-24T13:03:39.000Z</updated>
+    <updated>2017-02-24T13:09:06.000Z</updated>
     
     <content type="html"><![CDATA[<h2 id="참조"><a href="#참조" class="headerlink" title="참조"></a>참조</h2><ul>
 <li>인턴 멘토 森田(모리타)씨와의 대화</li>
@@ -43,7 +43,7 @@
 <p>이렇게 application전체의 상태를 redux로 관리하면 어떤 장점이 있을까?</p>
 <p>가장 먼저, application state의 변화가 예측가능하게 변한다는 점이다.</p>
 <p>이는 특정 액션이벤트 발생에만 reducer가 작동하게 했기때문에 store state가 변한경우 그것이 정확히 <code>어떠한 액션 이벤트로 부터</code>변경된 것인지 알 수 있다.</p>
-<p>또한, 정확히 어떤 액션 이벤트로 부터 변경된 것인지 알기 때문에 <code>Time travel debugging</code>이 가능해진다. 간단하게 얘기하자면 이제까지 store state가 변화<br>해온 과정을 마치 뒤로가기 버튼이 있는것 처럼 하나하나 확인해볼 수 있는 것이다.</p>
+<p>또한, 정확히 어떤 액션 이벤트로 부터 변경된 것인지 알기 때문에 <code>Time travel debugging</code>이 가능해진다. 간단하게 얘기하자면 이제까지 store state가 변화해온 과정을 마치 뒤로가기 버튼이 있는것 처럼 하나하나 확인해볼 수 있는 것이다.</p>
 <p>그리고, 리듀서가 순수 함수(외부에 영향을 끼치지 않는 함수. ex: api calling이 없는 함수)이기 때문에 test코드를 짤 수 있다는 장점도 존재한다.</p>
 <p>마지막으로 선언적으로 프로그래밍을 할 수 있다는 점이다(Declarative Programming)</p>
 <p>(물론 더 있을거라고 생각한다.)</p>
@@ -61,20 +61,20 @@
 <p>action creator는 함수이기 때문에 Promise나 Callback을 적절히 조화하는 것으로 다른 action 이벤트를 생성할 수 있고, 조건 분기도 가능해진다.<br>사실 이름만 action creator이지 action자체를 반환하지 않아도 된다.</p>
 <p>하지만 이 역시 그냥 맨땅에 하려면 <code>dispatch</code>를 일일이 불러와야하는 귀찮음이 생기므로 우리는 middleware로서 <code>redux thunk</code>등을 사용하는 것이다.</p>
 <p>여기에 등장하는 <code>redux thunk</code>는 함수를 반환하는 함수인데 dispatch를 가지고 함수를 warpping하고 있으므로 일일이 dispatch를 불러와야하는 귀찮음이 경감된다.</p>
-<p>사실 미들웨어에는 redux thunk이외에도 redux saga등등이 있으니 참고 바란다.</p>
+<p>사실 미들웨어에는 <code>redux thunk</code>이외에도 <code>redux saga</code>등등이 있으니 참고 바란다.</p>
 <h2 id="리덕스의-정체"><a href="#리덕스의-정체" class="headerlink" title="리덕스의 정체"></a>리덕스의 정체</h2><p>사실 이제부터가 진짜 이야기의 시작이다.</p>
-<p>결론부터 얘기하자면 redux는 state관리를 위한 거대한 event loop였던 것이다!</p>
+<p>결론부터 얘기하자면 <strong>redux는 state관리를 위한 거대한 event loop</strong>였던 것이다!</p>
 <p>액션 = 이벤트<br>리듀서 = 이벤트에 대한 반응</p>
 <p>즉, 액션이벤트를 발생시켜서 리듀서라는 이벤트에 대한 반응을 일으키므로서 어플리케이션의 state를 a라는 상태에서 b라는 상태로 만든다.(a is b)</p>
 <p>이렇게 이해하면 redux는 더이상 redux monster나 뭐가뭔지 모르지만 좋다니까 그냥 쓰는 녀석에서,</p>
-<p>우리가 아주 친숙한 event loop로 바뀌는 것이다.</p>
+<p>우리에게 아주 친숙한 event loop로 바뀌는 것이다.</p>
 <p>실제로 Dan Abramov는 공식 tutorial문서에서 이렇게 얘기하고 있다.</p>
 <blockquote>
-<p>Following in the steps of Flux, CQRS, and <strong>Event Sourcing(여기여기)</strong>, Redux attempts to make state mutations predictable by imposing certain restrictions on how and when updates can happen. These restrictions are reflected in the three principles of Redux.</p>
+<p>Following in the steps of Flux, CQRS, and <strong>Event Sourcing</strong>, Redux attempts to make state mutations predictable by imposing certain restrictions on how and when updates can happen. These restrictions are reflected in the three principles of Redux.</p>
 </blockquote>
-<p>그러니까 이벤트 기반의 생각이 들어가 있는 것이다.</p>
+<p>그러니까 앞서 말한 이벤트 기반의 프로그래밍론이 redux에 사상적으로 들어가 있는 것이다.</p>
 <p>나는 처음 tutorial을 읽었을때 전혀 눈치를 채지 못하고 있었는데 오늘 인턴의 멘토인 森田(모리타)씨가 나와 점심을 먹으며 나에게<br>해주신 말씀이다.</p>
-<p>그때까지는 그냥 그렇게 써왔던 redux가 내게 의미를 갖는 순간이었다.</p>
+<p>그때까지는 그냥 그렇게 무미건조하게 써왔던 redux가 내게 의미를 갖는 순간이었다.</p>
 <p>감사합니다 모리타씨!</p>
 ]]></content>
     
