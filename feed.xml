@@ -5,7 +5,7 @@
   <link href="/feed.xml" rel="self"/>
   
   <link href="https://voidsatisfaction.github.io/"/>
-  <updated>2017-02-24T13:15:18.000Z</updated>
+  <updated>2017-02-24T13:29:18.000Z</updated>
   <id>https://voidsatisfaction.github.io/</id>
   
   <author>
@@ -16,11 +16,11 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>리덕스란 무엇인가?</title>
+    <title>리덕스(Redux)란 무엇인가?</title>
     <link href="https://voidsatisfaction.github.io/2017/02/24/what-is-redux/"/>
     <id>https://voidsatisfaction.github.io/2017/02/24/what-is-redux/</id>
     <published>2017-02-24T12:14:45.000Z</published>
-    <updated>2017-02-24T13:15:18.000Z</updated>
+    <updated>2017-02-24T13:29:18.000Z</updated>
     
     <content type="html"><![CDATA[<h2 id="참조"><a href="#참조" class="headerlink" title="참조"></a>참조</h2><ul>
 <li>인턴 멘토 森田(모리타)씨와의 대화</li>
