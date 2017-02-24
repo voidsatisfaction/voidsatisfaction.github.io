@@ -24,7 +24,7 @@ Redux - motivation
 
 핵심리덕스는 어플리케이션의 클라이언트쪽 state를 관리하기 위한 거대한 이벤트루프이다.액션 = 이벤트리듀서 = 이벤트에 대한 반응
 Redux의 이해리액트를 사용하는 프로그래머 입장에서는 누구나가 거쳐가는 바로 그 기술 Redux.처음 리액트를 공부하는 사람들에게 크나큰 산과 같은">
-<meta property="og:updated_time" content="2017-02-24T13:29:18.000Z">
+<meta property="og:updated_time" content="2017-02-24T15:33:55.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="리덕스(Redux)란 무엇인가?">
 <meta name="twitter:description" content="참조
@@ -183,9 +183,9 @@ ga('send', 'pageview');
 <h2 id="핵심"><a href="#핵심" class="headerlink" title="핵심"></a>핵심</h2><p>리덕스는 어플리케이션의 클라이언트쪽 <code>state</code>를 관리하기 위한 거대한 이벤트루프이다.<br>액션 = 이벤트<br>리듀서 = 이벤트에 대한 반응</p>
 <h2 id="Redux의-이해"><a href="#Redux의-이해" class="headerlink" title="Redux의 이해"></a>Redux의 이해</h2><p>리액트를 사용하는 프로그래머 입장에서는 누구나가 거쳐가는 바로 그 기술 Redux.<br>처음 리액트를 공부하는 사람들에게 크나큰 산과 같은 Redux는 과연 무엇일까?</p>
 <h3 id="Redux의-동기"><a href="#Redux의-동기" class="headerlink" title="Redux의 동기"></a>Redux의 동기</h3><p>Redux공식 문서(참조)에 의하면 리덕스는 클라이언트 앱의 복잡성을 제어하기 위한 하나의 state제어 수단이라고 한다(정확히는 방법론이 맞는것 같다.)</p>
-<p>Redux를 제안하고 개발한 Dan Abramov는 클라이언트앱의 복잡성을 증가시키는게 <code>Mutation</code>과 <code>Asynchronicity</code>라며 그 둘을 멘토와와 콜라와 같다고 한다.<br><code>Mutation</code>과 <code>Asynchronicity</code>는 각각 존재할때에는 대단한 것임에 틀림없지만 같이 존재할때 크나큰 복잡성을 유도한다는 것이다.</p>
+<p>Redux를 제안하고 개발한 Dan Abramov는 클라이언트앱의 복잡성을 증가시키는게 <code>Mutation</code>과 <code>Asynchronicity</code>라며 그 둘을 멘토스와 콜라와 같다고 한다.<br><code>Mutation</code>과 <code>Asynchronicity</code>는 각각 존재할때에는 대단한 것임에 틀림없지만 같이 존재할때 크나큰 복잡성을 유도한다는 것이다.</p>
 <p>여기서 Redux는 Mutation, 즉 클라이언트의 종합적인 State를 관리하기 위한 아키텍쳐 방법론인 것이다.</p>
-<p>여기까지 읽은 몇몇의 독자는 “그럼 Asynchronicity는 어떻게 된건가요?”라고 의문을 갖을 수 있겠지만 간단히 얘끼하자면 Redux에 Middleware를 장착하는 것으로<br>복잡한 비동기적인 Api처리, Action처리를 한다. 이는 나중에 후술하겠다.</p>
+<p>여기까지 읽은 몇몇의 독자는 “그럼 Asynchronicity는 어떻게 된건가요?”라고 의문을 갖을 수 있겠지만 간단히 얘기하자면 Redux에 Middleware를 장착하는 것으로<br>복잡한 비동기적인 Api처리, Action처리를 한다. 이는 나중에 후술하겠다.</p>
 <h3 id="Redux의-원리"><a href="#Redux의-원리" class="headerlink" title="Redux의 원리"></a>Redux의 원리</h3><p>Redux의 원리는 생각보다 크게 어렵지 않다.</p>
 <p>어플리케이션 전체에는 store라는 커다란 <strong>하나의</strong> state가 존재하는데 이것이 어플리케이션의 state를 총괄한다.</p>
 <p>이 store의 state는 그 자체를 직접 변형할 수 없고, 오직 <strong>순수 함수</strong>인 리듀서로만 새로운 형태로 갈아치우는 것이 가능하다.</p>
@@ -221,7 +221,7 @@ ga('send', 'pageview');
 <p>액션 = 이벤트<br>리듀서 = 이벤트에 대한 반응</p>
 <p>즉, 액션이벤트를 발생시켜서 리듀서라는 이벤트에 대한 반응을 일으키므로서 어플리케이션의 state를 a라는 상태에서 b라는 상태로 만든다.(a is b)</p>
 <p>이렇게 이해하면 redux는 더이상 redux monster나 뭐가뭔지 모르지만 좋다니까 그냥 쓰는 녀석에서,</p>
-<p>우리에게 아주 친숙한 event loop로 바뀌는 것이다.</p>
+<p>우리에게 아주 친숙한 <code>event loop</code>로 바뀌는 것이다.</p>
 <p>실제로 Dan Abramov는 공식 tutorial문서에서 이렇게 얘기하고 있다.</p>
 <blockquote>
 <p>Following in the steps of Flux, CQRS, and <strong>Event Sourcing</strong>, Redux attempts to make state mutations predictable by imposing certain restrictions on how and when updates can happen. These restrictions are reflected in the three principles of Redux.</p>
