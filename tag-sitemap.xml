@@ -23,13 +23,6 @@
     </url>
 
     <url>
-        <loc>https://voidsatisfaction.github.io/tags/Redux/</loc>
-        <lastmod>2016-09-27T10:25:38.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>https://voidsatisfaction.github.io/tags/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/</loc>
         <lastmod>2016-09-29T05:29:04.000Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -179,6 +172,13 @@
     <url>
         <loc>https://voidsatisfaction.github.io/tags/%EB%82%98%EC%9D%98-%EA%BF%88/</loc>
         <lastmod>2017-02-24T12:11:54.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://voidsatisfaction.github.io/tags/Redux/</loc>
+        <lastmod>2017-02-24T13:03:39.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
