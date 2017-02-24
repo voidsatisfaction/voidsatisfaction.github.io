@@ -5,7 +5,7 @@
   <link href="/feed.xml" rel="self"/>
   
   <link href="https://voidsatisfaction.github.io/"/>
-  <updated>2017-02-22T17:43:50.000Z</updated>
+  <updated>2017-02-24T12:11:54.000Z</updated>
   <id>https://voidsatisfaction.github.io/</id>
   
   <author>
@@ -16,21 +16,29 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>개발자로의의 앞으로의 진로와 마음가짐</title>
+    <title>개발자로서의 앞으로의 진로와 마음가짐</title>
     <link href="https://voidsatisfaction.github.io/2017/02/23/i-want-to-be-a-good-programmer/"/>
     <id>https://voidsatisfaction.github.io/2017/02/23/i-want-to-be-a-good-programmer/</id>
     <published>2017-02-22T17:43:02.000Z</published>
-    <updated>2017-02-22T17:43:50.000Z</updated>
+    <updated>2017-02-24T12:11:54.000Z</updated>
     
     <content type="html"><![CDATA[<h1 id="개발자로서의-앞으로의-진로"><a href="#개발자로서의-앞으로의-진로" class="headerlink" title="개발자로서의 앞으로의 진로"></a>개발자로서의 앞으로의 진로</h1><h2 id="요즘-들은-좋은-말들"><a href="#요즘-들은-좋은-말들" class="headerlink" title="요즘 들은 좋은 말들"></a>요즘 들은 좋은 말들</h2><ol>
-<li>사업을 성공시키는 사람 / 프로그래밍을 잘하는 사람의 공통점은 <strong>포기하지 않는, 끈질김이 있다</strong>는 점이다.</li>
-<li>UX란 결국 <strong>공감이고 경험</strong>이다. 자기자신의 comfort zone에서 벗어나보라.</li>
-<li>왜 프로그램은 항상 텍스트 형식으로 작성해야 하는가? 엑셀과 같이 데이터와 프로그래밍을 일체화 할 수 는 없을까? 그렇다면 어떤 자료구조를 택해야 할까? <strong>상식을 부셔라.</strong></li>
-<li>데이터 사이언스란 거창한 것이 아니라, <strong>자신이 관심있는데이터</strong>를 중심으로 <strong>가시화</strong>해서 문제를 발견 / 분석하는 것이다. 결국 내가 데이터 사이언티스트를 하는 이유도 내가 궁금한것이 너무 많아 알고싶어 미치겠고 궁금하기 때문이다.</li>
-<li>당신의 제품은 <strong>vitamin인가요 painkiller인가요?</strong></li>
-<li>말대신 행동. <strong>雑に作れ。</strong></li>
-<li>개발에는 비지니스적 측면과 기술적 측면 양쪽을 다 적절히 고려해야한다.</li>
-<li>기계학습은 결국 탐색이고 학습이란 탐색의 기법을 기계적으로 자동화 한 것이다.</li>
+<li><p>사업을 성공시키는 사람 / 프로그래밍을 잘하는 사람의 공통점은 <strong>포기하지 않는, 끈질김이 있다</strong>는 점이다.</p>
+</li>
+<li><p>UX란 결국 <strong>공감이고 경험</strong>이다. 자기자신의 comfort zone에서 벗어나보라.</p>
+</li>
+<li><p>왜 프로그램은 항상 텍스트 형식으로 작성해야 하는가? 엑셀과 같이 데이터와 프로그래밍을 일체화 할 수 는 없을까? 그렇다면 어떤 자료구조를 택해야 할까? <strong>상식을 부셔라.</strong></p>
+</li>
+<li><p>데이터 사이언스란 거창한 것이 아니라, <strong>자신이 관심있는데이터</strong>를 중심으로 <strong>가시화</strong>해서 문제를 발견 / 분석하는 것이다. 결국 내가 데이터 사이언티스트를 하는 이유도 내가 궁금한것이 너무 많아 알고싶어 미치겠고 궁금하기 때문이다.</p>
+</li>
+<li><p>당신의 제품은 <strong>vitamin인가요 painkiller인가요?</strong></p>
+</li>
+<li><p>말대신 행동. <strong>雑に作れ。</strong></p>
+</li>
+<li><p>개발에는 비지니스적 측면과 기술적 측면 양쪽을 다 적절히 고려해야한다.</p>
+</li>
+<li><p>기계학습은 결국 탐색이고 학습이란 탐색의 기법을 기계적으로 자동화 한 것이다.</p>
+</li>
 </ol>
 <h2 id="서두"><a href="#서두" class="headerlink" title="서두"></a>서두</h2><p>요즘들어 부쩍 ‘나는 어떤 개발자가 될 것인가?’ 하는 질문을 나 자신에게 많이 한다.</p>
 <p>원래 같았으면 며칠정도 쉬는 시간에 잠깐생각하다가 스쳐지나갈 생각이었겠지만, 요즈음 내가 일하고 있는 리쿠르트에서의 많은 경험을 토대로 점점 구체화 되어가는 것을 느낀다. 리쿠르트에게 감사감사.</p>
