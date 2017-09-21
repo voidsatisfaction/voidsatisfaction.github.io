@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     
     <title>AWS DynamoDB 정리 2부 테이블 만들기, 정보보기, 데이터 읽기(secondary index), 데이터 수정하기, 삭제하기 | 텅 빈 충만의 블로그</title>
+    
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
         <meta name="keywords" content="Database,Dynamodb" />
@@ -34,7 +35,6 @@ Improving Data Access with Secondary Indexes in DynamoDB
 핵심기본 내용Query and Scan the TableStep 5.1: Run a Query
 This section provides e">
     
-    <link rel="canonical" href="https://voidsatisfaction.github.io/2016/12/11/aws-dynamodb-study2/"/>
 
     
 
@@ -52,6 +52,7 @@ This section provides e">
         <link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
     
     
+    
         <script type="text/javascript">
 (function(i,s,o,g,r,a,m) {i['GoogleAnalyticsObject']=r;i[r]=i[r]||function() {
 (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -64,6 +65,7 @@ ga('send', 'pageview');
 </script>
     
     
+
 
 </head>
 
@@ -165,12 +167,19 @@ ga('send', 'pageview');
             </header>
         
         
-            <div class="article-subtitle">
-                <a href="/2016/12/11/aws-dynamodb-study2/" class="article-date">
-    <time datetime="2016-12-11T06:19:08.000Z" itemprop="datePublished">2016-12-11</time>
-</a>
+            <div class="article-meta">
                 
-    <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Database/">Database</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Dynamodb/">Dynamodb</a></li></ul>
+    <div class="article-date">
+        <a href="/2016/12/11/aws-dynamodb-study2/" class="article-date">
+            <time datetime="2016-12-11T06:19:08.000Z" itemprop="datePublished">2016-12-11</time>
+        </a>
+    </div>
+
+                
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/Database/">Database</a>, <a class="tag-link" href="/tags/Dynamodb/">Dynamodb</a>
+    </div>
 
             </div>
         
@@ -248,7 +257,7 @@ ga('send', 'pageview');
 
 
 
-    <a data-url="https://voidsatisfaction.github.io/2016/12/11/aws-dynamodb-study2/" data-id="cizjtwv3z001sjslssg11zdqh" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="https://voidsatisfaction.github.io/2016/12/11/aws-dynamodb-study2/" data-id="cj7u2vpji001me9sdj4gebptb" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -349,8 +358,6 @@ ga('send', 'pageview');
             
         </ul>
     </div>
-    <div class="github-card" data-github="voidSatisfaction" data-height="" data-theme="default"></div>
-    <script src="//cdn.jsdelivr.net/github-cards/latest/widget.js"></script>
     
         
 <nav id="article-nav">
@@ -483,7 +490,6 @@ ga('send', 'pageview');
         
     </div>
 </aside>
-
                 </div>
             </div>
         </div>
@@ -532,6 +538,9 @@ ga('send', 'pageview');
         <script src="/libs/lightgallery/js/lg-share.min.js"></script>
         <script src="/libs/lightgallery/js/lg-video.min.js"></script>
     
+    
+    
+
 
 
 <!-- Custom Scripts -->

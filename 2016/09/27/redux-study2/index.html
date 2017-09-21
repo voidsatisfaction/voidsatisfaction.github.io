@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     
     <title>React Native 공부기 ~ Redux 후편 | 텅 빈 충만의 블로그</title>
+    
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
         <meta name="keywords" content="React Native,JavaScript,Redux" />
@@ -51,7 +52,6 @@ Redux의 매커니즘
 Q) 그럼 dumbcomponent에서 데이터가변화 =&amp;gt; screen으로 데이터가 감 =&amp;gt; action">
 <meta name="twitter:image" content="https://css-tricks.com/wp-content/uploads/2016/03/redux-article-3-03.svg">
     
-    <link rel="canonical" href="https://voidsatisfaction.github.io/2016/09/27/redux-study2/"/>
 
     
 
@@ -69,6 +69,7 @@ Q) 그럼 dumbcomponent에서 데이터가변화 =&amp;gt; screen으로 데이�
         <link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
     
     
+    
         <script type="text/javascript">
 (function(i,s,o,g,r,a,m) {i['GoogleAnalyticsObject']=r;i[r]=i[r]||function() {
 (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -81,6 +82,7 @@ ga('send', 'pageview');
 </script>
     
     
+
 
 </head>
 
@@ -182,12 +184,19 @@ ga('send', 'pageview');
             </header>
         
         
-            <div class="article-subtitle">
-                <a href="/2016/09/27/redux-study2/" class="article-date">
-    <time datetime="2016-09-27T08:37:59.000Z" itemprop="datePublished">2016-09-27</time>
-</a>
+            <div class="article-meta">
                 
-    <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/React-Native/">React Native</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Redux/">Redux</a></li></ul>
+    <div class="article-date">
+        <a href="/2016/09/27/redux-study2/" class="article-date">
+            <time datetime="2016-09-27T08:37:59.000Z" itemprop="datePublished">2016-09-27</time>
+        </a>
+    </div>
+
+                
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/JavaScript/">JavaScript</a>, <a class="tag-link" href="/tags/React-Native/">React Native</a>, <a class="tag-link" href="/tags/Redux/">Redux</a>
+    </div>
 
             </div>
         
@@ -264,7 +273,7 @@ ga('send', 'pageview');
 
 
 
-    <a data-url="https://voidsatisfaction.github.io/2016/09/27/redux-study2/" data-id="cizjtwv5g003yjsls1qjfsrku" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="https://voidsatisfaction.github.io/2016/09/27/redux-study2/" data-id="cj7u2vply003ye9sd0r70goyb" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -365,8 +374,6 @@ ga('send', 'pageview');
             
         </ul>
     </div>
-    <div class="github-card" data-github="voidSatisfaction" data-height="" data-theme="default"></div>
-    <script src="//cdn.jsdelivr.net/github-cards/latest/widget.js"></script>
     
         
 <nav id="article-nav">
@@ -499,7 +506,6 @@ ga('send', 'pageview');
         
     </div>
 </aside>
-
                 </div>
             </div>
         </div>
@@ -548,6 +554,9 @@ ga('send', 'pageview');
         <script src="/libs/lightgallery/js/lg-share.min.js"></script>
         <script src="/libs/lightgallery/js/lg-video.min.js"></script>
     
+    
+    
+
 
 
 <!-- Custom Scripts -->
